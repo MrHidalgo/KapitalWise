@@ -1,6 +1,11 @@
 @charset "UTF-8";
+/* line 30, src/scss/_utilities/_extend.scss */
+.number__box-title {
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* line 33, src/scss/_utilities/_extend.scss */
-.c-title, .turn-key__box-title, .connect__subtitle {
+.c-title, .number__box-badge span, .number__box-count, .turn-key__box-title, .connect__subtitle {
   font-family: 'Poppins', sans-serif;
 }
 
@@ -364,6 +369,138 @@ picture {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 80px;
+}
+
+/* line 3, src/scss/_components/homepage/_number.scss */
+.number {
+  padding-top: 107px;
+  padding-bottom: 80px;
+}
+
+/* line 7, src/scss/_components/homepage/_number.scss */
+.number__header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 55px;
+}
+
+/* line 14, src/scss/_components/homepage/_number.scss */
+.number__title {
+  width: 100%;
+  max-width: 285px;
+  text-align: left;
+  font-size: 36px;
+  line-height: 50px;
+  color: #153156;
+}
+
+/* line 23, src/scss/_components/homepage/_number.scss */
+.number__desc {
+  width: 100%;
+  max-width: 368px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+}
+
+/* line 31, src/scss/_components/homepage/_number.scss */
+.number__box {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  min-height: 176px;
+  background-color: #ffffff;
+  border: 1px solid #DDDDDD;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+}
+
+/* line 43, src/scss/_components/homepage/_number.scss */
+.number__box-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 47, src/scss/_components/homepage/_number.scss */
+.number__box-wrapper > div {
+  width: 100%;
+  max-width: -webkit-calc((100% - 22px) / 3);
+  max-width: calc((100% - 22px) / 3);
+}
+
+/* line 53, src/scss/_components/homepage/_number.scss */
+.number__box-badge {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 60, src/scss/_components/homepage/_number.scss */
+.number__box-badge span {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  color: #333333;
+}
+
+/* line 71, src/scss/_components/homepage/_number.scss */
+.number__box-count {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1;
+  color: #153156;
+}
+
+/* line 79, src/scss/_components/homepage/_number.scss */
+.number__box-title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  color: #333333;
 }
 
 /* line 3, src/scss/_components/homepage/_turn-key.scss */

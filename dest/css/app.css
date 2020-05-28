@@ -1,11 +1,11 @@
 @charset "UTF-8";
 /* line 33, src/scss/_utilities/_extend.scss */
-.c-title, .connect__subtitle {
+.c-title, .turn-key__box-title, .connect__subtitle {
   font-family: 'Poppins', sans-serif;
 }
 
 /* line 36, src/scss/_utilities/_extend.scss */
-.copyright__text {
+.copyright__text, .turn-key__box-desc {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -364,6 +364,136 @@ picture {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 80px;
+}
+
+/* line 3, src/scss/_components/homepage/_turn-key.scss */
+.turn-key {
+  padding-top: 66px;
+  padding-bottom: 83px;
+}
+
+/* line 7, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__title {
+  width: 100%;
+  max-width: 478px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 65px;
+}
+
+/* line 15, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 19, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 22, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-wrapper > div {
+  width: 100%;
+  max-width: -webkit-calc(100% / 3);
+  max-width: calc(100% / 3);
+}
+
+/* line 28, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 23px;
+  padding-right: 30px;
+}
+
+/* line 35, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-head > div:nth-of-type(1) {
+  padding-right: 22px;
+}
+
+/* line 38, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-head > div:nth-of-type(2) {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 1px;
+  max-width: 100%;
+}
+
+/* line 46, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 51, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-circle {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 48px;
+  height: 48px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background-color: #fd5545;
+}
+
+/* line 62, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-line {
+  width: 100%;
+  height: 1px;
+  background-color: #fd5545;
+}
+
+/* line 68, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-title {
+  padding-bottom: 7px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #333333;
+}
+
+/* line 77, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-desc {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(51, 51, 51, 0.5);
 }
 
 /* line 3, src/scss/_components/homepage/_connect.scss */

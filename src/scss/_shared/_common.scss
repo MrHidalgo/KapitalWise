@@ -1,3 +1,13 @@
 // COMMON :: START
 
+.copyright {
+	display: flex;
+
+	&__text {
+		text-align: center;
+		@extend %fontSourceSansPro;
+		color: rgba(#333333, 0.76);
+	}
+}
+
 // COMMON :: END

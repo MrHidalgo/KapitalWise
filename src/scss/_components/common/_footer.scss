@@ -1,5 +1,14 @@
 // FOOTER :: START
 
-.footer {}
+.footer {
+	background-color: #e1ecfd;
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 80px;
+	}
+}
 
 // FOOTER :: END

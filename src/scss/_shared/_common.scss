@@ -1,10 +1,41 @@
 // COMMON :: START
 
+.social {
+	display: flex;
+	align-items: center;
+
+	&__item {
+		&:not(:last-of-type) {
+			padding-right: 26px;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+
+		.icon-font {
+			position: relative;
+			color: #fd5545;
+			font-size: 32px;
+
+			&.icon-twitter {
+				top: 3px;
+			}
+		}
+	}
+}
+
 .copyright {
 	display: flex;
 
 	&__text {
 		text-align: center;
+		font-size: 16px;
+		line-height: 24px;
 		@extend %fontSourceSansPro;
 		color: rgba(#333333, 0.76);
 	}

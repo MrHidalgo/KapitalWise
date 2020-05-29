@@ -57,11 +57,16 @@
 			display: flex;
 			align-items: center;
 
+			i {
+				margin-right: 5px;
+				font-size: 16px;
+				color: #FD5545;
+			}
+
 			span {
 				text-transform: uppercase;
 				font-weight: 500;
 				font-size: 16px;
-				line-height: 24px;
 				@extend %fontPoppins;
 				letter-spacing: 0.4px;
 				color: #333333;

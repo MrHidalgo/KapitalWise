@@ -24,8 +24,10 @@ gulp.task('clean', function() {
     '!' + configPath.dest.root + '/media/**/*',
     '!' + configPath.dest.root + '/icon',
     '!' + configPath.dest.root + '/icon/**/*',
+		'!' + configPath.dest.root + '/webfonts',
+		'!' + configPath.dest.root + '/webfonts/**',
     '!' + configPath.src.root + '/img',
     '!' + configPath.src.root + '/icon',
-    '!' + configPath.src.root + '/icon/**'
+    '!' + configPath.src.root + '/icon/**',
   ]);
 });

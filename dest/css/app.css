@@ -5,7 +5,7 @@
 }
 
 /* line 33, src/scss/_utilities/_extend.scss */
-.c-title, .main__title, .main__subtitle, .number__box-badge span, .number__box-count, .turn-key__box-title, .connect__subtitle {
+.c-title, .main__title, .main__subtitle, .number__box-badge span, .number__box-count, .story__title, .turn-key__box-title, .connect__subtitle {
   font-family: 'Poppins', sans-serif;
 }
 
@@ -728,6 +728,22 @@ picture {
   font-size: 14px;
   line-height: 24px;
   color: #333333;
+}
+
+/* line 3, src/scss/_components/homepage/_story.scss */
+.story {
+  padding-top: 71px;
+  padding-bottom: 127px;
+}
+
+/* line 7, src/scss/_components/homepage/_story.scss */
+.story__title {
+  padding-bottom: 145px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 50px;
+  color: #153156;
+  text-align: center;
 }
 
 /* line 3, src/scss/_components/homepage/_partners.scss */

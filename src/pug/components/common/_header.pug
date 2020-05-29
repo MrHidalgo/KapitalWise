@@ -3,5 +3,25 @@
 header#header.header
 	.c-grid
 		.header__wrapper
+			.header__wrapper-left
+
+				.logo.logo--header
+					a.logo__btn(href="/")
+						img.logo__img(src="img/logo.svg" alt="")
+
+			.header__wrapper-right
+
+				ul.header__nav
+					li.header__nav-item
+						a.header__nav-link(href="#") Product
+
+					li.header__nav-item
+						a.header__nav-link(href="#") Security
+
+				.header__btn.c-btn__wrapper
+					a.c-btn.c-btn--radiusBig(href="#")
+						p!= "Get in <span>Touch</span>"
+
+
 
 // HEADER :: END

@@ -37,7 +37,7 @@
 //@import "_macros/nav";
 @import "_macros/title";
 //@import "_macros/subtitle";
-//@import "_macros/btn";
+@import "_macros/btn";
 //@import "_macros/modal";
 //@import "_macros/form";
 ///
@@ -46,6 +46,7 @@
 @import "_components/common/header";
 @import "_components/common/footer";
 
+@import "_components/homepage/main";
 @import "_components/homepage/number";
 @import "_components/homepage/turn-key";
 @import "_components/homepage/connect";

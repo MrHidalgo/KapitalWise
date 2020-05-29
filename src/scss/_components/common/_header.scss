@@ -1,5 +1,40 @@
 // HEADER :: START
 
-.header {}
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 44px;
+		padding-bottom: 10px;
+
+		&-right {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+
+		&-item {
+			display: flex;
+			padding-right: 43px;
+		}
+
+		&-link {
+			display: flex;
+			font-size: 16px;
+			color: #333333;
+		}
+	}
+}
 
 // HEADER :: END

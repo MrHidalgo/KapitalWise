@@ -74,9 +74,11 @@
 			max-width: 100%;
 
 			svg {
+				opacity: 0;
 				visibility: hidden;
 				position: relative;
 				transform: translateX(-30px);
+				@include transition(opacity, visibility);
 			}
 		}
 	}

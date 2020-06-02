@@ -24,16 +24,15 @@
 			tl.set("#main__content-line-3 > *", {transformOrigin: 'left center', scaleX: '0',});
 
 			tl
-				.to($('#main-box--left'), 0.4, {opacity: 1, ease: Power1.easeInOut}, '+=0.3')
-				.staggerTo($('#main__box-line > *'), 0.55, {scaleX: 1, ease: Power1.easeInOut}, 0.075, '-=0.2')
-				.staggerTo($('#main__box-graph > *'), 0.55, {scaleY: 1, ease: Power1.easeInOut}, 0.075, '-=0.3')
-				.staggerTo($('#main__box-point > *'), 0.55, {scale: 1, y: 0, ease: Power1.easeInOut}, 0.075, '-=0.3')
-				.staggerTo($('#main__sidebar-point > *'), 0.6, {scale: 1, ease: Power1.easeInOut}, 0.1, '-=1')
-				.staggerTo($('#main__sidebar-line > *'), 0.6, {scaleX: 1, ease: Power1.easeInOut}, 0.1, '-=1')
-				.staggerTo($('#main__content-line-1 > *'), 0.55, {scaleX: 1, ease: Power1.easeInOut}, 0.075, '-=0.75')
-				.staggerTo($('#main__content-line-2 > *'), 0.55, {scaleX: 1, ease: Power1.easeInOut}, 0.075, '-=0.75')
-				.staggerTo($('#main__content-line-3 > *'), 0.55, {scaleX: 1, ease: Power1.easeInOut}, 0.075, '-=0.75')
-			;
+				.staggerTo($('#main__box-line > *'), 0.8, {scaleX: 1, ease: Power2.easeInOut})
+				.staggerTo($('#main__box-graph > *'), 0.8, {scaleY: 1, ease: Power2.easeInOut}, 0.1, '-=0.5')
+				.staggerTo($('#main__box-point > *'), 0.8, {scale: 1, y: 0, ease: Power2.easeInOut}, 0.1, '-=0.5')
+				.staggerTo($('#main__sidebar-point > *'), 0.8, {scale: 1, ease: Power2.easeInOut}, 0.1, '-=1.15')
+				.staggerTo($('#main__sidebar-line > *'), 0.8, {scaleX: 1, ease: Power2.easeInOut}, 0.1, '-=1.15')
+				.staggerTo($('#main__content-line-1 > *'), 0.75, {scaleX: 1, ease: Power2.easeInOut}, 0.12, '-=1')
+				.staggerTo($('#main__content-line-2 > *'), 0.75, {scaleX: 1, ease: Power2.easeInOut}, 0.11, '-=1')
+				.staggerTo($('#main__content-line-3 > *'), 0.75, {scaleX: 1, ease: Power2.easeInOut}, 0.13, '-=1')
+				.to($('#main-box--left'), 1.2, {opacity: 1, ease: Power2.easeInOut}, '-=0.4');
 		};
 
 		mainAnimation();

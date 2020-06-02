@@ -78,7 +78,7 @@
 				visibility: hidden;
 				position: relative;
 				transform: translateX(-30px);
-				@include transition(opacity, visibility);
+				@include transition(opacity 0.5s, visibility 0.5s);
 			}
 		}
 	}

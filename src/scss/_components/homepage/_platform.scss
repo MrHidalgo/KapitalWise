@@ -71,9 +71,19 @@
 		}
 
 		&-right {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
 			flex: 1;
 			min-width: 1px;
 			max-width: 100%;
+
+			svg {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateX(30px);
+				@include transition(opacity 1s, visibility 1s);
+			}
 		}
 	}
 

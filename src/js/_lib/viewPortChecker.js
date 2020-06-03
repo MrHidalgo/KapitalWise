@@ -62,29 +62,26 @@ const initViewPortChecker = (
   });
 
 };
-const initViewPortPlatformChecker = (
-  className = "viewport-platform-js",
-  classNameToAdd = "is-active",
-  offsetVal = 300,
-  callbackFunctionName = scrollAnimation
+const initViewportSVG = (
+  className = "viewport-svg-js",
+  classNameToAdd = "is-viewport",
+  offsetVal = 300
 ) => {
 
   $("." + className).not(".full-visible").each(function(idx, el) {
 
     $(el).viewportChecker({
       classToAdd: classNameToAdd,
-      classToAddForFullView: 'is-active',
-      classToRemove : className,
+      classToAddForFullView: 'full-visible',
+      // classToRemove : className,
       removeClassAfterAnimation: true,
       offset: offsetVal,
       repeat: true,
       callbackFunction: function(elem, action) {
 
+				window[$(elem).attr('data-name')].play();
 
-				// console.log(elem);
-				// callbackFunctionName(elem, el);
-
-      }
+			}
     });
 
   });

@@ -7,7 +7,7 @@
 
 	&__bg {
 		z-index: 0;
-		opacity: 0.8;
+		opacity: 0.7;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -16,7 +16,7 @@
 		border-top-right-radius: 350px;
 		border-bottom-left-radius: 350px;
 		transform: matrix(-1, 0, 0, -1, 0, 0);
-		background: linear-gradient(178deg, darken(#FEFEFE, 1%) 0%, #D9E9FF 79%, #C2CBEE 100%);
+		background: linear-gradient(darken(#fefefe, 2%) 0%, #d9e9ff 78.67%, #c2cbee 100%);
 	}
 
 	.c-grid {
@@ -25,7 +25,7 @@
 	}
 
 	&__title {
-		padding-bottom: 25px;
+		padding-bottom: 40px;
 		font-weight: 700;
 		font-size: 36px;
 		line-height: 50px;
@@ -164,6 +164,8 @@
 
 			> div {
 				&:nth-of-type(1) {
+					display: flex;
+					align-items: center;
 					width: 40px;
 				}
 
@@ -174,16 +176,13 @@
 				}
 			}
 
-			i,
-			span {
-				color: #333;
-			}
-
-			i {
+			.icon-font {
+				color: #fd5545;
 				font-size: 24px;
 			}
 
 			span {
+				color: #333;
 				font-weight: 700;
 				font-size: 24px;
 				line-height: 32px;

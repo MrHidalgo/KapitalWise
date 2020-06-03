@@ -41,32 +41,12 @@
 		color: #1E232A;
 	}
 
-	&__box {
-		display: flex;
-		align-items: center;
-
-		&-wrapper {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
-			max-width: 800px;
-			margin-left: auto;
-			margin-right: auto;
-
-			> div {
-				padding-left: 12px;
-				padding-right: 12px;
-				padding-bottom: 42px;
-			}
-		}
-
-		img {
-			display: block;
-			max-width: 100%;
-			height: auto;
-		}
+	&__img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 

@@ -27,11 +27,44 @@
 @function icon-char($filename) {
 	$char: "";
 
-	@if $filename == linkedin {
+	@if $filename == artificial-intellience {
 		$char: "\E001";
 	}
-	@if $filename == twitter {
+	@if $filename == customer-needs {
 		$char: "\E002";
+	}
+	@if $filename == data-analysis {
+		$char: "\E003";
+	}
+	@if $filename == data-security {
+		$char: "\E004";
+	}
+	@if $filename == deep-insights {
+		$char: "\E005";
+	}
+	@if $filename == encryptions {
+		$char: "\E006";
+	}
+	@if $filename == linkedin {
+		$char: "\E007";
+	}
+	@if $filename == method {
+		$char: "\E008";
+	}
+	@if $filename == saas-dashboards {
+		$char: "\E009";
+	}
+	@if $filename == security {
+		$char: "\E00A";
+	}
+	@if $filename == targeted-marketing {
+		$char: "\E00B";
+	}
+	@if $filename == twitter {
+		$char: "\E00C";
+	}
+	@if $filename == virtual-engagement {
+		$char: "\E00D";
 	}
 
 	@return $char;
@@ -48,11 +81,55 @@
 	}
 }
 
+.icon-artificial-intellience {
+	@include icon(artificial-intellience);
+
+}
+.icon-customer-needs {
+	@include icon(customer-needs);
+
+}
+.icon-data-analysis {
+	@include icon(data-analysis);
+
+}
+.icon-data-security {
+	@include icon(data-security);
+
+}
+.icon-deep-insights {
+	@include icon(deep-insights);
+
+}
+.icon-encryptions {
+	@include icon(encryptions);
+
+}
 .icon-linkedin {
 	@include icon(linkedin);
 
 }
+.icon-method {
+	@include icon(method);
+
+}
+.icon-saas-dashboards {
+	@include icon(saas-dashboards);
+
+}
+.icon-security {
+	@include icon(security);
+
+}
+.icon-targeted-marketing {
+	@include icon(targeted-marketing);
+
+}
 .icon-twitter {
 	@include icon(twitter);
+
+}
+.icon-virtual-engagement {
+	@include icon(virtual-engagement);
 
 }

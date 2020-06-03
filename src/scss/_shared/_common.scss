@@ -34,6 +34,9 @@
 		line-height: 24px;
 		@extend %fontSourceSansPro;
 		color: rgba(#333333, 0.76);
+		@include adaptive(767) {
+			font-size: 14px;
+		}
 	}
 }
 

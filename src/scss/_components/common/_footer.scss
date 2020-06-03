@@ -8,6 +8,18 @@
 		align-items: center;
 		justify-content: space-between;
 		height: 80px;
+		@include adaptive(767) {
+			flex-wrap: wrap;
+			justify-content: center;
+			padding-top: 30px;
+			padding-bottom: 15px;
+			height: auto;
+			min-height: 80px;
+
+			&-right {
+				padding-top: 15px;
+			}
+		}
 	}
 }
 

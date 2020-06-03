@@ -7,6 +7,9 @@
 		padding-top: 50px;
 		padding-bottom: 75px;
 	}
+	@include adaptive(767) {
+		padding-bottom: 50px;
+	}
 
 	&__title {
 		width: 100%;
@@ -26,10 +29,20 @@
 		&-wrapper {
 			display: flex;
 			padding-bottom: 50px;
+			@include adaptive(767) {
+				flex-wrap: wrap;
+			}
 
 			> div {
 				width: 100%;
 				max-width: calc(100% / 3);
+				@include adaptive(767) {
+					max-width: 100%;
+
+					&:not(:last-of-type) {
+						padding-bottom: 30px;
+					}
+				}
 			}
 		}
 

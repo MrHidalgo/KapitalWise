@@ -35,6 +35,10 @@
 				padding-top: 20px;
 				padding-bottom: 20px;
 				@include transition(padding);
+				@include adaptive(767) {
+					padding-top: 15px;
+					padding-bottom: 15px;
+				}
 			}
 		}
 	}
@@ -48,21 +52,68 @@
 		padding-top: 44px;
 		padding-bottom: 10px;
 		@include transition(padding);
+		@include adaptive(767) {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+
+		&-left {
+			@include adaptive(767) {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+			}
+		}
 
 		&-right {
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
+			@include adaptive(767) {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateX(-100%);
+				z-index: 1250;
+				overflow-y: auto;
+				position: fixed;
+				top: 79px;
+				left: 0;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-start;
+				width: 100%;
+				height: calc(100% - 79px);
+				padding: 50px 15px;
+				background-color: rgba(#ffffff, 0.975);
+				transform-origin: center;
+				backface-visibility: hidden;
+				@include transition(opacity, visibility, transform);
+
+				&.is-open {
+					opacity: 1;
+					visibility: visible;
+					transform: translateX(0);
+					@include transition(opacity, visibility, transform);
+				}
+			}
 		}
 	}
 
 	&__nav {
 		display: flex;
 		align-items: center;
+		@include adaptive(767) {
+			flex-direction: column;
+			padding-bottom: 50px;
+		}
 
 		&-item {
 			display: flex;
 			padding-right: 43px;
+			@include adaptive(767) {
+				padding-right: 0;
+			}
 		}
 
 		&-link {
@@ -71,6 +122,10 @@
 			font-size: 16px;
 			color: #333333;
 			@include transition(color);
+			@include adaptive(767) {
+				align-items: center;
+				min-height: 45px;
+			}
 
 			&:after,
 			&:before {
@@ -101,6 +156,13 @@
 					@include transition(width);
 				}
 			}
+		}
+	}
+
+	.hamburger {
+		display: none;
+		@include adaptive(767) {
+			display: flex;
 		}
 	}
 }

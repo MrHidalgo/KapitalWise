@@ -11,6 +11,10 @@
 		padding-top: 175px;
 		padding-bottom: 100px;
 	}
+	@include adaptive(767) {
+		padding-top: 125px;
+		padding-bottom: 75px;
+	}
 
 	&__bg {
 		z-index: 0;
@@ -29,6 +33,9 @@
 		@include adaptive(1023) {
 			border-bottom-left-radius: 200px;
 		}
+		@include adaptive(767) {
+			border-bottom-left-radius: 125px;
+		}
 	}
 
 	&__wrapper {
@@ -43,6 +50,9 @@
 		&-left,
 		&-right {
 			height: 100%;
+			@include adaptive(767) {
+				height: auto;
+			}
 		}
 
 		&-left {

@@ -4,12 +4,20 @@
 	padding-top: 68px;
 	padding-bottom: 67px;
 	background-color: #f2f7ff;
+	@include adaptive(1023) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
 
 	&__title {
 		padding-bottom: 16px;
+		@include adaptive(1023) {
+			padding-bottom: 15px;
+		}
 	}
 
 	&__desc {
+		opacity: 1;
 		width: 100%;
 		max-width: 570px;
 		padding-bottom: 49px;
@@ -20,16 +28,28 @@
 		line-height: 24px;
 		letter-spacing: 0px;
 		color: #333333;
-		opacity: 1;
 	}
 
 	&__wrapper {
 		display: flex;
+		@include adaptive(1023) {
+			flex-wrap: wrap;
+			width: 100%;
+		}
 
 		&-col {
 			flex: 1;
 			min-width: 1px;
 			max-width: 100%;
+			@include adaptive(1023) {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				flex: unset;
+				min-width: unset;
+				width: 50%;
+				padding-bottom: 30px;
+			}
 		}
 	}
 

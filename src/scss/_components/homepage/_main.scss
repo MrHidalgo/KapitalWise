@@ -4,6 +4,13 @@
 	position: relative;
 	padding-top: 197px;
 	padding-bottom: 170px;
+	@include adaptive(1279) {
+		padding-bottom: 137px;
+	}
+	@include adaptive(1023) {
+		padding-top: 175px;
+		padding-bottom: 100px;
+	}
 
 	&__bg {
 		z-index: 0;
@@ -16,39 +23,11 @@
 		border-bottom-left-radius: 350px;
 		border: 1px solid #F4F9FF;
 		background: linear-gradient(#fff 0%, #fff 0%, #d9e9ff 58.58%, #c2cbee 100%);
-	}
-
-	&__illustration {
-		z-index: 0;
-		position: absolute;
-		display: flex;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-
-		&-left,
-		&-right {
-			height: 100%;
+		@include adaptive(1279) {
+			border-bottom-left-radius: 250px;
 		}
-
-		&-left {
-			width: 50%;
-		}
-
-		&-right {
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
-			flex: 1;
-			min-width: 1px;
-			max-width: 100%;
-
-			svg {
-				//display: block;
-				//max-width: 100%;
-				//height: auto;
-			}
+		@include adaptive(1023) {
+			border-bottom-left-radius: 200px;
 		}
 	}
 
@@ -57,6 +36,9 @@
 		position: relative;
 		display: flex;
 		align-items: center;
+		@include adaptive(1023) {
+			flex-wrap: wrap;
+		}
 
 		&-left,
 		&-right {
@@ -65,6 +47,10 @@
 
 		&-left {
 			width: 453px;
+			@include adaptive(1023) {
+				width: 100%;
+				padding-bottom: 30px;
+			}
 		}
 
 		&-right {
@@ -77,20 +63,27 @@
 				opacity: 0;
 				visibility: hidden;
 				position: relative;
+				display: block;
 				transform: translateX(-30px);
 				@include transition(opacity 1s, visibility 1s);
+				@include adaptive(1279) {
+					max-width: calc(100% + 30px);
+					height: auto;
+				}
+				@include adaptive(1023) {
+					max-width: 100%;
+					transform: translateX(0);
+				}
 			}
 		}
 	}
 
 	&__title {
 		padding-bottom: 16px;
-		@extend %fontPoppins;
-		font-weight: 700;
-		font-size: 36px;
-		line-height: 42px;
-		letter-spacing: 1.8px;
-		color: #153156;
+		@include adaptive(1023) {
+			padding-bottom: 15px;
+			text-align: center;
+		}
 	}
 
 	&__line {
@@ -100,6 +93,11 @@
 		padding: 0;
 		border: none;
 		background-color: #fd5545;
+		@include adaptive(1023) {
+			max-width: 300px;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 
 	&__subtitle {
@@ -110,6 +108,15 @@
 		@extend %fontPoppins;
 		letter-spacing: 1.2px;
 		color: #333333;
+		@include adaptive(1279) {
+			padding-right: 30px;
+			font-size: 20px;
+		}
+		@include adaptive(1023) {
+			padding-top: 15px;
+			padding-right: 0;
+			text-align: center;
+		}
 	}
 
 	&__desc {
@@ -117,6 +124,20 @@
 		font-size: 16px;
 		line-height: 24px;
 		color: #333333;
+		@include adaptive(1023) {
+			width: 100%;
+			max-width: 550px;
+			margin-left: auto;
+			margin-right: auto;
+			padding-bottom: 20px;
+			text-align: center;
+		}
+	}
+
+	&__btn {
+		@include adaptive(1023) {
+			justify-content: center;
+		}
 	}
 }
 

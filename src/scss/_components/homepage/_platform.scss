@@ -1,9 +1,14 @@
 // SECTION :: START
 
 .platform {
+	overflow: hidden;
 	position: relative;
 	padding-top: 60px;
 	padding-bottom: 30px;
+	@include adaptive(1023) {
+		padding-top: 50px;
+		padding-bottom: 15px;
+	}
 
 	&__bg {
 		z-index: 0;
@@ -17,6 +22,14 @@
 		border-bottom-left-radius: 350px;
 		transform: matrix(-1, 0, 0, -1, 0, 0);
 		background: linear-gradient(darken(#fefefe, 2%) 0%, #d9e9ff 78.67%, #c2cbee 100%);
+		@include adaptive(1279) {
+			border-top-right-radius: 250px;
+			border-bottom-left-radius: 250px;
+		}
+		@include adaptive(1023) {
+			border-top-right-radius: 200px;
+			border-bottom-left-radius: 200px;
+		}
 	}
 
 	.c-grid {
@@ -26,16 +39,19 @@
 
 	&__title {
 		padding-bottom: 40px;
-		font-weight: 700;
-		font-size: 36px;
-		line-height: 50px;
-		@extend %fontPoppins;
-		color: #153156;
+		@include adaptive(1023) {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
 
 		&-1,
 		&-3 {
 			width: 100%;
 			max-width: 400px;
+			@include adaptive(1023) {
+				max-width: 450px;
+			}
 		}
 
 		&-2,
@@ -44,6 +60,10 @@
 			max-width: 530px;
 			margin-left: auto;
 			text-align: right;
+			@include adaptive(1023) {
+				max-width: 450px;
+				text-align: center;
+			}
 		}
 	}
 
@@ -51,6 +71,9 @@
 		display: flex;
 		align-items: center;
 		padding-bottom: 50px;
+		@include adaptive(1023) {
+			padding-bottom: 75px;
+		}
 
 		&--reverse {
 			flex-direction: row-reverse;
@@ -58,10 +81,19 @@
 			.platform {
 				&__wrapper {
 					&-right {
+						@include adaptive(1023) {
+							padding-left: 0;
+							padding-right: 15px;
+						}
+
 						svg {
 							margin-left: 0;
 							margin-right: auto;
 							transform: translateX(-30px);
+							@include adaptive(1023) {
+								transform: translateX(0);
+								margin-left: auto;
+							}
 						}
 					}
 				}
@@ -79,6 +111,9 @@
 
 		&-left {
 			width: 370px;
+			@include adaptive(1023) {
+				max-width: 300px;
+			}
 		}
 
 		&-right {
@@ -88,6 +123,9 @@
 			flex: 1;
 			min-width: 1px;
 			max-width: 100%;
+			@include adaptive(1023) {
+				padding-left: 15px;
+			}
 
 			svg {
 				opacity: 0;
@@ -96,6 +134,15 @@
 				margin-left: auto;
 				transform: translateX(30px);
 				@include transition(opacity 1s, visibility 1s);
+				@include adaptive(1279) {
+					max-width: calc(100% + 30px);
+					height: auto;
+				}
+				@include adaptive(1023) {
+					max-width: 100%;
+					transform: translateX(0);
+					margin-right: auto;
+				}
 			}
 		}
 	}
@@ -111,6 +158,10 @@
 		border: 1px solid #DDDDDD;
 		border-radius: 3px;
 		background-color: #FFFFFF;
+		@include adaptive(1023) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
 
 		&:after {
 			content: '';
@@ -154,6 +205,9 @@
 
 			> div {
 				padding-bottom: 25px;
+				@include adaptive(1023) {
+					padding-bottom: 15px;
+				}
 			}
 		}
 
@@ -161,6 +215,9 @@
 			display: flex;
 			align-items: center;
 			padding-bottom: 15px;
+			@include adaptive(1023) {
+				padding-bottom: 10px;
+			}
 
 			> div {
 				&:nth-of-type(1) {
@@ -179,6 +236,9 @@
 			.icon-font {
 				color: #fd5545;
 				font-size: 24px;
+				@include adaptive(1023) {
+					font-size: 22px;
+				}
 			}
 
 			span {
@@ -188,6 +248,12 @@
 				line-height: 32px;
 				@extend %fontPoppins;
 				color: #333;
+				@include adaptive(1279) {
+					font-size: 20px;
+				}
+				@include adaptive(1023) {
+					font-size: 18px;
+				}
 			}
 		}
 
@@ -195,6 +261,9 @@
 			font-size: 16px;
 			line-height: 24px;
 			color: #333;
+			@include adaptive(1023) {
+				font-size: 14px;
+			}
 		}
 	}
 }

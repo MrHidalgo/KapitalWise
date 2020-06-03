@@ -45,26 +45,35 @@
 	@if $filename == encryptions {
 		$char: "\E006";
 	}
-	@if $filename == linkedin {
+	@if $filename == like {
 		$char: "\E007";
 	}
-	@if $filename == method {
+	@if $filename == linkedin {
 		$char: "\E008";
 	}
-	@if $filename == saas-dashboards {
+	@if $filename == loupe {
 		$char: "\E009";
 	}
-	@if $filename == security {
+	@if $filename == method {
 		$char: "\E00A";
 	}
-	@if $filename == targeted-marketing {
+	@if $filename == saas-dashboards {
 		$char: "\E00B";
 	}
-	@if $filename == twitter {
+	@if $filename == security {
 		$char: "\E00C";
 	}
-	@if $filename == virtual-engagement {
+	@if $filename == star {
 		$char: "\E00D";
+	}
+	@if $filename == targeted-marketing {
+		$char: "\E00E";
+	}
+	@if $filename == twitter {
+		$char: "\E00F";
+	}
+	@if $filename == virtual-engagement {
+		$char: "\E010";
 	}
 
 	@return $char;
@@ -105,8 +114,16 @@
 	@include icon(encryptions);
 
 }
+.icon-like {
+	@include icon(like);
+
+}
 .icon-linkedin {
 	@include icon(linkedin);
+
+}
+.icon-loupe {
+	@include icon(loupe);
 
 }
 .icon-method {
@@ -119,6 +136,10 @@
 }
 .icon-security {
 	@include icon(security);
+
+}
+.icon-star {
+	@include icon(star);
 
 }
 .icon-targeted-marketing {

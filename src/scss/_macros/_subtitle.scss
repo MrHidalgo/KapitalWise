@@ -1,9 +1,15 @@
 // SUBTITLE :: START
 
 .c-subtitle {
-  &__text {
-    &-wrap {}
-  }
+	@extend %fontPoppins;
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 42px;
+	letter-spacing: 1.8px;
+	color: #153156;
+	@include adaptive(1279) {
+		font-size: 33px;
+	}
 }
 
 // SUBTITLE :: END

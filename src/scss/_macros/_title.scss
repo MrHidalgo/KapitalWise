@@ -7,6 +7,13 @@
 	font-weight: 700;
 	@extend %fontPoppins;
 	color: #333333;
+	@include adaptive(1279) {
+		font-size: 36px;
+	}
+	@include adaptive(1023) {
+		font-size: 33px;
+		line-height: 54px;
+	}
 }
 
 // TITLE :: END

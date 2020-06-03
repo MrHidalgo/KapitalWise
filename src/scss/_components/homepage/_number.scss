@@ -14,10 +14,6 @@
 	&__title {
 		width: 100%;
 		max-width: 285px;
-		text-align: left;
-		font-size: 36px;
-		line-height: 50px;
-		color: #153156;
 	}
 
 	&__desc {
@@ -58,7 +54,7 @@
 			display: flex;
 			align-items: center;
 
-			i {
+			.icon-font {
 				margin-right: 5px;
 				font-size: 16px;
 				color: #FD5545;
@@ -68,9 +64,13 @@
 				text-transform: uppercase;
 				font-weight: 500;
 				font-size: 16px;
+				line-height: 1;
 				@extend %fontPoppins;
 				letter-spacing: 0.4px;
 				color: #333333;
+				@include adaptive(1023) {
+					font-size: 14px;
+				}
 			}
 		}
 
@@ -80,6 +80,12 @@
 			line-height: 1;
 			@extend %fontPoppins;
 			color: #153156;
+			@include adaptive(1279) {
+				font-size: 50px;
+			}
+			@include adaptive(1023) {
+				font-size: 45px;
+			}
 		}
 
 		&-title {

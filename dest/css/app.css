@@ -1307,7 +1307,15 @@ picture {
   padding-bottom: 80px;
 }
 
-/* line 7, src/scss/_components/homepage/_number.scss */
+@media screen and (max-width: 767px) {
+  /* line 3, src/scss/_components/homepage/_number.scss */
+  .number {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
+
+/* line 11, src/scss/_components/homepage/_number.scss */
 .number__header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1324,13 +1332,43 @@ picture {
   padding-bottom: 55px;
 }
 
-/* line 14, src/scss/_components/homepage/_number.scss */
+@media screen and (max-width: 767px) {
+  /* line 11, src/scss/_components/homepage/_number.scss */
+  .number__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-bottom: 40px;
+  }
+}
+
+/* line 24, src/scss/_components/homepage/_number.scss */
 .number__title {
   width: 100%;
   max-width: 285px;
 }
 
-/* line 19, src/scss/_components/homepage/_number.scss */
+@media screen and (max-width: 767px) {
+  /* line 24, src/scss/_components/homepage/_number.scss */
+  .number__title {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+}
+
+/* line 35, src/scss/_components/homepage/_number.scss */
 .number__desc {
   width: 100%;
   max-width: 368px;
@@ -1339,7 +1377,14 @@ picture {
   color: #333333;
 }
 
-/* line 27, src/scss/_components/homepage/_number.scss */
+@media screen and (max-width: 767px) {
+  /* line 35, src/scss/_components/homepage/_number.scss */
+  .number__desc {
+    text-align: center;
+  }
+}
+
+/* line 46, src/scss/_components/homepage/_number.scss */
 .number__box {
   position: relative;
   display: -webkit-box;
@@ -1368,7 +1413,14 @@ picture {
           border-radius: 3px;
 }
 
-/* line 40, src/scss/_components/homepage/_number.scss */
+@media screen and (max-width: 767px) {
+  /* line 46, src/scss/_components/homepage/_number.scss */
+  .number__box {
+    min-height: 155px;
+  }
+}
+
+/* line 62, src/scss/_components/homepage/_number.scss */
 .number__box-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1380,14 +1432,34 @@ picture {
           justify-content: space-between;
 }
 
-/* line 44, src/scss/_components/homepage/_number.scss */
+@media screen and (max-width: 767px) {
+  /* line 62, src/scss/_components/homepage/_number.scss */
+  .number__box-wrapper {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+}
+
+/* line 69, src/scss/_components/homepage/_number.scss */
 .number__box-wrapper > div {
   width: 100%;
   max-width: -webkit-calc((100% - 22px) / 3);
   max-width: calc((100% - 22px) / 3);
 }
 
-/* line 50, src/scss/_components/homepage/_number.scss */
+@media screen and (max-width: 767px) {
+  /* line 69, src/scss/_components/homepage/_number.scss */
+  .number__box-wrapper > div {
+    max-width: 100%;
+  }
+  /* line 75, src/scss/_components/homepage/_number.scss */
+  .number__box-wrapper > div:not(:last-of-type) {
+    padding-bottom: 15px;
+  }
+}
+
+/* line 82, src/scss/_components/homepage/_number.scss */
 .number__box-badge {
   position: absolute;
   top: 10px;
@@ -1402,14 +1474,14 @@ picture {
           align-items: center;
 }
 
-/* line 57, src/scss/_components/homepage/_number.scss */
+/* line 89, src/scss/_components/homepage/_number.scss */
 .number__box-badge .icon-font {
   margin-right: 5px;
   font-size: 16px;
   color: #FD5545;
 }
 
-/* line 63, src/scss/_components/homepage/_number.scss */
+/* line 95, src/scss/_components/homepage/_number.scss */
 .number__box-badge span {
   text-transform: uppercase;
   font-weight: 500;
@@ -1420,13 +1492,13 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 63, src/scss/_components/homepage/_number.scss */
+  /* line 95, src/scss/_components/homepage/_number.scss */
   .number__box-badge span {
     font-size: 14px;
   }
 }
 
-/* line 77, src/scss/_components/homepage/_number.scss */
+/* line 109, src/scss/_components/homepage/_number.scss */
 .number__box-count {
   font-weight: 700;
   font-size: 56px;
@@ -1435,20 +1507,27 @@ picture {
 }
 
 @media screen and (max-width: 1279px) {
-  /* line 77, src/scss/_components/homepage/_number.scss */
+  /* line 109, src/scss/_components/homepage/_number.scss */
   .number__box-count {
     font-size: 50px;
   }
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 77, src/scss/_components/homepage/_number.scss */
+  /* line 109, src/scss/_components/homepage/_number.scss */
   .number__box-count {
     font-size: 45px;
   }
 }
 
-/* line 91, src/scss/_components/homepage/_number.scss */
+@media screen and (max-width: 767px) {
+  /* line 109, src/scss/_components/homepage/_number.scss */
+  .number__box-count {
+    font-size: 40px;
+  }
+}
+
+/* line 126, src/scss/_components/homepage/_number.scss */
 .number__box-title {
   margin-left: auto;
   margin-right: auto;
@@ -1474,7 +1553,14 @@ picture {
   }
 }
 
-/* line 13, src/scss/_components/homepage/_platform.scss */
+@media screen and (max-width: 767px) {
+  /* line 3, src/scss/_components/homepage/_platform.scss */
+  .platform {
+    padding-bottom: 0;
+  }
+}
+
+/* line 16, src/scss/_components/homepage/_platform.scss */
 .platform__bg {
   z-index: 0;
   opacity: 0.7;
@@ -1497,7 +1583,7 @@ picture {
 }
 
 @media screen and (max-width: 1279px) {
-  /* line 13, src/scss/_components/homepage/_platform.scss */
+  /* line 16, src/scss/_components/homepage/_platform.scss */
   .platform__bg {
     -webkit-border-top-right-radius: 250px;
             border-top-right-radius: 250px;
@@ -1507,7 +1593,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 13, src/scss/_components/homepage/_platform.scss */
+  /* line 16, src/scss/_components/homepage/_platform.scss */
   .platform__bg {
     -webkit-border-top-right-radius: 200px;
             border-top-right-radius: 200px;
@@ -1516,19 +1602,29 @@ picture {
   }
 }
 
-/* line 35, src/scss/_components/homepage/_platform.scss */
+@media screen and (max-width: 767px) {
+  /* line 16, src/scss/_components/homepage/_platform.scss */
+  .platform__bg {
+    -webkit-border-top-right-radius: 125px;
+            border-top-right-radius: 125px;
+    -webkit-border-bottom-left-radius: 125px;
+            border-bottom-left-radius: 125px;
+  }
+}
+
+/* line 42, src/scss/_components/homepage/_platform.scss */
 .platform .c-grid {
   z-index: 2;
   position: relative;
 }
 
-/* line 40, src/scss/_components/homepage/_platform.scss */
+/* line 47, src/scss/_components/homepage/_platform.scss */
 .platform__title {
   padding-bottom: 40px;
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 40, src/scss/_components/homepage/_platform.scss */
+  /* line 47, src/scss/_components/homepage/_platform.scss */
   .platform__title {
     margin-left: auto;
     margin-right: auto;
@@ -1536,20 +1632,27 @@ picture {
   }
 }
 
-/* line 48, src/scss/_components/homepage/_platform.scss */
+@media screen and (max-width: 767px) {
+  /* line 47, src/scss/_components/homepage/_platform.scss */
+  .platform__title {
+    padding-bottom: 30px;
+  }
+}
+
+/* line 58, src/scss/_components/homepage/_platform.scss */
 .platform__title-1, .platform__title-3 {
   width: 100%;
   max-width: 400px;
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 48, src/scss/_components/homepage/_platform.scss */
+  /* line 58, src/scss/_components/homepage/_platform.scss */
   .platform__title-1, .platform__title-3 {
     max-width: 450px;
   }
 }
 
-/* line 57, src/scss/_components/homepage/_platform.scss */
+/* line 67, src/scss/_components/homepage/_platform.scss */
 .platform__title-2, .platform__title-4 {
   width: 100%;
   max-width: 530px;
@@ -1558,14 +1661,14 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 57, src/scss/_components/homepage/_platform.scss */
+  /* line 67, src/scss/_components/homepage/_platform.scss */
   .platform__title-2, .platform__title-4 {
     max-width: 450px;
     text-align: center;
   }
 }
 
-/* line 70, src/scss/_components/homepage/_platform.scss */
+/* line 80, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1579,13 +1682,22 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 70, src/scss/_components/homepage/_platform.scss */
+  /* line 80, src/scss/_components/homepage/_platform.scss */
   .platform__wrapper {
     padding-bottom: 75px;
   }
 }
 
-/* line 78, src/scss/_components/homepage/_platform.scss */
+@media screen and (max-width: 767px) {
+  /* line 80, src/scss/_components/homepage/_platform.scss */
+  .platform__wrapper {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+}
+
+/* line 91, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper--reverse {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
@@ -1595,14 +1707,21 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 83, src/scss/_components/homepage/_platform.scss */
+  /* line 96, src/scss/_components/homepage/_platform.scss */
   .platform__wrapper--reverse .platform__wrapper-right {
     padding-left: 0;
     padding-right: 15px;
   }
 }
 
-/* line 89, src/scss/_components/homepage/_platform.scss */
+@media screen and (max-width: 767px) {
+  /* line 96, src/scss/_components/homepage/_platform.scss */
+  .platform__wrapper--reverse .platform__wrapper-right {
+    padding-right: 0;
+  }
+}
+
+/* line 105, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper--reverse .platform__wrapper-right svg {
   margin-left: 0;
   margin-right: auto;
@@ -1612,7 +1731,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 89, src/scss/_components/homepage/_platform.scss */
+  /* line 105, src/scss/_components/homepage/_platform.scss */
   .platform__wrapper--reverse .platform__wrapper-right svg {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
@@ -1621,26 +1740,34 @@ picture {
   }
 }
 
-/* line 102, src/scss/_components/homepage/_platform.scss */
+/* line 118, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper--reverse .platform__box.is-active:after {
   left: -28px;
   right: auto;
   border-color: transparent #fd5545	 transparent transparent;
 }
 
-/* line 112, src/scss/_components/homepage/_platform.scss */
+/* line 128, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper-left {
   width: 370px;
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 112, src/scss/_components/homepage/_platform.scss */
+  /* line 128, src/scss/_components/homepage/_platform.scss */
   .platform__wrapper-left {
+    width: 100%;
     max-width: 300px;
   }
 }
 
-/* line 119, src/scss/_components/homepage/_platform.scss */
+@media screen and (max-width: 767px) {
+  /* line 128, src/scss/_components/homepage/_platform.scss */
+  .platform__wrapper-left {
+    max-width: 100%;
+  }
+}
+
+/* line 139, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper-right {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1663,13 +1790,20 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 119, src/scss/_components/homepage/_platform.scss */
+  /* line 139, src/scss/_components/homepage/_platform.scss */
   .platform__wrapper-right {
     padding-left: 15px;
   }
 }
 
-/* line 130, src/scss/_components/homepage/_platform.scss */
+@media screen and (max-width: 767px) {
+  /* line 139, src/scss/_components/homepage/_platform.scss */
+  .platform__wrapper-right {
+    padding-left: 0;
+  }
+}
+
+/* line 153, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper-right svg {
   opacity: 0;
   visibility: hidden;
@@ -1684,7 +1818,7 @@ picture {
 }
 
 @media screen and (max-width: 1279px) {
-  /* line 130, src/scss/_components/homepage/_platform.scss */
+  /* line 153, src/scss/_components/homepage/_platform.scss */
   .platform__wrapper-right svg {
     max-width: -webkit-calc(100% + 30px);
     max-width: calc(100% + 30px);
@@ -1693,7 +1827,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 130, src/scss/_components/homepage/_platform.scss */
+  /* line 153, src/scss/_components/homepage/_platform.scss */
   .platform__wrapper-right svg {
     max-width: 100%;
     -webkit-transform: translateX(0);
@@ -1703,7 +1837,7 @@ picture {
   }
 }
 
-/* line 150, src/scss/_components/homepage/_platform.scss */
+/* line 173, src/scss/_components/homepage/_platform.scss */
 .platform__box {
   position: relative;
   display: -webkit-box;
@@ -1726,14 +1860,21 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 150, src/scss/_components/homepage/_platform.scss */
+  /* line 173, src/scss/_components/homepage/_platform.scss */
   .platform__box {
     padding-left: 15px;
     padding-right: 15px;
   }
 }
 
-/* line 166, src/scss/_components/homepage/_platform.scss */
+@media screen and (max-width: 767px) {
+  /* line 173, src/scss/_components/homepage/_platform.scss */
+  .platform__box {
+    max-width: 100%;
+  }
+}
+
+/* line 192, src/scss/_components/homepage/_platform.scss */
 .platform__box:after {
   content: '';
   opacity: 0;
@@ -1751,30 +1892,44 @@ picture {
   border-color: transparent transparent transparent #fd5545;
 }
 
-/* line 181, src/scss/_components/homepage/_platform.scss */
+@media screen and (max-width: 767px) {
+  /* line 192, src/scss/_components/homepage/_platform.scss */
+  .platform__box:after {
+    top: auto;
+    right: auto;
+    left: 50%;
+    bottom: -28px;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    border-color: #fd5545 transparent transparent transparent;
+  }
+}
+
+/* line 215, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active {
   border-color: #fd5545;
   background-color: #fd5545;
 }
 
-/* line 185, src/scss/_components/homepage/_platform.scss */
+/* line 219, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active:after {
   opacity: 1;
   visibility: visible;
 }
 
-/* line 191, src/scss/_components/homepage/_platform.scss */
+/* line 225, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active .platform__box-head i,
 .platform__box.is-active .platform__box-head span {
   color: #ffffff;
 }
 
-/* line 197, src/scss/_components/homepage/_platform.scss */
+/* line 231, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active .platform__box-desc {
   color: #fff;
 }
 
-/* line 202, src/scss/_components/homepage/_platform.scss */
+/* line 236, src/scss/_components/homepage/_platform.scss */
 .platform__box-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1787,19 +1942,26 @@ picture {
           flex-direction: column;
 }
 
-/* line 206, src/scss/_components/homepage/_platform.scss */
+/* line 240, src/scss/_components/homepage/_platform.scss */
 .platform__box-wrapper > div {
   padding-bottom: 25px;
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 206, src/scss/_components/homepage/_platform.scss */
+  /* line 240, src/scss/_components/homepage/_platform.scss */
   .platform__box-wrapper > div {
     padding-bottom: 15px;
   }
 }
 
-/* line 214, src/scss/_components/homepage/_platform.scss */
+@media screen and (max-width: 767px) {
+  /* line 240, src/scss/_components/homepage/_platform.scss */
+  .platform__box-wrapper > div {
+    padding-bottom: 30px;
+  }
+}
+
+/* line 251, src/scss/_components/homepage/_platform.scss */
 .platform__box-head {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1813,13 +1975,13 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 214, src/scss/_components/homepage/_platform.scss */
+  /* line 251, src/scss/_components/homepage/_platform.scss */
   .platform__box-head {
     padding-bottom: 10px;
   }
 }
 
-/* line 223, src/scss/_components/homepage/_platform.scss */
+/* line 260, src/scss/_components/homepage/_platform.scss */
 .platform__box-head > div:nth-of-type(1) {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1832,7 +1994,7 @@ picture {
   width: 40px;
 }
 
-/* line 229, src/scss/_components/homepage/_platform.scss */
+/* line 266, src/scss/_components/homepage/_platform.scss */
 .platform__box-head > div:nth-of-type(2) {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -1842,20 +2004,20 @@ picture {
   max-width: 100%;
 }
 
-/* line 236, src/scss/_components/homepage/_platform.scss */
+/* line 273, src/scss/_components/homepage/_platform.scss */
 .platform__box-head .icon-font {
   color: #fd5545;
   font-size: 24px;
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 236, src/scss/_components/homepage/_platform.scss */
+  /* line 273, src/scss/_components/homepage/_platform.scss */
   .platform__box-head .icon-font {
     font-size: 22px;
   }
 }
 
-/* line 244, src/scss/_components/homepage/_platform.scss */
+/* line 281, src/scss/_components/homepage/_platform.scss */
 .platform__box-head span {
   color: #333;
   font-weight: 700;
@@ -1865,20 +2027,20 @@ picture {
 }
 
 @media screen and (max-width: 1279px) {
-  /* line 244, src/scss/_components/homepage/_platform.scss */
+  /* line 281, src/scss/_components/homepage/_platform.scss */
   .platform__box-head span {
     font-size: 20px;
   }
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 244, src/scss/_components/homepage/_platform.scss */
+  /* line 281, src/scss/_components/homepage/_platform.scss */
   .platform__box-head span {
     font-size: 18px;
   }
 }
 
-/* line 260, src/scss/_components/homepage/_platform.scss */
+/* line 297, src/scss/_components/homepage/_platform.scss */
 .platform__box-desc {
   font-size: 16px;
   line-height: 24px;
@@ -1886,7 +2048,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 260, src/scss/_components/homepage/_platform.scss */
+  /* line 297, src/scss/_components/homepage/_platform.scss */
   .platform__box-desc {
     font-size: 14px;
   }
@@ -1961,25 +2123,35 @@ picture {
   }
 }
 
-/* line 35, src/scss/_components/homepage/_partners.scss */
+@media screen and (max-width: 767px) {
+  /* line 12, src/scss/_components/homepage/_partners.scss */
+  .partners__bg {
+    -webkit-border-top-right-radius: 125px;
+            border-top-right-radius: 125px;
+    -webkit-border-bottom-left-radius: 125px;
+            border-bottom-left-radius: 125px;
+  }
+}
+
+/* line 39, src/scss/_components/homepage/_partners.scss */
 .partners__wrapper {
   z-index: 2;
   position: relative;
 }
 
-/* line 40, src/scss/_components/homepage/_partners.scss */
+/* line 44, src/scss/_components/homepage/_partners.scss */
 .partners__title {
   padding-bottom: 9px;
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 40, src/scss/_components/homepage/_partners.scss */
+  /* line 44, src/scss/_components/homepage/_partners.scss */
   .partners__title {
     padding-bottom: 15px;
   }
 }
 
-/* line 47, src/scss/_components/homepage/_partners.scss */
+/* line 51, src/scss/_components/homepage/_partners.scss */
 .partners__desc {
   width: 100%;
   max-width: 641px;
@@ -1992,7 +2164,7 @@ picture {
   color: #1E232A;
 }
 
-/* line 59, src/scss/_components/homepage/_partners.scss */
+/* line 63, src/scss/_components/homepage/_partners.scss */
 .partners__img {
   display: block;
   max-width: 100%;
@@ -2002,9 +2174,16 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 59, src/scss/_components/homepage/_partners.scss */
+  /* line 63, src/scss/_components/homepage/_partners.scss */
   .partners__img {
     max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* line 63, src/scss/_components/homepage/_partners.scss */
+  .partners__img {
+    max-width: 100%;
   }
 }
 

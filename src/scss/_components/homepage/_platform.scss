@@ -9,6 +9,9 @@
 		padding-top: 50px;
 		padding-bottom: 15px;
 	}
+	@include adaptive(767) {
+		padding-bottom: 0;
+	}
 
 	&__bg {
 		z-index: 0;
@@ -30,6 +33,10 @@
 			border-top-right-radius: 200px;
 			border-bottom-left-radius: 200px;
 		}
+		@include adaptive(767) {
+			border-top-right-radius: 125px;
+			border-bottom-left-radius: 125px;
+		}
 	}
 
 	.c-grid {
@@ -43,6 +50,9 @@
 			margin-left: auto;
 			margin-right: auto;
 			text-align: center;
+		}
+		@include adaptive(767) {
+			padding-bottom: 30px;
 		}
 
 		&-1,
@@ -74,6 +84,9 @@
 		@include adaptive(1023) {
 			padding-bottom: 75px;
 		}
+		@include adaptive(767) {
+			flex-wrap: wrap;
+		}
 
 		&--reverse {
 			flex-direction: row-reverse;
@@ -84,6 +97,9 @@
 						@include adaptive(1023) {
 							padding-left: 0;
 							padding-right: 15px;
+						}
+						@include adaptive(767) {
+							padding-right: 0;
 						}
 
 						svg {
@@ -112,7 +128,11 @@
 		&-left {
 			width: 370px;
 			@include adaptive(1023) {
+				width: 100%;
 				max-width: 300px;
+			}
+			@include adaptive(767) {
+				max-width: 100%;
 			}
 		}
 
@@ -125,6 +145,9 @@
 			max-width: 100%;
 			@include adaptive(1023) {
 				padding-left: 15px;
+			}
+			@include adaptive(767) {
+				padding-left: 0;
 			}
 
 			svg {
@@ -162,6 +185,9 @@
 			padding-left: 15px;
 			padding-right: 15px;
 		}
+		@include adaptive(767) {
+			max-width: 100%;
+		}
 
 		&:after {
 			content: '';
@@ -176,6 +202,14 @@
 			border-width: 14px;
 			border-style: solid;
 			border-color: transparent transparent transparent #fd5545;
+			@include adaptive(767) {
+				top: auto;
+				right: auto;
+				left: 50%;
+				bottom: -28px;
+				transform: translate(-50%, 0);
+				border-color: #fd5545 transparent transparent transparent;
+			}
 		}
 
 		&.is-active {
@@ -207,6 +241,9 @@
 				padding-bottom: 25px;
 				@include adaptive(1023) {
 					padding-bottom: 15px;
+				}
+				@include adaptive(767) {
+					padding-bottom: 30px;
 				}
 			}
 		}

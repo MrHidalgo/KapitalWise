@@ -3,17 +3,33 @@
 .number {
 	padding-top: 107px;
 	padding-bottom: 80px;
+	@include adaptive(767) {
+		padding-top: 75px;
+		padding-bottom: 75px;
+	}
 
 	&__header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding-bottom: 55px;
+		@include adaptive(767) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding-bottom: 40px;
+		}
 	}
 
 	&__title {
 		width: 100%;
 		max-width: 285px;
+		@include adaptive(767) {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			padding-bottom: 15px;
+		}
 	}
 
 	&__desc {
@@ -22,6 +38,9 @@
 		font-size: 16px;
 		line-height: 24px;
 		color: #333333;
+		@include adaptive(767) {
+			text-align: center;
+		}
 	}
 
 	&__box {
@@ -36,14 +55,27 @@
 		background-color: #ffffff;
 		border: 1px solid #DDDDDD;
 		border-radius: 3px;
+		@include adaptive(767) {
+			min-height: 155px;
+		}
 
 		&-wrapper {
 			display: flex;
 			justify-content: space-between;
+			@include adaptive(767) {
+				flex-wrap: wrap;
+			}
 
 			> div {
 				width: 100%;
 				max-width: calc((100% - 22px) / 3);
+				@include adaptive(767) {
+					max-width: 100%;
+
+					&:not(:last-of-type) {
+						padding-bottom: 15px;
+					}
+				}
 			}
 		}
 
@@ -85,6 +117,9 @@
 			}
 			@include adaptive(1023) {
 				font-size: 45px;
+			}
+			@include adaptive(767) {
+				font-size: 40px;
 			}
 		}
 

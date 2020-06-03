@@ -30,6 +30,10 @@
 			border-top-right-radius: 200px;
 			border-bottom-left-radius: 200px;
 		}
+		@include adaptive(767) {
+			border-top-right-radius: 125px;
+			border-bottom-left-radius: 125px;
+		}
 	}
 
 	&__wrapper {
@@ -64,6 +68,9 @@
 		margin-right: auto;
 		@include adaptive(1023) {
 			max-width: 80%;
+		}
+		@include adaptive(767) {
+			max-width: 100%;
 		}
 	}
 }

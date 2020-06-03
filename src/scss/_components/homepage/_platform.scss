@@ -55,12 +55,21 @@
 		&--reverse {
 			flex-direction: row-reverse;
 
-			.platform__box {
-				&.is-active {
-					&:after {
-						left: -28px;
-						right: auto;
-						border-color: transparent #fd5545	 transparent transparent;
+			.platform {
+				&__wrapper {
+					&-right {
+						svg {
+							transform: translateX(-30px);
+						}
+					}
+				}
+				&__box {
+					&.is-active {
+						&:after {
+							left: -28px;
+							right: auto;
+							border-color: transparent #fd5545	 transparent transparent;
+						}
 					}
 				}
 			}

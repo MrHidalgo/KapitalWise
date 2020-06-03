@@ -874,19 +874,26 @@ picture {
           flex-direction: row-reverse;
 }
 
-/* line 60, src/scss/_components/homepage/_platform.scss */
+/* line 61, src/scss/_components/homepage/_platform.scss */
+.platform__wrapper--reverse .platform__wrapper-right svg {
+  -webkit-transform: translateX(-30px);
+      -ms-transform: translateX(-30px);
+          transform: translateX(-30px);
+}
+
+/* line 68, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper--reverse .platform__box.is-active:after {
   left: -28px;
   right: auto;
   border-color: transparent #fd5545	 transparent transparent;
 }
 
-/* line 69, src/scss/_components/homepage/_platform.scss */
+/* line 78, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper-left {
   width: 370px;
 }
 
-/* line 73, src/scss/_components/homepage/_platform.scss */
+/* line 82, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper-right {
   display: -webkit-box;
   display: -webkit-flex;
@@ -908,7 +915,7 @@ picture {
   max-width: 100%;
 }
 
-/* line 81, src/scss/_components/homepage/_platform.scss */
+/* line 90, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper-right svg {
   opacity: 0;
   visibility: hidden;
@@ -920,7 +927,7 @@ picture {
   transition: opacity 1s 0.3s ease-in-out, visibility 1s 0.3s ease-in-out;
 }
 
-/* line 90, src/scss/_components/homepage/_platform.scss */
+/* line 99, src/scss/_components/homepage/_platform.scss */
 .platform__box {
   position: relative;
   display: -webkit-box;
@@ -942,7 +949,7 @@ picture {
   background-color: #FFFFFF;
 }
 
-/* line 102, src/scss/_components/homepage/_platform.scss */
+/* line 111, src/scss/_components/homepage/_platform.scss */
 .platform__box:after {
   content: '';
   opacity: 0;
@@ -960,30 +967,30 @@ picture {
   border-color: transparent transparent transparent #fd5545;
 }
 
-/* line 117, src/scss/_components/homepage/_platform.scss */
+/* line 126, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active {
   border-color: #fd5545;
   background-color: #fd5545;
 }
 
-/* line 121, src/scss/_components/homepage/_platform.scss */
+/* line 130, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active:after {
   opacity: 1;
   visibility: visible;
 }
 
-/* line 127, src/scss/_components/homepage/_platform.scss */
+/* line 136, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active .platform__box-head i,
 .platform__box.is-active .platform__box-head span {
   color: #ffffff;
 }
 
-/* line 133, src/scss/_components/homepage/_platform.scss */
+/* line 142, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active .platform__box-desc {
   color: #fff;
 }
 
-/* line 138, src/scss/_components/homepage/_platform.scss */
+/* line 147, src/scss/_components/homepage/_platform.scss */
 .platform__box-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -996,12 +1003,12 @@ picture {
           flex-direction: column;
 }
 
-/* line 142, src/scss/_components/homepage/_platform.scss */
+/* line 151, src/scss/_components/homepage/_platform.scss */
 .platform__box-wrapper > div {
   padding-bottom: 25px;
 }
 
-/* line 147, src/scss/_components/homepage/_platform.scss */
+/* line 156, src/scss/_components/homepage/_platform.scss */
 .platform__box-head {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1014,12 +1021,12 @@ picture {
   padding-bottom: 15px;
 }
 
-/* line 153, src/scss/_components/homepage/_platform.scss */
+/* line 162, src/scss/_components/homepage/_platform.scss */
 .platform__box-head > div:nth-of-type(1) {
   width: 40px;
 }
 
-/* line 157, src/scss/_components/homepage/_platform.scss */
+/* line 166, src/scss/_components/homepage/_platform.scss */
 .platform__box-head > div:nth-of-type(2) {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -1029,18 +1036,18 @@ picture {
   max-width: 100%;
 }
 
-/* line 164, src/scss/_components/homepage/_platform.scss */
+/* line 173, src/scss/_components/homepage/_platform.scss */
 .platform__box-head i,
 .platform__box-head span {
   color: #333;
 }
 
-/* line 169, src/scss/_components/homepage/_platform.scss */
+/* line 178, src/scss/_components/homepage/_platform.scss */
 .platform__box-head i {
   font-size: 24px;
 }
 
-/* line 173, src/scss/_components/homepage/_platform.scss */
+/* line 182, src/scss/_components/homepage/_platform.scss */
 .platform__box-head span {
   font-weight: 700;
   font-size: 24px;
@@ -1048,7 +1055,7 @@ picture {
   color: #333;
 }
 
-/* line 182, src/scss/_components/homepage/_platform.scss */
+/* line 191, src/scss/_components/homepage/_platform.scss */
 .platform__box-desc {
   font-size: 16px;
   line-height: 24px;

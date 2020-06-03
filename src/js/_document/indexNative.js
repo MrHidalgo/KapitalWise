@@ -59,8 +59,39 @@
 				;
 		};
 
+		const platform2Animation = () => {
+			const tl = new TimelineMax();
+
+			const _svg = $('#platform-illustration-2-svg');
+
+			tl.set(_svg, {opacity:1, visibility: "visible"});
+			tl.set("#platform-2__box-1, #platform-2__box-2, #platform-2__box-3", {opacity: 0,});
+			tl.set("#platform-2__sidebar-point > *", {transformOrigin: 'center', scale: 0,});
+			tl.set("#platform-2__sidebar-line > *, #platform-2__table-header > *, #platform-2__table-option > *", {transformOrigin: 'left center', scaleX: 0});
+			tl.set("#platform-2__table-text-1 > *, #platform-2__table-text-2 > *, #platform-2__table-text-3 > *, #platform-2__table-text-4 > *, #platform-2__table-text-5 > *", {
+				transformOrigin: 'left bottom', scaleX: 0
+			});
+
+
+			tl
+				.staggerTo($('#platform-2__sidebar-point > *'), 0.8, {scale: 1, ease: Power2.easeInOut}, 0.1)
+				.staggerTo($('#platform-2__sidebar-line > *'), 0.8, {scaleX: 1, ease: Power2.easeInOut}, 0.075, '-=0.95')
+				.staggerTo($('#platform-2__table-header > *'), 0.75, {scaleX: 1, ease: Power2.easeInOut}, 0.1, '-=0.95')
+				.staggerTo($('#platform-2__table-option > *'), 0.8, {scaleX: 1, ease: Power2.easeInOut}, 0.1, '-=1')
+				.staggerTo($('#platform-2__table-text-1 > *'), 0.7, {scaleX: 1, ease: Power2.easeInOut}, 0.075, '-=1')
+				.staggerTo($('#platform-2__table-text-2 > *'), 0.7, {scaleX: 1, ease: Power2.easeInOut}, 0.075, '-=1')
+				.staggerTo($('#platform-2__table-text-3 > *'), 0.7, {scaleX: 1, ease: Power2.easeInOut}, 0.075, '-=1')
+				.staggerTo($('#platform-2__table-text-4 > *'), 0.7, {scaleX: 1, ease: Power2.easeInOut}, 0.075, '-=1')
+				.staggerTo($('#platform-2__table-text-5 > *'), 0.7, {scaleX: 1, ease: Power2.easeInOut}, 0.075, '-=1')
+				.to($('#platform-2__box-1'), 1.5, {opacity: 1, ease: Power2.easeInOut}, '-=1.5')
+				.to($('#platform-2__box-2'), 1.5, {opacity: 1, ease: Power2.easeInOut}, '-=1.25')
+				.to($('#platform-2__box-3'), 1.5, {opacity: 1, ease: Power2.easeInOut}, '-=1')
+				;
+		};
+
 		mainAnimation();
 		platform1Animation();
+		platform2Animation();
 	};
 	/*
 	* CALLBACK :: end

@@ -89,9 +89,41 @@
 				;
 		};
 
+		const platform3Animation = () => {
+			const tl = new TimelineMax();
+
+			const _svg = $('#platform-illustration-3-svg');
+
+			tl.set(_svg, {opacity:1, visibility: "visible"});
+			tl.set("#platform-3__sidebar-action > *", {opacity: 0});
+			tl.set("#platform-3__sidebar-point > *", {transformOrigin: 'center', scale: 0,});
+			tl.set("#platform-3__sidebar-line > *", {transformOrigin: 'left center', scaleX: 0});
+			tl.set("#platform-3__graph-1-action > *", {transformOrigin: 'left center', scaleX: 0});
+			tl.set("#platform-3__graph-1-line > *", {transformOrigin: 'bottom center', scaleY: 0});
+			tl.set("#platform-3__graph-2-text, #platform-3__graph-2-point, #platform-3__graph-2-ind", {opacity: 0});
+			tl.set("#platform-3__pointer", {
+				opacity: 0,
+				rotation: 314,
+				transformOrigin:"left 100%"
+			});
+
+
+			tl
+				.to($('#platform-3__sidebar-action > *'), 1.25, {opacity: 1, ease: Power2.easeInOut})
+				.staggerTo($('#platform-3__sidebar-point > *'), 0.8, {scale: 1, ease: Power2.easeInOut}, 0.1, '-=1')
+				.staggerTo($('#platform-3__sidebar-line > *'), 0.8, {scaleX: 1, ease: Power2.easeInOut}, 0.075, '-=0.95')
+				.staggerTo($('#platform-3__graph-1-action > *'), 0.75, {scaleX: 1, ease: Power2.easeInOut}, 0.1, '-=0.95')
+				.staggerTo($('#platform-3__graph-1-line > *'), 0.75, {scaleY: 1, ease: Power2.easeInOut}, 0.075, '-=1')
+				.to($('#platform-3__graph-2-point, #platform-3__graph-2-ind'), 1, {opacity: 1, ease: Power2.easeInOut}, '-=1')
+				.to($('#platform-3__pointer'), 1, {opacity: 1, rotation: 386, ease: Power2.easeInOut}, '-=0.55')
+				.to($('#platform-3__graph-2-text'), 1, {opacity: 1, ease: Power2.easeInOut}, '-=0.35')
+				;
+		};
+
 		mainAnimation();
 		platform1Animation();
 		platform2Animation();
+		platform3Animation();
 	};
 	/*
 	* CALLBACK :: end

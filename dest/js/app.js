@@ -77,9 +77,31 @@ var initPreventBehavior = function initPreventBehavior() {
 			tl.staggerTo($('#platform-2__sidebar-point > *'), 0.8, { scale: 1, ease: Power2.easeInOut }, 0.1).staggerTo($('#platform-2__sidebar-line > *'), 0.8, { scaleX: 1, ease: Power2.easeInOut }, 0.075, '-=0.95').staggerTo($('#platform-2__table-header > *'), 0.75, { scaleX: 1, ease: Power2.easeInOut }, 0.1, '-=0.95').staggerTo($('#platform-2__table-option > *'), 0.8, { scaleX: 1, ease: Power2.easeInOut }, 0.1, '-=1').staggerTo($('#platform-2__table-text-1 > *'), 0.7, { scaleX: 1, ease: Power2.easeInOut }, 0.075, '-=1').staggerTo($('#platform-2__table-text-2 > *'), 0.7, { scaleX: 1, ease: Power2.easeInOut }, 0.075, '-=1').staggerTo($('#platform-2__table-text-3 > *'), 0.7, { scaleX: 1, ease: Power2.easeInOut }, 0.075, '-=1').staggerTo($('#platform-2__table-text-4 > *'), 0.7, { scaleX: 1, ease: Power2.easeInOut }, 0.075, '-=1').staggerTo($('#platform-2__table-text-5 > *'), 0.7, { scaleX: 1, ease: Power2.easeInOut }, 0.075, '-=1').to($('#platform-2__box-1'), 1.5, { opacity: 1, ease: Power2.easeInOut }, '-=1.5').to($('#platform-2__box-2'), 1.5, { opacity: 1, ease: Power2.easeInOut }, '-=1.25').to($('#platform-2__box-3'), 1.5, { opacity: 1, ease: Power2.easeInOut }, '-=1');
 		};
 
+		var platform3Animation = function platform3Animation() {
+			var tl = new TimelineMax();
+
+			var _svg = $('#platform-illustration-3-svg');
+
+			tl.set(_svg, { opacity: 1, visibility: "visible" });
+			tl.set("#platform-3__sidebar-action > *", { opacity: 0 });
+			tl.set("#platform-3__sidebar-point > *", { transformOrigin: 'center', scale: 0 });
+			tl.set("#platform-3__sidebar-line > *", { transformOrigin: 'left center', scaleX: 0 });
+			tl.set("#platform-3__graph-1-action > *", { transformOrigin: 'left center', scaleX: 0 });
+			tl.set("#platform-3__graph-1-line > *", { transformOrigin: 'bottom center', scaleY: 0 });
+			tl.set("#platform-3__graph-2-text, #platform-3__graph-2-point, #platform-3__graph-2-ind", { opacity: 0 });
+			tl.set("#platform-3__pointer", {
+				opacity: 0,
+				rotation: 314,
+				transformOrigin: "left 100%"
+			});
+
+			tl.to($('#platform-3__sidebar-action > *'), 1.25, { opacity: 1, ease: Power2.easeInOut }).staggerTo($('#platform-3__sidebar-point > *'), 0.8, { scale: 1, ease: Power2.easeInOut }, 0.1, '-=1').staggerTo($('#platform-3__sidebar-line > *'), 0.8, { scaleX: 1, ease: Power2.easeInOut }, 0.075, '-=0.95').staggerTo($('#platform-3__graph-1-action > *'), 0.75, { scaleX: 1, ease: Power2.easeInOut }, 0.1, '-=0.95').staggerTo($('#platform-3__graph-1-line > *'), 0.75, { scaleY: 1, ease: Power2.easeInOut }, 0.075, '-=1').to($('#platform-3__graph-2-point, #platform-3__graph-2-ind'), 1, { opacity: 1, ease: Power2.easeInOut }, '-=1').to($('#platform-3__pointer'), 1, { opacity: 1, rotation: 386, ease: Power2.easeInOut }, '-=0.55').to($('#platform-3__graph-2-text'), 1, { opacity: 1, ease: Power2.easeInOut }, '-=0.35');
+		};
+
 		mainAnimation();
 		platform1Animation();
 		platform2Animation();
+		platform3Animation();
 	};
 	/*
  * CALLBACK :: end

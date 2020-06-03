@@ -7,7 +7,9 @@
 	* ============================================= */
 	const illustrationAnimation = () => {
 		const mainAnimation = () => {
-			const tl = new TimelineMax();
+			const tl = new TimelineMax({
+				// paused: true
+			});
 
 			const _svg = $('#main-illustration-svg');
 
@@ -34,7 +36,9 @@
 		};
 
 		const platform1Animation = () => {
-			const tl = new TimelineMax();
+			const tl = new TimelineMax({
+				// paused: true
+			});
 
 			const _svg = $('#platform-illustration-1-svg');
 
@@ -60,7 +64,9 @@
 		};
 
 		const platform2Animation = () => {
-			const tl = new TimelineMax();
+			const tl = new TimelineMax({
+				// paused: true
+			});
 
 			const _svg = $('#platform-illustration-2-svg');
 
@@ -90,7 +96,9 @@
 		};
 
 		const platform3Animation = () => {
-			const tl = new TimelineMax();
+			const tl = new TimelineMax({
+				// paused: true
+			});
 
 			const _svg = $('#platform-illustration-3-svg');
 
@@ -121,7 +129,9 @@
 		};
 
 		const platform4Animation = () => {
-			const tl = new TimelineMax();
+			const tl = new TimelineMax({
+				// paused: true
+			});
 
 			const _svg = $('#platform-illustration-4-svg');
 
@@ -149,6 +159,45 @@
 		platform3Animation();
 		platform4Animation();
 	};
+
+
+	const viewportAnimation = () => {
+		AOS.init({
+			offset: 150,
+			duration: 400,
+			easing: 'ease-in-out',
+			once: false,
+			mirror: false,
+		});
+	};
+
+
+	const platformBoxViewportAnimation = () => {
+		function isElementInViewport(el) {
+			let rect = el.getBoundingClientRect();
+
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+
+		const elem = $('.viewport-platform-js');
+
+		$(window).on("resize scroll load", function () {
+			for(let idx = 0; idx < elem.length; idx++) {
+
+				if (isElementInViewport(elem[idx])) {
+					$(elem[idx]).addClass('is-active');
+				} else {
+					$(elem[idx]).removeClass('is-active');
+				}
+
+			}
+		});
+	};
 	/*
 	* CALLBACK :: end
 	* ============================================= */
@@ -166,10 +215,13 @@
 
 		// lib
 		initHamburger();
+		// initViewPortPlatformChecker();
 		// ==========================================
 
 		// callback
 		illustrationAnimation();
+		viewportAnimation();
+		platformBoxViewportAnimation();
 		// ==========================================
 	};
 	initNative();

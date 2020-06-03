@@ -181,6 +181,7 @@
 		border: 1px solid #DDDDDD;
 		border-radius: 3px;
 		background-color: #FFFFFF;
+		@include transition(border-color, background-color);
 		@include adaptive(1023) {
 			padding-left: 15px;
 			padding-right: 15px;
@@ -202,6 +203,7 @@
 			border-width: 14px;
 			border-style: solid;
 			border-color: transparent transparent transparent #fd5545;
+			@include transition(opacity, visibility);
 			@include adaptive(767) {
 				top: auto;
 				right: auto;
@@ -215,21 +217,25 @@
 		&.is-active {
 			border-color: #fd5545;
 			background-color: #fd5545;
+			@include transition(border-color, background-color);
 
 			&:after {
 				opacity: 1;
 				visibility: visible;
+				@include transition(opacity, visibility);
 			}
 
 			.platform__box-head {
 				i,
 				span {
 					color: #ffffff;
+					@include transition(color);
 				}
 			}
 
 			.platform__box-desc {
 				color: #fff;
+				@include transition(color);
 			}
 		}
 
@@ -273,6 +279,7 @@
 			.icon-font {
 				color: #fd5545;
 				font-size: 24px;
+				@include transition(color);
 				@include adaptive(1023) {
 					font-size: 22px;
 				}
@@ -285,6 +292,7 @@
 				line-height: 32px;
 				@extend %fontPoppins;
 				color: #333;
+				@include transition(color);
 				@include adaptive(1279) {
 					font-size: 20px;
 				}
@@ -298,6 +306,7 @@
 			font-size: 16px;
 			line-height: 24px;
 			color: #333;
+			@include transition(color);
 			@include adaptive(1023) {
 				font-size: 14px;
 			}

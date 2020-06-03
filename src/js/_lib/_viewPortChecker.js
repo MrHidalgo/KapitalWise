@@ -62,3 +62,31 @@ const initViewPortChecker = (
   });
 
 };
+const initViewPortPlatformChecker = (
+  className = "viewport-platform-js",
+  classNameToAdd = "is-active",
+  offsetVal = 300,
+  callbackFunctionName = scrollAnimation
+) => {
+
+  $("." + className).not(".full-visible").each(function(idx, el) {
+
+    $(el).viewportChecker({
+      classToAdd: classNameToAdd,
+      classToAddForFullView: 'is-active',
+      classToRemove : className,
+      removeClassAfterAnimation: true,
+      offset: offsetVal,
+      repeat: true,
+      callbackFunction: function(elem, action) {
+
+
+				// console.log(elem);
+				// callbackFunctionName(elem, el);
+
+      }
+    });
+
+  });
+
+};

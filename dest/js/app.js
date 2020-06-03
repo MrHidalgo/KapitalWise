@@ -92,7 +92,9 @@ window.addEventListener('scroll', function (ev) {
  * ============================================= */
 	var illustrationAnimation = function illustrationAnimation() {
 		var mainAnimation = function mainAnimation() {
-			var tl = new TimelineMax();
+			var tl = new TimelineMax({
+				// paused: true
+			});
 
 			var _svg = $('#main-illustration-svg');
 
@@ -110,7 +112,9 @@ window.addEventListener('scroll', function (ev) {
 		};
 
 		var platform1Animation = function platform1Animation() {
-			var tl = new TimelineMax();
+			var tl = new TimelineMax({
+				// paused: true
+			});
 
 			var _svg = $('#platform-illustration-1-svg');
 
@@ -126,7 +130,9 @@ window.addEventListener('scroll', function (ev) {
 		};
 
 		var platform2Animation = function platform2Animation() {
-			var tl = new TimelineMax();
+			var tl = new TimelineMax({
+				// paused: true
+			});
 
 			var _svg = $('#platform-illustration-2-svg');
 
@@ -142,7 +148,9 @@ window.addEventListener('scroll', function (ev) {
 		};
 
 		var platform3Animation = function platform3Animation() {
-			var tl = new TimelineMax();
+			var tl = new TimelineMax({
+				// paused: true
+			});
 
 			var _svg = $('#platform-illustration-3-svg');
 
@@ -163,7 +171,9 @@ window.addEventListener('scroll', function (ev) {
 		};
 
 		var platform4Animation = function platform4Animation() {
-			var tl = new TimelineMax();
+			var tl = new TimelineMax({
+				// paused: true
+			});
 
 			var _svg = $('#platform-illustration-4-svg');
 
@@ -182,6 +192,37 @@ window.addEventListener('scroll', function (ev) {
 		platform3Animation();
 		platform4Animation();
 	};
+
+	var viewportAnimation = function viewportAnimation() {
+		AOS.init({
+			offset: 150,
+			duration: 400,
+			easing: 'ease-in-out',
+			once: false,
+			mirror: false
+		});
+	};
+
+	var platformBoxViewportAnimation = function platformBoxViewportAnimation() {
+		function isElementInViewport(el) {
+			var rect = el.getBoundingClientRect();
+
+			return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+		}
+
+		var elem = $('.viewport-platform-js');
+
+		$(window).on("resize scroll load", function () {
+			for (var idx = 0; idx < elem.length; idx++) {
+
+				if (isElementInViewport(elem[idx])) {
+					$(elem[idx]).addClass('is-active');
+				} else {
+					$(elem[idx]).removeClass('is-active');
+				}
+			}
+		});
+	};
 	/*
  * CALLBACK :: end
  * ============================================= */
@@ -198,10 +239,13 @@ window.addEventListener('scroll', function (ev) {
 
 		// lib
 		initHamburger();
+		// initViewPortPlatformChecker();
 		// ==========================================
 
 		// callback
 		illustrationAnimation();
+		viewportAnimation();
+		platformBoxViewportAnimation();
 		// ==========================================
 	};
 	initNative();

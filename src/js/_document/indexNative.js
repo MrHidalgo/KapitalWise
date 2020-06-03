@@ -120,10 +120,34 @@
 				;
 		};
 
+		const platform4Animation = () => {
+			const tl = new TimelineMax();
+
+			const _svg = $('#platform-illustration-4-svg');
+
+			tl.set(_svg, {opacity:1, visibility: "visible"});
+			tl.set("#platform-4__box-1, #platform-4__box-2", {opacity: 0});
+			tl.set("#platform-4__sidebar-point > *, #platform-4__details-point > *", {transformOrigin: 'center', scale: 0,});
+			tl.set("#platform-4__sidebar-line > *, #platform-4__details-line > *", {transformOrigin: 'left center', scaleX: 0});
+			tl.set("#platform-4__graph-line > *", {transformOrigin: 'bottom center', scaleY: 0});
+
+			tl
+				.staggerTo($('#platform-4__sidebar-point > *'), 0.8, {scale: 1, ease: Power2.easeInOut}, 0.1)
+				.staggerTo($('#platform-4__sidebar-line > *'), 0.8, {scaleX: 1, ease: Power2.easeInOut}, 0.075, '-=0.95')
+				.staggerTo($('#platform-4__details-point > *'), 0.8, {scale: 1, ease: Power2.easeInOut}, 0.1, '-=1')
+				.staggerTo($('#platform-4__details-line > *'), 0.8, {scaleX: 1, ease: Power2.easeInOut}, 0.075, '-=1')
+				.staggerTo($('#platform-4__graph-line > *'), 0.75, {scaleY: 1, ease: Power2.easeInOut}, 0.075, '-=1')
+				.to($('#platform-4__box-1'), 1, {opacity: 1, ease: Power2.easeInOut}, '-=1')
+				.to($('#platform-4__box-2'), 1, {opacity: 1, ease: Power2.easeInOut}, '-=0.55')
+
+				;
+		};
+
 		mainAnimation();
 		platform1Animation();
 		platform2Animation();
 		platform3Animation();
+		platform4Animation();
 	};
 	/*
 	* CALLBACK :: end

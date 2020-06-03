@@ -59,6 +59,8 @@
 				&__wrapper {
 					&-right {
 						svg {
+							margin-left: 0;
+							margin-right: auto;
 							transform: translateX(-30px);
 						}
 					}
@@ -90,6 +92,8 @@
 			svg {
 				opacity: 0;
 				visibility: hidden;
+				display: block;
+				margin-left: auto;
 				transform: translateX(30px);
 				@include transition(opacity 1s, visibility 1s);
 			}

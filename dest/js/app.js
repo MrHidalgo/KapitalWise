@@ -1,6 +1,23 @@
 "use strict";
 
 /**
+ * @name initHeaderFixed
+ *
+ * @description Fixing the site header in the scrolling page.
+ */
+var initHeaderFixed = function initHeaderFixed() {
+
+	var countScroll = window.pageYOffset,
+	    headerElement = document.getElementById('header');
+
+	if (countScroll > 10) {
+		headerElement.classList.add("header--fixed");
+	} else {
+		headerElement.classList.remove("header--fixed");
+	}
+};
+
+/**
  * @name initPreventBehavior
  *
  * @description
@@ -18,6 +35,25 @@ var initPreventBehavior = function initPreventBehavior() {
 		});
 	});
 };
+
+/**
+ * @description Window on load.
+ */
+window.addEventListener('load', function (ev) {
+	initHeaderFixed();
+});
+
+/**
+ * @description Window on resize.
+ */
+window.addEventListener('resize', function (ev) {});
+
+/**
+ * @description Window on scroll.
+ */
+window.addEventListener('scroll', function (ev) {
+	initHeaderFixed();
+});
 
 /**
  * @description Document DOM ready.
@@ -133,6 +169,7 @@ var initPreventBehavior = function initPreventBehavior() {
 		// ==========================================
 
 		// lib
+
 		// ==========================================
 
 		// callback

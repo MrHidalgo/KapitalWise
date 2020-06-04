@@ -21,11 +21,9 @@ const tlMain = new TimelineMax({paused: true}),
 
 		const mainAnimation = () => {
 			const SVGNode = `
-				#main__box-line > *, #main__box-graph > *,
-				#main__box-point > *, #main__box-point > *,
-				#main__sidebar-point > *, #main__sidebar-line > *,
-				#main__content-line-1 > *, #main__content-line-2 > *,
-				#main__content-line-3 > *
+				#main__box-line > *, #main__box-graph > *, #main__box-point > *,
+				#main__box-point > *, #main__sidebar-point > *, #main__sidebar-line > *,
+				#main__content-line-1 > *, #main__content-line-2 > *, #main__content-line-3 > *
 			`;
 
 			tlMain.set("#main-box--left", {opacity: 0, transformOrigin: 'center'});
@@ -52,9 +50,8 @@ const tlMain = new TimelineMax({paused: true}),
 
 		const platform1Animation = () => {
 			const SVGNode = `
-				#platform-1__sidebar-point > *, #platform-1__sidebar-line > *,
-				#platform-1__graph-3-line > *, #platform-1__graph-1-line > *,
-				#platform-1__graph-4-line > *, #platform-1__graph-2-line-1 > *,
+				#platform-1__sidebar-point > *, #platform-1__sidebar-line > *, #platform-1__graph-3-line > *,
+				#platform-1__graph-1-line > *, #platform-1__graph-4-line > *, #platform-1__graph-2-line-1 > *,
 				#platform-1__graph-2-line-2 > *, #platform-1__graph-2-line-3 > *
 			`;
 
@@ -79,11 +76,9 @@ const tlMain = new TimelineMax({paused: true}),
 
 		const platform2Animation = () => {
 			const SVGNode = `
-				#platform-2__sidebar-point > *, #platform-2__sidebar-line > *,
-				#platform-2__table-header > *, #platform-2__table-option > *,
-				#platform-2__table-text-1 > *, #platform-2__table-text-2 > *,
-				#platform-2__table-text-3 > *, #platform-2__table-text-4 > *,
-				#platform-2__table-text-5 > *
+				#platform-2__sidebar-point > *, #platform-2__sidebar-line > *, #platform-2__table-header > *,
+				#platform-2__table-option > *, #platform-2__table-text-1 > *, #platform-2__table-text-2 > *,
+				#platform-2__table-text-3 > *, #platform-2__table-text-4 > *, #platform-2__table-text-5 > *
 			`;
 
 			tlPlatform2.set("#platform-2__box-1, #platform-2__box-2, #platform-2__box-3", {opacity: 0,});
@@ -141,9 +136,8 @@ const tlMain = new TimelineMax({paused: true}),
 
 		const platform4Animation = () => {
 			const SVGNode = `
-				#platform-4__sidebar-point > *, #platform-4__details-point > *,
-				#platform-4__sidebar-line > *, #platform-4__details-line > *,
-				#platform-4__graph-line > *
+				#platform-4__sidebar-point > *, #platform-4__details-point > *, #platform-4__sidebar-line > *,
+				#platform-4__details-line > *, #platform-4__graph-line > *
 			`;
 
 			tlPlatform4.set("#platform-4__box-1, #platform-4__box-2", {opacity: 0});
@@ -235,6 +229,29 @@ const tlMain = new TimelineMax({paused: true}),
 			}
 		});
 	};
+
+
+	const turnKeyLineAnimation = () => {
+		function isAnyPartOfElementInViewport(el) {
+			const rect = el.getBoundingClientRect();
+			const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+			const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+			const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+			const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+
+			return (vertInView && horInView);
+		}
+
+		const elem = $('.turn-key__box-wrapper')[0];
+
+		$(window).on("resize scroll load", function () {
+			if (isAnyPartOfElementInViewport(elem)) {
+				$(elem).addClass('is-active');
+			} else {
+				$(elem).removeClass('is-active');
+			}
+		});
+	};
 	/*
 	* CALLBACK :: end
 	* ============================================= */
@@ -257,6 +274,7 @@ const tlMain = new TimelineMax({paused: true}),
 		// callback
 		illustrationAnimation();
 		platformBoxViewportAnimation();
+		turnKeyLineAnimation();
 		// ==========================================
 	};
 

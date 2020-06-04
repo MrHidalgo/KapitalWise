@@ -33,6 +33,13 @@
 				flex-wrap: wrap;
 			}
 
+			&.is-active {
+				.turn-key__box-line {
+					width: 100%;
+					@include transition(width 1s);
+				}
+			}
+
 			> div {
 				width: 100%;
 				max-width: calc(100% / 3);
@@ -92,9 +99,10 @@
 		}
 
 		&-line {
-			width: 100%;
+			width: 0;
 			height: 1px;
 			background-color: #fd5545;
+			@include transition(width 1s);
 		}
 
 		&-title {

@@ -101,7 +101,7 @@ var tlMain = new TimelineMax({ paused: true }),
 		$('#main-illustration-svg, ' + '#platform-illustration-1-svg, ' + '#platform-illustration-2-svg, ' + '#platform-illustration-3-svg,' + '#platform-illustration-4-svg').css({ opacity: 1 });
 
 		var mainAnimation = function mainAnimation() {
-			var SVGNode = "\n\t\t\t\t#main__box-line > *, #main__box-graph > *,\n\t\t\t\t#main__box-point > *, #main__box-point > *,\n\t\t\t\t#main__sidebar-point > *, #main__sidebar-line > *,\n\t\t\t\t#main__content-line-1 > *, #main__content-line-2 > *,\n\t\t\t\t#main__content-line-3 > *\n\t\t\t";
+			var SVGNode = "\n\t\t\t\t#main__box-line > *, #main__box-graph > *, #main__box-point > *,\n\t\t\t\t#main__box-point > *, #main__sidebar-point > *, #main__sidebar-line > *,\n\t\t\t\t#main__content-line-1 > *, #main__content-line-2 > *, #main__content-line-3 > *\n\t\t\t";
 
 			tlMain.set("#main-box--left", { opacity: 0, transformOrigin: 'center' });
 			tlMain.set("#main__box-line > *", { transformOrigin: 'left center', scaleX: 0 });
@@ -116,7 +116,7 @@ var tlMain = new TimelineMax({ paused: true }),
 		};
 
 		var platform1Animation = function platform1Animation() {
-			var SVGNode = "\n\t\t\t\t#platform-1__sidebar-point > *, #platform-1__sidebar-line > *,\n\t\t\t\t#platform-1__graph-3-line > *, #platform-1__graph-1-line > *,\n\t\t\t\t#platform-1__graph-4-line > *, #platform-1__graph-2-line-1 > *,\n\t\t\t\t#platform-1__graph-2-line-2 > *, #platform-1__graph-2-line-3 > *\n\t\t\t";
+			var SVGNode = "\n\t\t\t\t#platform-1__sidebar-point > *, #platform-1__sidebar-line > *, #platform-1__graph-3-line > *,\n\t\t\t\t#platform-1__graph-1-line > *, #platform-1__graph-4-line > *, #platform-1__graph-2-line-1 > *,\n\t\t\t\t#platform-1__graph-2-line-2 > *, #platform-1__graph-2-line-3 > *\n\t\t\t";
 
 			tlPlatform1.set("#platform-1__sidebar-point > *", { transformOrigin: 'center', scale: 0 });
 			tlPlatform1.set("#platform-1__sidebar-line > *, #platform-1__graph-3-line > *", { transformOrigin: 'left center', scaleX: 0 });
@@ -129,7 +129,7 @@ var tlMain = new TimelineMax({ paused: true }),
 		};
 
 		var platform2Animation = function platform2Animation() {
-			var SVGNode = "\n\t\t\t\t#platform-2__sidebar-point > *, #platform-2__sidebar-line > *,\n\t\t\t\t#platform-2__table-header > *, #platform-2__table-option > *,\n\t\t\t\t#platform-2__table-text-1 > *, #platform-2__table-text-2 > *,\n\t\t\t\t#platform-2__table-text-3 > *, #platform-2__table-text-4 > *,\n\t\t\t\t#platform-2__table-text-5 > *\n\t\t\t";
+			var SVGNode = "\n\t\t\t\t#platform-2__sidebar-point > *, #platform-2__sidebar-line > *, #platform-2__table-header > *,\n\t\t\t\t#platform-2__table-option > *, #platform-2__table-text-1 > *, #platform-2__table-text-2 > *,\n\t\t\t\t#platform-2__table-text-3 > *, #platform-2__table-text-4 > *, #platform-2__table-text-5 > *\n\t\t\t";
 
 			tlPlatform2.set("#platform-2__box-1, #platform-2__box-2, #platform-2__box-3", { opacity: 0 });
 			tlPlatform2.set("#platform-2__sidebar-point > *", { transformOrigin: 'center', scale: 0 });
@@ -160,7 +160,7 @@ var tlMain = new TimelineMax({ paused: true }),
 		};
 
 		var platform4Animation = function platform4Animation() {
-			var SVGNode = "\n\t\t\t\t#platform-4__sidebar-point > *, #platform-4__details-point > *,\n\t\t\t\t#platform-4__sidebar-line > *, #platform-4__details-line > *,\n\t\t\t\t#platform-4__graph-line > *\n\t\t\t";
+			var SVGNode = "\n\t\t\t\t#platform-4__sidebar-point > *, #platform-4__details-point > *, #platform-4__sidebar-line > *,\n\t\t\t\t#platform-4__details-line > *, #platform-4__graph-line > *\n\t\t\t";
 
 			tlPlatform4.set("#platform-4__box-1, #platform-4__box-2", { opacity: 0 });
 			tlPlatform4.set("#platform-4__sidebar-point > *, #platform-4__details-point > *", { transformOrigin: 'center', scale: 0 });
@@ -230,6 +230,28 @@ var tlMain = new TimelineMax({ paused: true }),
 			}
 		});
 	};
+
+	var turnKeyLineAnimation = function turnKeyLineAnimation() {
+		function isAnyPartOfElementInViewport(el) {
+			var rect = el.getBoundingClientRect();
+			var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+			var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+			var vertInView = rect.top <= windowHeight && rect.top + rect.height >= 0;
+			var horInView = rect.left <= windowWidth && rect.left + rect.width >= 0;
+
+			return vertInView && horInView;
+		}
+
+		var elem = $('.turn-key__box-wrapper')[0];
+
+		$(window).on("resize scroll load", function () {
+			if (isAnyPartOfElementInViewport(elem)) {
+				$(elem).addClass('is-active');
+			} else {
+				$(elem).removeClass('is-active');
+			}
+		});
+	};
 	/*
  * CALLBACK :: end
  * ============================================= */
@@ -251,6 +273,7 @@ var tlMain = new TimelineMax({ paused: true }),
 		// callback
 		illustrationAnimation();
 		platformBoxViewportAnimation();
+		turnKeyLineAnimation();
 		// ==========================================
 	};
 

@@ -2361,7 +2361,15 @@ picture {
   }
 }
 
-/* line 36, src/scss/_components/homepage/_turn-key.scss */
+/* line 37, src/scss/_components/homepage/_turn-key.scss */
+.turn-key__box-wrapper.is-active .turn-key__box-line {
+  width: 100%;
+  -webkit-transition: width 1s 0.35s ease-in-out;
+  -o-transition: width 1s 0.35s ease-in-out;
+  transition: width 1s 0.35s ease-in-out;
+}
+
+/* line 43, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__box-wrapper > div {
   width: 100%;
   max-width: -webkit-calc(100% / 3);
@@ -2369,17 +2377,17 @@ picture {
 }
 
 @media screen and (max-width: 767px) {
-  /* line 36, src/scss/_components/homepage/_turn-key.scss */
+  /* line 43, src/scss/_components/homepage/_turn-key.scss */
   .turn-key__box-wrapper > div {
     max-width: 100%;
   }
-  /* line 42, src/scss/_components/homepage/_turn-key.scss */
+  /* line 49, src/scss/_components/homepage/_turn-key.scss */
   .turn-key__box-wrapper > div:not(:last-of-type) {
     padding-bottom: 30px;
   }
 }
 
-/* line 49, src/scss/_components/homepage/_turn-key.scss */
+/* line 56, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__box-head {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2394,25 +2402,25 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 49, src/scss/_components/homepage/_turn-key.scss */
+  /* line 56, src/scss/_components/homepage/_turn-key.scss */
   .turn-key__box-head {
     padding-bottom: 20px;
   }
 }
 
-/* line 59, src/scss/_components/homepage/_turn-key.scss */
+/* line 66, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__box-head > div:nth-of-type(1) {
   padding-right: 22px;
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 59, src/scss/_components/homepage/_turn-key.scss */
+  /* line 66, src/scss/_components/homepage/_turn-key.scss */
   .turn-key__box-head > div:nth-of-type(1) {
     padding-right: 20px;
   }
 }
 
-/* line 65, src/scss/_components/homepage/_turn-key.scss */
+/* line 72, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__box-head > div:nth-of-type(2) {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -2422,7 +2430,7 @@ picture {
   max-width: 100%;
 }
 
-/* line 73, src/scss/_components/homepage/_turn-key.scss */
+/* line 80, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__box-body {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2435,7 +2443,7 @@ picture {
           flex-direction: column;
 }
 
-/* line 78, src/scss/_components/homepage/_turn-key.scss */
+/* line 85, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__box-circle {
   position: relative;
   display: -webkit-box;
@@ -2457,20 +2465,23 @@ picture {
   background-color: #fd5545;
 }
 
-/* line 88, src/scss/_components/homepage/_turn-key.scss */
+/* line 95, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__box-circle .icon-font {
   color: #ffffff;
   font-size: 22px;
 }
 
-/* line 94, src/scss/_components/homepage/_turn-key.scss */
+/* line 101, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__box-line {
-  width: 100%;
+  width: 0;
   height: 1px;
   background-color: #fd5545;
+  -webkit-transition: width 1s 0.35s ease-in-out;
+  -o-transition: width 1s 0.35s ease-in-out;
+  transition: width 1s 0.35s ease-in-out;
 }
 
-/* line 100, src/scss/_components/homepage/_turn-key.scss */
+/* line 108, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__box-title {
   padding-bottom: 7px;
   font-weight: 700;
@@ -2480,14 +2491,14 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 100, src/scss/_components/homepage/_turn-key.scss */
+  /* line 108, src/scss/_components/homepage/_turn-key.scss */
   .turn-key__box-title {
     padding-bottom: 10px;
     font-size: 22px;
   }
 }
 
-/* line 113, src/scss/_components/homepage/_turn-key.scss */
+/* line 121, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__box-desc {
   font-size: 16px;
   line-height: 24px;
@@ -2495,13 +2506,13 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 113, src/scss/_components/homepage/_turn-key.scss */
+  /* line 121, src/scss/_components/homepage/_turn-key.scss */
   .turn-key__box-desc {
     font-size: 14px;
   }
 }
 
-/* line 124, src/scss/_components/homepage/_turn-key.scss */
+/* line 132, src/scss/_components/homepage/_turn-key.scss */
 .turn-key__btn {
   -webkit-box-pack: center;
   -webkit-justify-content: center;

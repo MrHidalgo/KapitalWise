@@ -152,11 +152,9 @@
 
 			svg {
 				opacity: 0;
-				visibility: hidden;
 				display: block;
 				margin-left: auto;
 				transform: translateX(30px);
-				@include transition(opacity 1s, visibility 1s);
 				@include adaptive(1279) {
 					max-width: calc(100% + 30px);
 					height: auto;
@@ -165,6 +163,44 @@
 					max-width: 100%;
 					transform: translateX(0);
 					margin-right: auto;
+				}
+
+				#platform-1__sidebar-point > *,
+				#platform-1__sidebar-line > *,
+				#platform-1__graph-3-line > *,
+				#platform-1__graph-1-line > *,
+				#platform-1__graph-4-line > *,
+				#platform-1__graph-2-line-1 > *,
+				#platform-1__graph-2-line-2 > *,
+				#platform-1__graph-2-line-3 > * {
+					opacity: 0;
+				}
+
+				#platform-2__sidebar-point > *,
+				#platform-2__sidebar-line > *,
+				#platform-2__table-header > *,
+				#platform-2__table-option > *,
+				#platform-2__table-text-1 > *,
+				#platform-2__table-text-2 > *,
+				#platform-2__table-text-3 > *,
+				#platform-2__table-text-4 > *,
+				#platform-2__table-text-5 > * {
+					opacity: 0;
+				}
+
+				#platform-3__sidebar-point > *,
+				#platform-3__sidebar-line > *,
+				#platform-3__graph-1-action > *,
+				#platform-3__graph-1-line > * {
+					opacity: 0;
+				}
+
+				#platform-4__sidebar-point > *,
+				#platform-4__details-point > *,
+				#platform-4__sidebar-line > *,
+				#platform-4__details-line > *,
+				#platform-4__graph-line > * {
+					opacity: 0;
 				}
 			}
 		}

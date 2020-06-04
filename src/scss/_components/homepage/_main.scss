@@ -71,11 +71,9 @@
 
 			svg {
 				opacity: 0;
-				visibility: hidden;
 				position: relative;
 				display: block;
 				transform: translateX(-30px);
-				@include transition(opacity 1s, visibility 1s);
 				@include adaptive(1279) {
 					max-width: calc(100% + 30px);
 					height: auto;
@@ -83,6 +81,18 @@
 				@include adaptive(1023) {
 					max-width: 100%;
 					transform: translateX(0);
+				}
+
+				#main__box-line > *,
+				#main__box-graph > *,
+				#main__box-point > *,
+				#main__box-point > *,
+				#main__sidebar-point > *,
+				#main__sidebar-line > *,
+				#main__content-line-1 > *,
+				#main__content-line-2 > *,
+				#main__content-line-3 > * {
+					opacity: 0;
 				}
 			}
 		}

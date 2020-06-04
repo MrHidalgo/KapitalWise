@@ -1210,15 +1210,11 @@ picture {
 /* line 72, src/scss/_components/homepage/_main.scss */
 .main__wrapper-right svg {
   opacity: 0;
-  visibility: hidden;
   position: relative;
   display: block;
   -webkit-transform: translateX(-30px);
       -ms-transform: translateX(-30px);
           transform: translateX(-30px);
-  -webkit-transition: opacity 1s 0.35s ease-in-out, visibility 1s 0.35s ease-in-out;
-  -o-transition: opacity 1s 0.35s ease-in-out, visibility 1s 0.35s ease-in-out;
-  transition: opacity 1s 0.35s ease-in-out, visibility 1s 0.35s ease-in-out;
 }
 
 @media screen and (max-width: 1279px) {
@@ -1240,20 +1236,33 @@ picture {
   }
 }
 
-/* line 91, src/scss/_components/homepage/_main.scss */
+/* line 86, src/scss/_components/homepage/_main.scss */
+.main__wrapper-right svg #main__box-line > *,
+.main__wrapper-right svg #main__box-graph > *,
+.main__wrapper-right svg #main__box-point > *,
+.main__wrapper-right svg #main__box-point > *,
+.main__wrapper-right svg #main__sidebar-point > *,
+.main__wrapper-right svg #main__sidebar-line > *,
+.main__wrapper-right svg #main__content-line-1 > *,
+.main__wrapper-right svg #main__content-line-2 > *,
+.main__wrapper-right svg #main__content-line-3 > * {
+  opacity: 0;
+}
+
+/* line 101, src/scss/_components/homepage/_main.scss */
 .main__title {
   padding-bottom: 16px;
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 91, src/scss/_components/homepage/_main.scss */
+  /* line 101, src/scss/_components/homepage/_main.scss */
   .main__title {
     padding-bottom: 15px;
     text-align: center;
   }
 }
 
-/* line 99, src/scss/_components/homepage/_main.scss */
+/* line 109, src/scss/_components/homepage/_main.scss */
 .main__line {
   width: 100%;
   height: 1px;
@@ -1264,7 +1273,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 99, src/scss/_components/homepage/_main.scss */
+  /* line 109, src/scss/_components/homepage/_main.scss */
   .main__line {
     max-width: 300px;
     margin-left: auto;
@@ -1272,7 +1281,7 @@ picture {
   }
 }
 
-/* line 113, src/scss/_components/homepage/_main.scss */
+/* line 123, src/scss/_components/homepage/_main.scss */
 .main__subtitle {
   padding-top: 16px;
   padding-bottom: 24px;
@@ -1283,7 +1292,7 @@ picture {
 }
 
 @media screen and (max-width: 1279px) {
-  /* line 113, src/scss/_components/homepage/_main.scss */
+  /* line 123, src/scss/_components/homepage/_main.scss */
   .main__subtitle {
     padding-right: 30px;
     font-size: 20px;
@@ -1291,7 +1300,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 113, src/scss/_components/homepage/_main.scss */
+  /* line 123, src/scss/_components/homepage/_main.scss */
   .main__subtitle {
     padding-top: 15px;
     padding-right: 0;
@@ -1299,7 +1308,7 @@ picture {
   }
 }
 
-/* line 132, src/scss/_components/homepage/_main.scss */
+/* line 142, src/scss/_components/homepage/_main.scss */
 .main__desc {
   padding-bottom: 21px;
   font-size: 16px;
@@ -1308,7 +1317,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 132, src/scss/_components/homepage/_main.scss */
+  /* line 142, src/scss/_components/homepage/_main.scss */
   .main__desc {
     width: 100%;
     max-width: 550px;
@@ -1320,7 +1329,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 147, src/scss/_components/homepage/_main.scss */
+  /* line 157, src/scss/_components/homepage/_main.scss */
   .main__btn {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -1834,15 +1843,11 @@ picture {
 /* line 153, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper-right svg {
   opacity: 0;
-  visibility: hidden;
   display: block;
   margin-left: auto;
   -webkit-transform: translateX(30px);
       -ms-transform: translateX(30px);
           transform: translateX(30px);
-  -webkit-transition: opacity 1s 0.35s ease-in-out, visibility 1s 0.35s ease-in-out;
-  -o-transition: opacity 1s 0.35s ease-in-out, visibility 1s 0.35s ease-in-out;
-  transition: opacity 1s 0.35s ease-in-out, visibility 1s 0.35s ease-in-out;
 }
 
 @media screen and (max-width: 1279px) {
@@ -1865,7 +1870,49 @@ picture {
   }
 }
 
-/* line 173, src/scss/_components/homepage/_platform.scss */
+/* line 168, src/scss/_components/homepage/_platform.scss */
+.platform__wrapper-right svg #platform-1__sidebar-point > *,
+.platform__wrapper-right svg #platform-1__sidebar-line > *,
+.platform__wrapper-right svg #platform-1__graph-3-line > *,
+.platform__wrapper-right svg #platform-1__graph-1-line > *,
+.platform__wrapper-right svg #platform-1__graph-4-line > *,
+.platform__wrapper-right svg #platform-1__graph-2-line-1 > *,
+.platform__wrapper-right svg #platform-1__graph-2-line-2 > *,
+.platform__wrapper-right svg #platform-1__graph-2-line-3 > * {
+  opacity: 0;
+}
+
+/* line 179, src/scss/_components/homepage/_platform.scss */
+.platform__wrapper-right svg #platform-2__sidebar-point > *,
+.platform__wrapper-right svg #platform-2__sidebar-line > *,
+.platform__wrapper-right svg #platform-2__table-header > *,
+.platform__wrapper-right svg #platform-2__table-option > *,
+.platform__wrapper-right svg #platform-2__table-text-1 > *,
+.platform__wrapper-right svg #platform-2__table-text-2 > *,
+.platform__wrapper-right svg #platform-2__table-text-3 > *,
+.platform__wrapper-right svg #platform-2__table-text-4 > *,
+.platform__wrapper-right svg #platform-2__table-text-5 > * {
+  opacity: 0;
+}
+
+/* line 191, src/scss/_components/homepage/_platform.scss */
+.platform__wrapper-right svg #platform-3__sidebar-point > *,
+.platform__wrapper-right svg #platform-3__sidebar-line > *,
+.platform__wrapper-right svg #platform-3__graph-1-action > *,
+.platform__wrapper-right svg #platform-3__graph-1-line > * {
+  opacity: 0;
+}
+
+/* line 198, src/scss/_components/homepage/_platform.scss */
+.platform__wrapper-right svg #platform-4__sidebar-point > *,
+.platform__wrapper-right svg #platform-4__details-point > *,
+.platform__wrapper-right svg #platform-4__sidebar-line > *,
+.platform__wrapper-right svg #platform-4__details-line > *,
+.platform__wrapper-right svg #platform-4__graph-line > * {
+  opacity: 0;
+}
+
+/* line 209, src/scss/_components/homepage/_platform.scss */
 .platform__box {
   position: relative;
   display: -webkit-box;
@@ -1891,7 +1938,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 173, src/scss/_components/homepage/_platform.scss */
+  /* line 209, src/scss/_components/homepage/_platform.scss */
   .platform__box {
     padding-left: 15px;
     padding-right: 15px;
@@ -1899,13 +1946,13 @@ picture {
 }
 
 @media screen and (max-width: 767px) {
-  /* line 173, src/scss/_components/homepage/_platform.scss */
+  /* line 209, src/scss/_components/homepage/_platform.scss */
   .platform__box {
     max-width: 100%;
   }
 }
 
-/* line 193, src/scss/_components/homepage/_platform.scss */
+/* line 229, src/scss/_components/homepage/_platform.scss */
 .platform__box:after {
   content: '';
   opacity: 0;
@@ -1927,7 +1974,7 @@ picture {
 }
 
 @media screen and (max-width: 767px) {
-  /* line 193, src/scss/_components/homepage/_platform.scss */
+  /* line 229, src/scss/_components/homepage/_platform.scss */
   .platform__box:after {
     top: auto;
     right: auto;
@@ -1940,7 +1987,7 @@ picture {
   }
 }
 
-/* line 217, src/scss/_components/homepage/_platform.scss */
+/* line 253, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active {
   border-color: #fd5545;
   background-color: #fd5545;
@@ -1949,7 +1996,7 @@ picture {
   transition: border-color 0.35s ease-in-out, background-color 0.35s ease-in-out;
 }
 
-/* line 222, src/scss/_components/homepage/_platform.scss */
+/* line 258, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active:after {
   opacity: 1;
   visibility: visible;
@@ -1958,7 +2005,7 @@ picture {
   transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
 }
 
-/* line 229, src/scss/_components/homepage/_platform.scss */
+/* line 265, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active .platform__box-head i,
 .platform__box.is-active .platform__box-head span {
   color: #ffffff;
@@ -1967,7 +2014,7 @@ picture {
   transition: color 0.35s ease-in-out;
 }
 
-/* line 236, src/scss/_components/homepage/_platform.scss */
+/* line 272, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active .platform__box-desc {
   color: #fff;
   -webkit-transition: color 0.35s ease-in-out;
@@ -1975,7 +2022,7 @@ picture {
   transition: color 0.35s ease-in-out;
 }
 
-/* line 242, src/scss/_components/homepage/_platform.scss */
+/* line 278, src/scss/_components/homepage/_platform.scss */
 .platform__box-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1988,26 +2035,26 @@ picture {
           flex-direction: column;
 }
 
-/* line 246, src/scss/_components/homepage/_platform.scss */
+/* line 282, src/scss/_components/homepage/_platform.scss */
 .platform__box-wrapper > div {
   padding-bottom: 25px;
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 246, src/scss/_components/homepage/_platform.scss */
+  /* line 282, src/scss/_components/homepage/_platform.scss */
   .platform__box-wrapper > div {
     padding-bottom: 15px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  /* line 246, src/scss/_components/homepage/_platform.scss */
+  /* line 282, src/scss/_components/homepage/_platform.scss */
   .platform__box-wrapper > div {
     padding-bottom: 30px;
   }
 }
 
-/* line 257, src/scss/_components/homepage/_platform.scss */
+/* line 293, src/scss/_components/homepage/_platform.scss */
 .platform__box-head {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2021,13 +2068,13 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 257, src/scss/_components/homepage/_platform.scss */
+  /* line 293, src/scss/_components/homepage/_platform.scss */
   .platform__box-head {
     padding-bottom: 10px;
   }
 }
 
-/* line 266, src/scss/_components/homepage/_platform.scss */
+/* line 302, src/scss/_components/homepage/_platform.scss */
 .platform__box-head > div:nth-of-type(1) {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2040,7 +2087,7 @@ picture {
   width: 40px;
 }
 
-/* line 272, src/scss/_components/homepage/_platform.scss */
+/* line 308, src/scss/_components/homepage/_platform.scss */
 .platform__box-head > div:nth-of-type(2) {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -2050,7 +2097,7 @@ picture {
   max-width: 100%;
 }
 
-/* line 279, src/scss/_components/homepage/_platform.scss */
+/* line 315, src/scss/_components/homepage/_platform.scss */
 .platform__box-head .icon-font {
   color: #fd5545;
   font-size: 24px;
@@ -2060,13 +2107,13 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 279, src/scss/_components/homepage/_platform.scss */
+  /* line 315, src/scss/_components/homepage/_platform.scss */
   .platform__box-head .icon-font {
     font-size: 22px;
   }
 }
 
-/* line 288, src/scss/_components/homepage/_platform.scss */
+/* line 324, src/scss/_components/homepage/_platform.scss */
 .platform__box-head span {
   color: #333;
   font-weight: 700;
@@ -2079,20 +2126,20 @@ picture {
 }
 
 @media screen and (max-width: 1279px) {
-  /* line 288, src/scss/_components/homepage/_platform.scss */
+  /* line 324, src/scss/_components/homepage/_platform.scss */
   .platform__box-head span {
     font-size: 20px;
   }
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 288, src/scss/_components/homepage/_platform.scss */
+  /* line 324, src/scss/_components/homepage/_platform.scss */
   .platform__box-head span {
     font-size: 18px;
   }
 }
 
-/* line 305, src/scss/_components/homepage/_platform.scss */
+/* line 341, src/scss/_components/homepage/_platform.scss */
 .platform__box-desc {
   font-size: 16px;
   line-height: 24px;
@@ -2103,7 +2150,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 305, src/scss/_components/homepage/_platform.scss */
+  /* line 341, src/scss/_components/homepage/_platform.scss */
   .platform__box-desc {
     font-size: 14px;
   }

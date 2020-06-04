@@ -69,21 +69,16 @@ const initViewportSVG = (
 ) => {
 
   $("." + className).not(".full-visible").each(function(idx, el) {
-
     $(el).viewportChecker({
       classToAdd: classNameToAdd,
       classToAddForFullView: 'full-visible',
-      // classToRemove : className,
       removeClassAfterAnimation: true,
       offset: offsetVal,
       repeat: true,
       callbackFunction: function(elem, action) {
-
 				window[$(elem).attr('data-name')].play();
-
 			}
     });
-
   });
 
 };

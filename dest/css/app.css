@@ -177,7 +177,7 @@
 }
 
 /* line 23, src/scss/_generated/_spriteFont.scss */
-.icon-artificial-intellience:before, .icon-customer-needs:before, .icon-data-analysis:before, .icon-data-security:before, .icon-deep-insights:before, .icon-encryptions:before, .icon-like:before, .icon-linkedin:before, .icon-loupe:before, .icon-method:before, .icon-saas-dashboards:before, .icon-security:before, .icon-star:before, .icon-targeted-marketing:before, .icon-twitter:before, .icon-virtual-engagement:before {
+.icon-artificial-intellience:before, .icon-banking:before, .icon-category:before, .icon-customer-needs:before, .icon-data-analysis:before, .icon-data-security:before, .icon-deep-insights:before, .icon-encryptions:before, .icon-like:before, .icon-linkedin:before, .icon-loupe:before, .icon-method:before, .icon-ring-chart:before, .icon-saas-dashboards:before, .icon-security:before, .icon-star:before, .icon-targeted-marketing:before, .icon-twitter:before, .icon-virtual-engagement:before {
   font-family: "iconFont", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -188,84 +188,99 @@
   text-transform: none;
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
+/* line 92, src/scss/_generated/_spriteFont.scss */
 .icon-artificial-intellience:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-customer-needs:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-banking:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-data-analysis:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-category:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-data-security:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-customer-needs:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-deep-insights:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-data-analysis:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-encryptions:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-data-security:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-like:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-deep-insights:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-linkedin:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-encryptions:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-loupe:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-like:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-method:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-linkedin:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-saas-dashboards:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-loupe:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-security:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-method:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-star:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-ring-chart:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-targeted-marketing:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-saas-dashboards:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-twitter:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-security:before {
   content: "";
 }
 
-/* line 83, src/scss/_generated/_spriteFont.scss */
-.icon-virtual-engagement:before {
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-star:before {
   content: "";
+}
+
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-targeted-marketing:before {
+  content: "";
+}
+
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-twitter:before {
+  content: "";
+}
+
+/* line 92, src/scss/_generated/_spriteFont.scss */
+.icon-virtual-engagement:before {
+  content: "";
 }
 
 /* line 1, src/scss/_shared/_main-setting-reset.scss */
@@ -961,6 +976,11 @@ picture {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 42px;
   font-size: 16px;
   color: #333333;
   -webkit-transition: color 0.35s ease-in-out;
@@ -979,7 +999,7 @@ picture {
   }
 }
 
-/* line 130, src/scss/_components/common/_header.scss */
+/* line 132, src/scss/_components/common/_header.scss */
 .header__nav-link:after, .header__nav-link:before {
   content: '';
   position: absolute;
@@ -992,17 +1012,17 @@ picture {
   transition: width 0.35s ease-in-out;
 }
 
-/* line 141, src/scss/_components/common/_header.scss */
+/* line 143, src/scss/_components/common/_header.scss */
 .header__nav-link:after {
   left: 50%;
 }
 
-/* line 145, src/scss/_components/common/_header.scss */
+/* line 147, src/scss/_components/common/_header.scss */
 .header__nav-link:before {
   right: 50%;
 }
 
-/* line 149, src/scss/_components/common/_header.scss */
+/* line 151, src/scss/_components/common/_header.scss */
 .header__nav-link:hover {
   color: #fd5545;
   -webkit-transition: color 0.35s ease-in-out;
@@ -1010,7 +1030,7 @@ picture {
   transition: color 0.35s ease-in-out;
 }
 
-/* line 153, src/scss/_components/common/_header.scss */
+/* line 155, src/scss/_components/common/_header.scss */
 .header__nav-link:hover:after, .header__nav-link:hover:before {
   width: 50%;
   -webkit-transition: width 0.35s ease-in-out;
@@ -1019,12 +1039,192 @@ picture {
 }
 
 /* line 162, src/scss/_components/common/_header.scss */
+.header__nav-link-wrapper {
+  position: relative;
+}
+
+/* line 166, src/scss/_components/common/_header.scss */
+.header__nav-link-wrapper:hover .header__nav-link-drop {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  -webkit-transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+  -o-transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, transform 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, transform 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+}
+
+/* line 175, src/scss/_components/common/_header.scss */
+.header__nav-link-drop {
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translate(-50%, 10px);
+      -ms-transform: translate(-50%, 10px);
+          transform: translate(-50%, 10px);
+  width: 280px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 20px #153156;
+          box-shadow: 0px 5px 20px #153156;
+  background-color: #fff;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+  -o-transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, transform 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, transform 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+}
+
+/* line 194, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 68px;
+  -webkit-transition: background-color 0.35s ease-in-out;
+  -o-transition: background-color 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out;
+}
+
+/* line 202, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a:hover {
+  background-color: #f2f7ff;
+  -webkit-transition: background-color 0.35s ease-in-out;
+  -o-transition: background-color 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out;
+}
+
+/* line 206, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a:hover span {
+  background-color: #fd5545;
+  -webkit-box-shadow: 0 3px 10px 0 rgba(21, 49, 86, 0.83);
+          box-shadow: 0 3px 10px 0 rgba(21, 49, 86, 0.83);
+  -webkit-transition: background-color 0.35s ease-in-out, -webkit-box-shadow 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out, -webkit-box-shadow 0.35s ease-in-out;
+  -o-transition: background-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out, -webkit-box-shadow 0.35s ease-in-out;
+}
+
+/* line 211, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a:hover span .icon-font {
+  color: #ffffff;
+  -webkit-transition: color 0.35s ease-in-out;
+  -o-transition: color 0.35s ease-in-out;
+  transition: color 0.35s ease-in-out;
+}
+
+/* line 219, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a > div:nth-of-type(1) {
+  width: 82px;
+  padding-left: 20px;
+}
+
+/* line 223, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a > div:nth-of-type(2) {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 1px;
+  max-width: 100%;
+  padding-right: 20px;
+}
+
+/* line 231, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a span {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 37px;
+  height: 37px;
+  border: 1px solid rgba(253, 85, 69, 0.5);
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  background-color: transparent;
+  -webkit-transition: background-color 0.35s ease-in-out, -webkit-box-shadow 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out, -webkit-box-shadow 0.35s ease-in-out;
+  -o-transition: background-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out, -webkit-box-shadow 0.35s ease-in-out;
+}
+
+/* line 243, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a span .icon-font {
+  color: #fd5545;
+  -webkit-transition: color 0.35s ease-in-out;
+  -o-transition: color 0.35s ease-in-out;
+  transition: color 0.35s ease-in-out;
+}
+
+/* line 247, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a span .icon-font.icon-banking {
+  font-size: 17px;
+}
+
+/* line 250, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a span .icon-font.icon-category {
+  font-size: 20px;
+}
+
+/* line 253, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a span .icon-font.icon-ring-chart {
+  font-size: 12px;
+}
+
+/* line 259, src/scss/_components/common/_header.scss */
+.header__nav-link-drop a p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #153156;
+}
+
+/* line 270, src/scss/_components/common/_header.scss */
 .header .hamburger {
   display: none;
 }
 
 @media screen and (max-width: 767px) {
-  /* line 162, src/scss/_components/common/_header.scss */
+  /* line 270, src/scss/_components/common/_header.scss */
   .header .hamburger {
     display: -webkit-box;
     display: -webkit-flex;

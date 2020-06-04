@@ -30,50 +30,59 @@
 	@if $filename == artificial-intellience {
 		$char: "\E001";
 	}
-	@if $filename == customer-needs {
+	@if $filename == banking {
 		$char: "\E002";
 	}
-	@if $filename == data-analysis {
+	@if $filename == category {
 		$char: "\E003";
 	}
-	@if $filename == data-security {
+	@if $filename == customer-needs {
 		$char: "\E004";
 	}
-	@if $filename == deep-insights {
+	@if $filename == data-analysis {
 		$char: "\E005";
 	}
-	@if $filename == encryptions {
+	@if $filename == data-security {
 		$char: "\E006";
 	}
-	@if $filename == like {
+	@if $filename == deep-insights {
 		$char: "\E007";
 	}
-	@if $filename == linkedin {
+	@if $filename == encryptions {
 		$char: "\E008";
 	}
-	@if $filename == loupe {
+	@if $filename == like {
 		$char: "\E009";
 	}
-	@if $filename == method {
+	@if $filename == linkedin {
 		$char: "\E00A";
 	}
-	@if $filename == saas-dashboards {
+	@if $filename == loupe {
 		$char: "\E00B";
 	}
-	@if $filename == security {
+	@if $filename == method {
 		$char: "\E00C";
 	}
-	@if $filename == star {
+	@if $filename == ring-chart {
 		$char: "\E00D";
 	}
-	@if $filename == targeted-marketing {
+	@if $filename == saas-dashboards {
 		$char: "\E00E";
 	}
-	@if $filename == twitter {
+	@if $filename == security {
 		$char: "\E00F";
 	}
-	@if $filename == virtual-engagement {
+	@if $filename == star {
 		$char: "\E010";
+	}
+	@if $filename == targeted-marketing {
+		$char: "\E011";
+	}
+	@if $filename == twitter {
+		$char: "\E012";
+	}
+	@if $filename == virtual-engagement {
+		$char: "\E013";
 	}
 
 	@return $char;
@@ -92,6 +101,14 @@
 
 .icon-artificial-intellience {
 	@include icon(artificial-intellience);
+
+}
+.icon-banking {
+	@include icon(banking);
+
+}
+.icon-category {
+	@include icon(category);
 
 }
 .icon-customer-needs {
@@ -128,6 +145,10 @@
 }
 .icon-method {
 	@include icon(method);
+
+}
+.icon-ring-chart {
+	@include icon(ring-chart);
 
 }
 .icon-saas-dashboards {

@@ -65,84 +65,6 @@ var initPreventBehavior = function initPreventBehavior() {
 };
 
 /**
- * @name scrollAnimation
- *
- * @param elem
- * @param el
- *
- * @description
- */
-var scrollAnimation = function scrollAnimation(elem, el) {
-
-	$(elem).css({
-		'animation-name': $(el).data('animation-name') ? $(el).data('animation-name') + ", fadeIn" : 'slideInUp, fadeIn',
-		'animation-delay': $(el).data('animation-delay') || '0s',
-		'animation-duration': $(el).data('animation-duration') || '1s'
-	});
-};
-
-/**
- * @name initViewPortChecker
- *
- * @param className {String}              - default is `viewport-hide-js`
- * @param classNameToAdd {String}         - default is `viewport-show-js animated`
- * @param offsetVal {Number}              - default is 100
- * @param callbackFunctionName {Object}   - default is `scrollAnimation()`
- *
- * @description Detects if an element is in the viewport and adds a class to it
- *
- * You can to add some attribute:
- * - <div data-vp-add-class="random"></div>                       > classToAdd
- * - <div data-vp-remove-class="random"></div>                    > classToRemove
- * - <div data-vp-remove-after-animation="true|false"></div>      > Removes added classes after CSS3 animation has completed
- * - <div data-vp-offset="[100 OR 10%]"></div>                    > offset
- * - <div data-vp-repeat="true"></div>                            > repeat
- * - <div data-vp-scrollHorizontal="false"></div>                 > scrollHorizontal
- */
-var initViewPortChecker = function initViewPortChecker() {
-	var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "viewport-hide-js";
-	var classNameToAdd = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "viewport-show-js animated";
-	var offsetVal = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 100;
-	var callbackFunctionName = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : scrollAnimation;
-
-
-	$("." + className).not(".full-visible").each(function (idx, el) {
-
-		$(el).viewportChecker({
-			classToAdd: classNameToAdd,
-			classToAddForFullView: 'full-visible',
-			classToRemove: className,
-			removeClassAfterAnimation: true,
-			offset: offsetVal,
-			repeat: false,
-			callbackFunction: function callbackFunction(elem, action) {
-
-				callbackFunctionName(elem, el);
-			}
-		});
-	});
-};
-var initViewportSVG = function initViewportSVG() {
-	var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "viewport-svg-js";
-	var classNameToAdd = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "is-viewport";
-	var offsetVal = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 300;
-
-
-	$("." + className).not(".full-visible").each(function (idx, el) {
-		$(el).viewportChecker({
-			classToAdd: classNameToAdd,
-			classToAddForFullView: 'full-visible',
-			removeClassAfterAnimation: true,
-			offset: offsetVal,
-			repeat: true,
-			callbackFunction: function callbackFunction(elem, action) {
-				window[$(elem).attr('data-name')].play();
-			}
-		});
-	});
-};
-
-/**
  * @description Window on load.
  */
 window.addEventListener('load', function (ev) {
@@ -176,7 +98,7 @@ var tlMain = new TimelineMax({ paused: true }),
  * CALLBACK :: start
  * ============================================= */
 	var illustrationAnimation = function illustrationAnimation() {
-		$('#main-illustration-svg, #platform-illustration-1-svg, ' + '#platform-illustration-2-svg, #platform-illustration-3-svg,' + '#platform-illustration-4-svg').css({ opacity: 1 });
+		$('#main-illustration-svg, ' + '#platform-illustration-1-svg, ' + '#platform-illustration-2-svg, ' + '#platform-illustration-3-svg,' + '#platform-illustration-4-svg').css({ opacity: 1 });
 
 		var mainAnimation = function mainAnimation() {
 			var SVGNode = "\n\t\t\t\t#main__box-line > *, #main__box-graph > *,\n\t\t\t\t#main__box-point > *, #main__box-point > *,\n\t\t\t\t#main__sidebar-point > *, #main__sidebar-line > *,\n\t\t\t\t#main__content-line-1 > *, #main__content-line-2 > *,\n\t\t\t\t#main__content-line-3 > *\n\t\t\t";
@@ -249,27 +171,33 @@ var tlMain = new TimelineMax({ paused: true }),
 		};
 
 		var viewportCheckedAnimation = function viewportCheckedAnimation() {
-			function isElementOutViewport(el) {
-				var rect = el.getBoundingClientRect();
+			$.fn.isInViewport = function () {
+				var elementTop = $(this).offset().top;
+				var elementBottom = elementTop + $(this).outerHeight();
 
-				return rect.top + rect.height > 0;
+				var viewportTop = $(window).scrollTop();
+				var viewportBottom = viewportTop + $(window).height();
+
+				return elementBottom > viewportTop && elementTop < viewportBottom;
+			};
+
+			var svgObj = ['#main-illustration-svg', '#platform-illustration-1-svg', '#platform-illustration-2-svg', '#platform-illustration-3-svg', '#platform-illustration-4-svg'];
+
+			for (var i = 0; i < svgObj.length; i++) {
+				if ($(svgObj[i]).isInViewport()) {
+					window[$(svgObj[i]).attr('data-name')].play();
+				} else {
+					window[$(svgObj[i]).attr('data-name')].restart().kill();
+				}
 			}
 
 			$(window).on("resize scroll", function () {
-				if (!isElementOutViewport($('#main-illustration-svg')[0])) {
-					tlMain.restart().kill();
-				}
-				if (!isElementOutViewport($('#platform-illustration-1-svg')[0])) {
-					tlPlatform1.restart().kill();
-				}
-				if (!isElementOutViewport($('#platform-illustration-2-svg')[0])) {
-					tlPlatform2.restart().kill();
-				}
-				if (!isElementOutViewport($('#platform-illustration-3-svg')[0])) {
-					tlPlatform3.restart().kill();
-				}
-				if (!isElementOutViewport($('#platform-illustration-4-svg')[0])) {
-					tlPlatform4.restart().kill();
+				for (var _i = 0; _i < svgObj.length; _i++) {
+					if ($(svgObj[_i]).isInViewport()) {
+						window[$(svgObj[_i]).attr('data-name')].play();
+					} else {
+						window[$(svgObj[_i]).attr('data-name')].restart().kill();
+					}
 				}
 			});
 		};
@@ -280,16 +208,6 @@ var tlMain = new TimelineMax({ paused: true }),
 		platform3Animation();
 		platform4Animation();
 		viewportCheckedAnimation();
-	};
-
-	var viewportAnimation = function viewportAnimation() {
-		AOS.init({
-			offset: 150,
-			duration: 400,
-			easing: 'ease-in-out',
-			once: false,
-			mirror: false
-		});
 	};
 
 	var platformBoxViewportAnimation = function platformBoxViewportAnimation() {
@@ -328,12 +246,10 @@ var tlMain = new TimelineMax({ paused: true }),
 
 		// lib
 		initHamburger();
-		initViewportSVG();
 		// ==========================================
 
 		// callback
 		illustrationAnimation();
-		viewportAnimation();
 		platformBoxViewportAnimation();
 		// ==========================================
 	};

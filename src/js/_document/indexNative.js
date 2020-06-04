@@ -13,8 +13,10 @@ const tlMain = new TimelineMax({paused: true}),
 	* CALLBACK :: start
 	* ============================================= */
 	const illustrationAnimation = () => {
-		$('#main-illustration-svg, #platform-illustration-1-svg, ' +
-			'#platform-illustration-2-svg, #platform-illustration-3-svg,' +
+		$('#main-illustration-svg, ' +
+			'#platform-illustration-1-svg, ' +
+			'#platform-illustration-2-svg, ' +
+			'#platform-illustration-3-svg,' +
 			'#platform-illustration-4-svg').css({opacity: 1});
 
 		const mainAnimation = () => {
@@ -72,8 +74,7 @@ const tlMain = new TimelineMax({paused: true}),
 				.staggerTo($('#platform-1__graph-3-line > *'), 0.8, {scaleX: 1, ease: Power2.easeInOut}, 0.1, '-=0.8')
 				.staggerTo($('#platform-1__graph-2-line-1 > *'), 0.75, {scaleX: 1, ease: Power2.easeInOut}, 0.055, '-=0.8')
 				.staggerTo($('#platform-1__graph-2-line-2 > *'), 0.75, {scaleX: 1, ease: Power2.easeInOut}, 0.055, '-=0.8')
-				.staggerTo($('#platform-1__graph-2-line-3 > *'), 0.75, {scaleX: 1, ease: Power2.easeInOut}, 0.055, '-=0.8')
-				;
+				.staggerTo($('#platform-1__graph-2-line-3 > *'), 0.75, {scaleX: 1, ease: Power2.easeInOut}, 0.055, '-=0.8');
 		};
 
 		const platform2Animation = () => {
@@ -162,18 +163,40 @@ const tlMain = new TimelineMax({paused: true}),
 		};
 
 		const viewportCheckedAnimation = () => {
-			function isElementOutViewport(el) {
-				let rect = el.getBoundingClientRect();
+			$.fn.isInViewport = function() {
+				var elementTop = $(this).offset().top;
+				var elementBottom = elementTop + $(this).outerHeight();
 
-				return (rect.top + rect.height) > 0;
+				var viewportTop = $(window).scrollTop();
+				var viewportBottom = viewportTop + $(window).height();
+
+				return elementBottom > viewportTop && elementTop < viewportBottom;
+			};
+
+			const svgObj = [
+				'#main-illustration-svg',
+				'#platform-illustration-1-svg',
+				'#platform-illustration-2-svg',
+				'#platform-illustration-3-svg',
+				'#platform-illustration-4-svg'
+			];
+
+			for(let i = 0; i < svgObj.length; i++) {
+				if ($(svgObj[i]).isInViewport()) {
+					window[$(svgObj[i]).attr('data-name')].play();
+				} else {
+					window[$(svgObj[i]).attr('data-name')].restart().kill();
+				}
 			}
 
 			$(window).on("resize scroll", () => {
-				if(!isElementOutViewport($('#main-illustration-svg')[0])) {tlMain.restart().kill();}
-				if(!isElementOutViewport($('#platform-illustration-1-svg')[0])) {tlPlatform1.restart().kill();}
-				if(!isElementOutViewport($('#platform-illustration-2-svg')[0])) {tlPlatform2.restart().kill();}
-				if(!isElementOutViewport($('#platform-illustration-3-svg')[0])) {tlPlatform3.restart().kill();}
-				if(!isElementOutViewport($('#platform-illustration-4-svg')[0])) {tlPlatform4.restart().kill();}
+				for(let i = 0; i < svgObj.length; i++) {
+					if ($(svgObj[i]).isInViewport()) {
+						window[$(svgObj[i]).attr('data-name')].play();
+					} else {
+						window[$(svgObj[i]).attr('data-name')].restart().kill();
+					}
+				}
 			});
 		};
 
@@ -183,17 +206,6 @@ const tlMain = new TimelineMax({paused: true}),
 		platform3Animation();
 		platform4Animation();
 		viewportCheckedAnimation();
-	};
-
-
-	const viewportAnimation = () => {
-		AOS.init({
-			offset: 150,
-			duration: 400,
-			easing: 'ease-in-out',
-			once: false,
-			mirror: false,
-		});
 	};
 
 
@@ -240,12 +252,10 @@ const tlMain = new TimelineMax({paused: true}),
 
 		// lib
 		initHamburger();
-		initViewportSVG();
 		// ==========================================
 
 		// callback
 		illustrationAnimation();
-		viewportAnimation();
 		platformBoxViewportAnimation();
 		// ==========================================
 	};

@@ -191,7 +191,11 @@
 				#platform-3__sidebar-point > *,
 				#platform-3__sidebar-line > *,
 				#platform-3__graph-1-action > *,
-				#platform-3__graph-1-line > * {
+				#platform-3__graph-1-line > *,
+				#platform-3__graph-2-text,
+				#platform-3__graph-2-point,
+				#platform-3__graph-2-ind,
+				#platform-3__pointer {
 					opacity: 0;
 				}
 

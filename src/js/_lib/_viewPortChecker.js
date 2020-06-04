@@ -65,8 +65,29 @@ const initViewPortChecker = (
 const initViewportSVG = (
   className = "viewport-svg-js",
   classNameToAdd = "is-viewport",
-  offsetVal = 300
+  offsetVal = 400
 ) => {
+
+	function isElementInViewport(el) {
+		let rect = el.getBoundingClientRect();
+
+		return (
+			rect.top >= 0 &&
+			rect.left >= 0 &&
+			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+			rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+	}
+	function isElementOutViewport(el) {
+		let rect = el.getBoundingClientRect();
+
+		return (
+			rect.top <= 0 &&
+			rect.left <= 0 &&
+			rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+			rect.right >= (window.innerWidth || document.documentElement.clientWidth)
+		);
+	}
 
   $("." + className).not(".full-visible").each(function(idx, el) {
     $(el).viewportChecker({
@@ -76,7 +97,28 @@ const initViewportSVG = (
       offset: offsetVal,
       repeat: true,
       callbackFunction: function(elem, action) {
-				window[$(elem).attr('data-name')].play();
+
+				// var top_of_element = $(elem).offset().top;
+				// var bottom_of_element = $(elem).offset().top + $(elem).outerHeight();
+				// var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+				// var top_of_screen = $(window).scrollTop();
+				//
+				// if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+				// 	// the element is visible, do something
+				// 	console.log('the element is visible, do something');
+				// } else {
+				// 	// the element is not visible, do something else
+				// 	console.log('the element is not visible, do something else');
+				// }
+
+      	// if(isElementInViewport($(elem)[0]) && action === 'add') {
+				// 	console.log('in');
+				// 	window[$(elem).attr('data-name')].play();
+				// // }
+      	// if (isElementOutViewport($(elem)[0]) && action === 'remove') {
+				// 	console.log('out');
+				// 	window[$(elem).attr('data-name')].restart().kill();
+				// }
 			}
     });
   });

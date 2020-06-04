@@ -1899,11 +1899,15 @@ picture {
 .platform__wrapper-right svg #platform-3__sidebar-point > *,
 .platform__wrapper-right svg #platform-3__sidebar-line > *,
 .platform__wrapper-right svg #platform-3__graph-1-action > *,
-.platform__wrapper-right svg #platform-3__graph-1-line > * {
+.platform__wrapper-right svg #platform-3__graph-1-line > *,
+.platform__wrapper-right svg #platform-3__graph-2-text,
+.platform__wrapper-right svg #platform-3__graph-2-point,
+.platform__wrapper-right svg #platform-3__graph-2-ind,
+.platform__wrapper-right svg #platform-3__pointer {
   opacity: 0;
 }
 
-/* line 198, src/scss/_components/homepage/_platform.scss */
+/* line 202, src/scss/_components/homepage/_platform.scss */
 .platform__wrapper-right svg #platform-4__sidebar-point > *,
 .platform__wrapper-right svg #platform-4__details-point > *,
 .platform__wrapper-right svg #platform-4__sidebar-line > *,
@@ -1912,7 +1916,7 @@ picture {
   opacity: 0;
 }
 
-/* line 209, src/scss/_components/homepage/_platform.scss */
+/* line 213, src/scss/_components/homepage/_platform.scss */
 .platform__box {
   position: relative;
   display: -webkit-box;
@@ -1938,7 +1942,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 209, src/scss/_components/homepage/_platform.scss */
+  /* line 213, src/scss/_components/homepage/_platform.scss */
   .platform__box {
     padding-left: 15px;
     padding-right: 15px;
@@ -1946,13 +1950,13 @@ picture {
 }
 
 @media screen and (max-width: 767px) {
-  /* line 209, src/scss/_components/homepage/_platform.scss */
+  /* line 213, src/scss/_components/homepage/_platform.scss */
   .platform__box {
     max-width: 100%;
   }
 }
 
-/* line 229, src/scss/_components/homepage/_platform.scss */
+/* line 233, src/scss/_components/homepage/_platform.scss */
 .platform__box:after {
   content: '';
   opacity: 0;
@@ -1974,7 +1978,7 @@ picture {
 }
 
 @media screen and (max-width: 767px) {
-  /* line 229, src/scss/_components/homepage/_platform.scss */
+  /* line 233, src/scss/_components/homepage/_platform.scss */
   .platform__box:after {
     top: auto;
     right: auto;
@@ -1987,7 +1991,7 @@ picture {
   }
 }
 
-/* line 253, src/scss/_components/homepage/_platform.scss */
+/* line 257, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active {
   border-color: #fd5545;
   background-color: #fd5545;
@@ -1996,7 +2000,7 @@ picture {
   transition: border-color 0.35s ease-in-out, background-color 0.35s ease-in-out;
 }
 
-/* line 258, src/scss/_components/homepage/_platform.scss */
+/* line 262, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active:after {
   opacity: 1;
   visibility: visible;
@@ -2005,7 +2009,7 @@ picture {
   transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
 }
 
-/* line 265, src/scss/_components/homepage/_platform.scss */
+/* line 269, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active .platform__box-head i,
 .platform__box.is-active .platform__box-head span {
   color: #ffffff;
@@ -2014,7 +2018,7 @@ picture {
   transition: color 0.35s ease-in-out;
 }
 
-/* line 272, src/scss/_components/homepage/_platform.scss */
+/* line 276, src/scss/_components/homepage/_platform.scss */
 .platform__box.is-active .platform__box-desc {
   color: #fff;
   -webkit-transition: color 0.35s ease-in-out;
@@ -2022,7 +2026,7 @@ picture {
   transition: color 0.35s ease-in-out;
 }
 
-/* line 278, src/scss/_components/homepage/_platform.scss */
+/* line 282, src/scss/_components/homepage/_platform.scss */
 .platform__box-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2035,26 +2039,26 @@ picture {
           flex-direction: column;
 }
 
-/* line 282, src/scss/_components/homepage/_platform.scss */
+/* line 286, src/scss/_components/homepage/_platform.scss */
 .platform__box-wrapper > div {
   padding-bottom: 25px;
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 282, src/scss/_components/homepage/_platform.scss */
+  /* line 286, src/scss/_components/homepage/_platform.scss */
   .platform__box-wrapper > div {
     padding-bottom: 15px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  /* line 282, src/scss/_components/homepage/_platform.scss */
+  /* line 286, src/scss/_components/homepage/_platform.scss */
   .platform__box-wrapper > div {
     padding-bottom: 30px;
   }
 }
 
-/* line 293, src/scss/_components/homepage/_platform.scss */
+/* line 297, src/scss/_components/homepage/_platform.scss */
 .platform__box-head {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2068,13 +2072,13 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 293, src/scss/_components/homepage/_platform.scss */
+  /* line 297, src/scss/_components/homepage/_platform.scss */
   .platform__box-head {
     padding-bottom: 10px;
   }
 }
 
-/* line 302, src/scss/_components/homepage/_platform.scss */
+/* line 306, src/scss/_components/homepage/_platform.scss */
 .platform__box-head > div:nth-of-type(1) {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2087,7 +2091,7 @@ picture {
   width: 40px;
 }
 
-/* line 308, src/scss/_components/homepage/_platform.scss */
+/* line 312, src/scss/_components/homepage/_platform.scss */
 .platform__box-head > div:nth-of-type(2) {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -2097,7 +2101,7 @@ picture {
   max-width: 100%;
 }
 
-/* line 315, src/scss/_components/homepage/_platform.scss */
+/* line 319, src/scss/_components/homepage/_platform.scss */
 .platform__box-head .icon-font {
   color: #fd5545;
   font-size: 24px;
@@ -2107,13 +2111,13 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 315, src/scss/_components/homepage/_platform.scss */
+  /* line 319, src/scss/_components/homepage/_platform.scss */
   .platform__box-head .icon-font {
     font-size: 22px;
   }
 }
 
-/* line 324, src/scss/_components/homepage/_platform.scss */
+/* line 328, src/scss/_components/homepage/_platform.scss */
 .platform__box-head span {
   color: #333;
   font-weight: 700;
@@ -2126,20 +2130,20 @@ picture {
 }
 
 @media screen and (max-width: 1279px) {
-  /* line 324, src/scss/_components/homepage/_platform.scss */
+  /* line 328, src/scss/_components/homepage/_platform.scss */
   .platform__box-head span {
     font-size: 20px;
   }
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 324, src/scss/_components/homepage/_platform.scss */
+  /* line 328, src/scss/_components/homepage/_platform.scss */
   .platform__box-head span {
     font-size: 18px;
   }
 }
 
-/* line 341, src/scss/_components/homepage/_platform.scss */
+/* line 345, src/scss/_components/homepage/_platform.scss */
 .platform__box-desc {
   font-size: 16px;
   line-height: 24px;
@@ -2150,7 +2154,7 @@ picture {
 }
 
 @media screen and (max-width: 1023px) {
-  /* line 341, src/scss/_components/homepage/_platform.scss */
+  /* line 345, src/scss/_components/homepage/_platform.scss */
   .platform__box-desc {
     font-size: 14px;
   }

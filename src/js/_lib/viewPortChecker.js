@@ -1,5 +1,3 @@
-
-
 /**
  * @name scrollAnimation
  *
@@ -10,11 +8,11 @@
  */
 const scrollAnimation = (elem, el) => {
 
-  $(elem).css({
-    'animation-name'      : ($(el).data('animation-name')) ? $(el).data('animation-name') + ", fadeIn" : 'slideInUp, fadeIn',
-    'animation-delay'     : $(el).data('animation-delay') || '0s',
-    'animation-duration'  : $(el).data('animation-duration') || '1s'
-  });
+	$(elem).css({
+		'animation-name': ($(el).data('animation-name')) ? $(el).data('animation-name') + ", fadeIn" : 'slideInUp, fadeIn',
+		'animation-delay': $(el).data('animation-delay') || '0s',
+		'animation-duration': $(el).data('animation-duration') || '1s'
+	});
 
 };
 
@@ -37,62 +35,95 @@ const scrollAnimation = (elem, el) => {
  * - <div data-vp-scrollHorizontal="false"></div>                 > scrollHorizontal
  */
 const initViewPortChecker = (
-  className = "viewport-hide-js",
-  classNameToAdd = "viewport-show-js animated",
-  offsetVal = 100,
-  callbackFunctionName = scrollAnimation
+	className = "viewport-hide-js",
+	classNameToAdd = "viewport-show-js animated",
+	offsetVal = 100,
+	callbackFunctionName = scrollAnimation
 ) => {
 
-  $("." + className).not(".full-visible").each(function(idx, el) {
+	$("." + className).not(".full-visible").each(function (idx, el) {
 
-    $(el).viewportChecker({
-      classToAdd: classNameToAdd,
-      classToAddForFullView: 'full-visible',
-      classToRemove : className,
-      removeClassAfterAnimation: true,
-      offset: offsetVal,
-      repeat: false,
-      callbackFunction: function(elem, action) {
+		$(el).viewportChecker({
+			classToAdd: classNameToAdd,
+			classToAddForFullView: 'full-visible',
+			classToRemove: className,
+			removeClassAfterAnimation: true,
+			offset: offsetVal,
+			repeat: false,
+			callbackFunction: function (elem, action) {
 
-        callbackFunctionName(elem, el);
+				callbackFunctionName(elem, el);
 
-      }
-    });
+			}
+		});
 
-  });
+	});
+
+};
+
+const initViewPortPlatformBlockChecker = (
+	className = "viewport-platform-js",
+	classNameToAdd = "is-active",
+	offsetVal = 300,
+) => {
+
+	$("." + className).not(".full-visible").each(function (idx, el) {
+
+		$(el).viewportChecker({
+			classToAdd: classNameToAdd,
+			classToAddForFullView: 'full-visible',
+			classToRemove: className,
+			removeClassAfterAnimation: true,
+			offset: offsetVal,
+			repeat: true,
+			callbackFunction: function (elem, action) {
+				if (action === 'add') {
+					// const parentNode = $(elem).closest('.platform__box-wrapper'),
+					// 	currentBlockElem = parentNode.find('.platform__box.is-active'),
+					// 	activeCount = $('.platform__box.is-active').length;
+					//
+					// if(activeCount > 1) {
+					// 	for (let i = 0; i < currentBlockElem.length - 1; i++) {
+					// 		$(currentBlockElem[i]).removeClass('is-active');
+					// 	}
+					// }
+
+					$(elem).addClass('is-active');
+				}
+
+				if (action === 'remove') $(elem).removeClass('is-active');
+			}
+		});
+
+	});
 
 };
 
 const initViewPortCountToChecker = (
-  className = "viewport-countTo-js",
-  classNameToAdd = "",
-  offsetVal = 300,
+	className = "viewport-countTo-js",
+	classNameToAdd = "",
+	offsetVal = 300,
 ) => {
 
-  $("." + className).not(".full-visible").each(function(idx, el) {
+	$("." + className).not(".full-visible").each(function (idx, el) {
 
-    $(el).viewportChecker({
-      classToAdd: classNameToAdd,
-      classToAddForFullView: 'full-visible',
-      classToRemove : className,
-      removeClassAfterAnimation: true,
-      offset: offsetVal,
-      repeat: false,
-      callbackFunction: function(elem, action) {
+		$(el).viewportChecker({
+			classToAdd: classNameToAdd,
+			classToAddForFullView: 'full-visible',
+			classToRemove: className,
+			removeClassAfterAnimation: true,
+			offset: offsetVal,
+			repeat: false,
+			callbackFunction: function (elem, action) {
 
 				$('.number__box-count span').countTo({
-					speed: 1000,
-					refreshInterval: 50,
-					formatter: function (value, options) {
-						return value.toFixed(options.decimals);
-					},
-					onUpdate: function (value) {},
-					onComplete: function (value) {}
+					speed: 1500,
+					refreshInterval: 30
 				});
 
-      }
-    });
+			}
+		});
 
-  });
+	});
 
 };

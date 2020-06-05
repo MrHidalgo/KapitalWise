@@ -204,30 +204,21 @@ const tlMain = new TimelineMax({paused: true}),
 
 
 	const platformBoxViewportAnimation = () => {
-		function isElementInViewport(el) {
-			let rect = el.getBoundingClientRect();
+		const controller = new ScrollMagic.Controller();
 
-			return (
-				rect.top >= 0 &&
-				rect.left >= 0 &&
-				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-			);
+		const platformBlocks = $('.platform__box');
+
+		for(let block of platformBlocks) {
+			var scene = new ScrollMagic.Scene({
+				triggerElement: block,
+				duration: 230,
+				offset: -75
+			})
+				.on("enter", function () {block.classList.add('is-active');})
+				.on("leave", function () {block.classList.remove('is-active');})
+				// .addIndicators({name: "2 - change inline style"})
+				.addTo(controller);
 		}
-
-		const elem = $('.viewport-platform-js');
-
-		$(window).on("resize scroll load", function () {
-			for(let idx = 0; idx < elem.length; idx++) {
-
-				if (isElementInViewport(elem[idx])) {
-					$(elem[idx]).addClass('is-active');
-				} else {
-					$(elem[idx]).removeClass('is-active');
-				}
-
-			}
-		});
 	};
 
 
@@ -244,7 +235,13 @@ const tlMain = new TimelineMax({paused: true}),
 
 		const elem = $('.turn-key__box-wrapper')[0];
 
-		$(window).on("resize scroll load", function () {
+		if (isAnyPartOfElementInViewport(elem)) {
+			$(elem).addClass('is-active');
+		} else {
+			$(elem).removeClass('is-active');
+		}
+
+		$(window).on("resize scroll", function () {
 			if (isAnyPartOfElementInViewport(elem)) {
 				$(elem).addClass('is-active');
 			} else {
@@ -271,6 +268,7 @@ const tlMain = new TimelineMax({paused: true}),
 		initHamburger();
 		initSmoothScroll();
 		initViewPortCountToChecker();
+		// initViewPortPlatformBlockChecker();
 		// ==========================================
 
 		// callback

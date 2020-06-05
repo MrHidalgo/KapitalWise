@@ -85,7 +85,6 @@ var initSmoothScroll = function initSmoothScroll() {
 		}, animateSpeed);
 	});
 };
-
 /**
  * @name scrollAnimation
  *
@@ -145,6 +144,42 @@ var initViewPortChecker = function initViewPortChecker() {
 	});
 };
 
+var initViewPortPlatformBlockChecker = function initViewPortPlatformBlockChecker() {
+	var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "viewport-platform-js";
+	var classNameToAdd = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "is-active";
+	var offsetVal = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 300;
+
+
+	$("." + className).not(".full-visible").each(function (idx, el) {
+
+		$(el).viewportChecker({
+			classToAdd: classNameToAdd,
+			classToAddForFullView: 'full-visible',
+			classToRemove: className,
+			removeClassAfterAnimation: true,
+			offset: offsetVal,
+			repeat: true,
+			callbackFunction: function callbackFunction(elem, action) {
+				if (action === 'add') {
+					// const parentNode = $(elem).closest('.platform__box-wrapper'),
+					// 	currentBlockElem = parentNode.find('.platform__box.is-active'),
+					// 	activeCount = $('.platform__box.is-active').length;
+					//
+					// if(activeCount > 1) {
+					// 	for (let i = 0; i < currentBlockElem.length - 1; i++) {
+					// 		$(currentBlockElem[i]).removeClass('is-active');
+					// 	}
+					// }
+
+					$(elem).addClass('is-active');
+				}
+
+				if (action === 'remove') $(elem).removeClass('is-active');
+			}
+		});
+	});
+};
+
 var initViewPortCountToChecker = function initViewPortCountToChecker() {
 	var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "viewport-countTo-js";
 	var classNameToAdd = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
@@ -163,13 +198,8 @@ var initViewPortCountToChecker = function initViewPortCountToChecker() {
 			callbackFunction: function callbackFunction(elem, action) {
 
 				$('.number__box-count span').countTo({
-					speed: 1000,
-					refreshInterval: 50,
-					formatter: function formatter(value, options) {
-						return value.toFixed(options.decimals);
-					},
-					onUpdate: function onUpdate(value) {},
-					onComplete: function onComplete(value) {}
+					speed: 1500,
+					refreshInterval: 30
 				});
 			}
 		});
@@ -323,24 +353,49 @@ var tlMain = new TimelineMax({ paused: true }),
 	};
 
 	var platformBoxViewportAnimation = function platformBoxViewportAnimation() {
-		function isElementInViewport(el) {
-			var rect = el.getBoundingClientRect();
+		var controller = new ScrollMagic.Controller();
 
-			return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-		}
+		var platformBlocks = $('.platform__box');
 
-		var elem = $('.viewport-platform-js');
+		var _loop = function _loop(block) {
+			scene = new ScrollMagic.Scene({
+				triggerElement: block,
+				duration: 230,
+				offset: -75
+			}).on("enter", function () {
+				block.classList.add('is-active');
+			}).on("leave", function () {
+				block.classList.remove('is-active');
+			})
+			// .addIndicators({name: "2 - change inline style"})
+			.addTo(controller);
+		};
 
-		$(window).on("resize scroll load", function () {
-			for (var idx = 0; idx < elem.length; idx++) {
+		var _iteratorNormalCompletion = true;
+		var _didIteratorError = false;
+		var _iteratorError = undefined;
 
-				if (isElementInViewport(elem[idx])) {
-					$(elem[idx]).addClass('is-active');
-				} else {
-					$(elem[idx]).removeClass('is-active');
+		try {
+			for (var _iterator = platformBlocks[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+				var block = _step.value;
+				var scene;
+
+				_loop(block);
+			}
+		} catch (err) {
+			_didIteratorError = true;
+			_iteratorError = err;
+		} finally {
+			try {
+				if (!_iteratorNormalCompletion && _iterator.return) {
+					_iterator.return();
+				}
+			} finally {
+				if (_didIteratorError) {
+					throw _iteratorError;
 				}
 			}
-		});
+		}
 	};
 
 	var turnKeyLineAnimation = function turnKeyLineAnimation() {
@@ -356,7 +411,13 @@ var tlMain = new TimelineMax({ paused: true }),
 
 		var elem = $('.turn-key__box-wrapper')[0];
 
-		$(window).on("resize scroll load", function () {
+		if (isAnyPartOfElementInViewport(elem)) {
+			$(elem).addClass('is-active');
+		} else {
+			$(elem).removeClass('is-active');
+		}
+
+		$(window).on("resize scroll", function () {
 			if (isAnyPartOfElementInViewport(elem)) {
 				$(elem).addClass('is-active');
 			} else {
@@ -382,6 +443,7 @@ var tlMain = new TimelineMax({ paused: true }),
 		initHamburger();
 		initSmoothScroll();
 		initViewPortCountToChecker();
+		// initViewPortPlatformBlockChecker();
 		// ==========================================
 
 		// callback

@@ -85,90 +85,6 @@ var initSmoothScroll = function initSmoothScroll() {
 		}, animateSpeed);
 	});
 };
-/**
- * @name scrollAnimation
- *
- * @param elem
- * @param el
- *
- * @description
- */
-var scrollAnimation = function scrollAnimation(elem, el) {
-
-	$(elem).css({
-		'animation-name': $(el).data('animation-name') ? $(el).data('animation-name') + ", fadeIn" : 'slideInUp, fadeIn',
-		'animation-delay': $(el).data('animation-delay') || '0s',
-		'animation-duration': $(el).data('animation-duration') || '1s'
-	});
-};
-
-/**
- * @name initViewPortChecker
- *
- * @param className {String}              - default is `viewport-hide-js`
- * @param classNameToAdd {String}         - default is `viewport-show-js animated`
- * @param offsetVal {Number}              - default is 100
- * @param callbackFunctionName {Object}   - default is `scrollAnimation()`
- *
- * @description Detects if an element is in the viewport and adds a class to it
- *
- * You can to add some attribute:
- * - <div data-vp-add-class="random"></div>                       > classToAdd
- * - <div data-vp-remove-class="random"></div>                    > classToRemove
- * - <div data-vp-remove-after-animation="true|false"></div>      > Removes added classes after CSS3 animation has completed
- * - <div data-vp-offset="[100 OR 10%]"></div>                    > offset
- * - <div data-vp-repeat="true"></div>                            > repeat
- * - <div data-vp-scrollHorizontal="false"></div>                 > scrollHorizontal
- */
-var initViewPortChecker = function initViewPortChecker() {
-	var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "viewport-hide-js";
-	var classNameToAdd = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "viewport-show-js animated";
-	var offsetVal = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 100;
-	var callbackFunctionName = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : scrollAnimation;
-
-
-	$("." + className).not(".full-visible").each(function (idx, el) {
-
-		$(el).viewportChecker({
-			classToAdd: classNameToAdd,
-			classToAddForFullView: 'full-visible',
-			classToRemove: className,
-			removeClassAfterAnimation: true,
-			offset: offsetVal,
-			repeat: false,
-			callbackFunction: function callbackFunction(elem, action) {
-
-				callbackFunctionName(elem, el);
-			}
-		});
-	});
-};
-
-var initViewPortCountToChecker = function initViewPortCountToChecker() {
-	var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "viewport-countTo-js";
-	var classNameToAdd = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-	var offsetVal = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 300;
-
-
-	$("." + className).not(".full-visible").each(function (idx, el) {
-
-		$(el).viewportChecker({
-			classToAdd: classNameToAdd,
-			classToAddForFullView: 'full-visible',
-			classToRemove: className,
-			removeClassAfterAnimation: true,
-			offset: offsetVal,
-			repeat: false,
-			callbackFunction: function callbackFunction(elem, action) {
-
-				$('.number__box-count span').countTo({
-					speed: 1500,
-					refreshInterval: 30
-				});
-			}
-		});
-	});
-};
 
 /**
  * @description Window on load.
@@ -205,7 +121,7 @@ var tlMain = new TimelineMax({ paused: true }),
  * CALLBACK :: start
  * ============================================= */
 	var illustrationAnimation = function illustrationAnimation() {
-		$('#main-illustration-svg, ' + '#platform-illustration-1-svg, ' + '#platform-illustration-2-svg, ' + '#platform-illustration-3-svg,' + '#platform-illustration-4-svg,' + '#story-illustration-svg').css({ opacity: 1 });
+		$('#main-illustration-svg, ' + '#platform-illustration-1-svg, ' + '#platform-illustration-2-svg, ' + '#platform-illustration-3-svg,' + '#platform-illustration-4-svg,' + '#story-illustration-svg,' + '#story2-illustration-svg').css({ opacity: 1 });
 
 		var mainAnimation = function mainAnimation() {
 			var SVGNode = "\n\t\t\t\t#main__box-line > *, #main__box-graph > *, #main__box-point > *,\n\t\t\t\t#main__box-point > *, #main__sidebar-point > *, #main__sidebar-line > *,\n\t\t\t\t#main__content-line-1 > *, #main__content-line-2 > *, #main__content-line-3 > *\n\t\t\t";
@@ -284,7 +200,6 @@ var tlMain = new TimelineMax({ paused: true }),
 				drawSVG: '0%',
 				transformOrigin: "50% 50%"
 			});
-			tlStory.set("", { drawSVG: '0%', transformOrigin: "50% 50%" });
 			tlStory.set("" + "#story__line-1-1, #story__line-2-1, #story__line-3-1," + "#story__line-4-1, #story__line-5-1", {
 				drawSVG: '0%',
 				transformOrigin: '0 top'
@@ -299,8 +214,21 @@ var tlMain = new TimelineMax({ paused: true }),
 				opacity: 0,
 				transformOrigin: 'center'
 			});
+			tlStory.set("" + "#story__path-1, #story__path-2, " + "#story__path-3, #story__path-4, " + "#story__path-5", {
+				drawSVG: '0%', transformOrigin: "center"
+			});
+			tlStory.set("#story__logo", { rotation: 0, transformOrigin: "center" });
+			tlStory.set("#story__logo-circle", { scale: 0, transformOrigin: "center" });
+			tlStory.set("#story__logo-curve-1", { scaleY: 0, transformOrigin: "left top" });
+			tlStory.set("#story__logo-curve-3", { scaleY: 0, transformOrigin: "left bottom" });
+			tlStory.set("#story__logo-curve-2", { scaleX: 0, transformOrigin: "center" });
+			tlStory.set("#story__block-1, #story__block-2, #story__block-3, #story__block-4, #story__block-5", { opacity: 0 });
+			tlStory.set("" + "#story__block-1-line > *, #story__block-2-line > *, " + "#story__block-3-line > *, #story__block-4-line > *, #story__block-5-line > *", {
+				scaleX: 0, transformOrigin: "left center"
+			});
+			tlStory.set("#story__block-2-graph > *, #story__block-5-graph > *", { scaleY: 0, transformOrigin: "0 bottom" });
 
-			tlStory.to($(SVGNode), 0, { opacity: 1, ease: Power0.none }).to($('#story__circle-stroke-1'), 0.45, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-1'), 0.5, { opacity: 1, ease: Power1.easeInOut }, '-=0.3').to($('#story__line-1-1'), 0.45, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to($('#story__additional-line-1'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to($('#story__line-1-2'), 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to($('#story__circle-stroke-2'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-2'), 0.5, { opacity: 1, ease: Power1.easeInOut }, '-=0.3').to($('#story__line-2-1'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to($('#story__additional-line-2'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to($('#story__line-2-2'), 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to($('#story__circle-stroke-3'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-3'), 0.5, { opacity: 1, ease: Power1.easeInOut }).to($('#story__line-3-1'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to($('#story__additional-line-3'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to($('#story__line-3-2'), 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to($('#story__circle-stroke-4'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-4'), 0.5, { opacity: 1, ease: Power1.easeInOut }).to($('#story__line-4-1'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to($('#story__additional-line-4'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to($('#story__line-4-2'), 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to($('#story__circle-stroke-5'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-5'), 0.5, { opacity: 1, ease: Power1.easeInOut }).to($('#story__line-5-1'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to($('#story__additional-line-5'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to($('#story__line-5-2'), 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to($('#story__circle-stroke-6'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-6'), 0.5, { opacity: 1, ease: Power1.easeInOut });
+			tlStory.to($(SVGNode), 0, { opacity: 1, ease: Power0.none }).to('#story__circle-stroke-1', 0.45, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to('#story__icon-1', 0.5, { opacity: 1, ease: Power1.easeInOut }, '-=0.3').to('#story__line-1-1', 0.45, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to('#story__additional-line-1', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to('#story__line-1-2', 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to('#story__circle-stroke-2', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to('#story__icon-2', 0.5, { opacity: 1, ease: Power1.easeInOut }, '-=0.3').to('#story__line-2-1', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to('#story__additional-line-2', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to('#story__line-2-2', 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to('#story__circle-stroke-3', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to('#story__icon-3', 0.5, { opacity: 1, ease: Power1.easeInOut }).to('#story__line-3-1', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to('#story__additional-line-3', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to('#story__line-3-2', 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to('#story__circle-stroke-4', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to('#story__icon-4', 0.5, { opacity: 1, ease: Power1.easeInOut }).to('#story__line-4-1', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to('#story__additional-line-4', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to('#story__line-4-2', 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to('#story__circle-stroke-5', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to('#story__icon-5', 0.5, { opacity: 1, ease: Power1.easeInOut }).to('#story__line-5-1', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to('#story__additional-line-5', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to('#story__line-5-2', 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to('#story__circle-stroke-6', 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to('#story__icon-6', 0.5, { opacity: 1, ease: Power1.easeInOut }).to('#story__icon-6', 0.5, { opacity: 1, ease: Power1.easeInOut }, '-=0.15').to('#story-illustration-svg', 0.75, { opacity: 0, ease: Elastic.easeInOut.config(1, 1) }, '-=0.75').to('#story__logo-circle', 1, { scale: 1, ease: Elastic.easeInOut.config(1.2, 0.5) }, '-=0.25').to('#story__logo-curve-1, #story__logo-curve-3', 0.75, { scaleY: 1, ease: Power1.easeInOut }).to('#story__logo-curve-2', 0.75, { scaleX: 1, ease: Power1.easeInOut }, '-=0.75').to('#story__logo', 1.2, { rotation: '360deg', ease: Power1.easeInOut }, '-=1').staggerTo('#story__path > *', 1, { drawSVG: '0 100%', ease: Power1.easeInOut }, '-=0.25').to('#story__block-1, #story__block-2, #story__block-3, #story__block-4, #story__block-5', 1, { opacity: 1, ease: Power1.easeInOut }).staggerTo('#story__block-1-line > *, #story__block-2-line > *, #story__block-3-line > *, #story__block-4-line > *, #story__block-5-line > *', 0.55, { scaleX: 1, ease: Power1.easeInOut }, 0.1, '-=0.75').staggerTo('#story__block-2-graph > *, #story__block-5-graph > *', 0.55, { scaleY: 1, ease: Power1.easeInOut }, 0.1, '-=0.95');
 		};
 
 		var viewportCheckedAnimation = function viewportCheckedAnimation() {
@@ -434,7 +362,6 @@ var tlMain = new TimelineMax({ paused: true }),
 		// lib
 		initHamburger();
 		initSmoothScroll();
-		initViewPortCountToChecker();
 		// ==========================================
 
 		// callback

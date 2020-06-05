@@ -2379,13 +2379,18 @@ picture {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-/* line 18, src/scss/_components/homepage/_story.scss */
+/* line 19, src/scss/_components/homepage/_story.scss */
 .story svg {
   opacity: 0;
   position: relative;
@@ -2396,7 +2401,20 @@ picture {
   margin-right: auto;
 }
 
-/* line 27, src/scss/_components/homepage/_story.scss */
+/* line 28, src/scss/_components/homepage/_story.scss */
+.story svg#story-illustration-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 40, src/scss/_components/homepage/_story.scss */
 .story svg #story__part-1 circle, .story svg #story__part-1 path, .story svg #story__part-1 line,
 .story svg #story__part-2 circle, .story svg #story__part-2 path, .story svg #story__part-2 line,
 .story svg #story__part-3 circle, .story svg #story__part-3 path, .story svg #story__part-3 line,

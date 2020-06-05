@@ -19,7 +19,8 @@ const tlMain = new TimelineMax({paused: true}),
 			'#platform-illustration-2-svg, ' +
 			'#platform-illustration-3-svg,' +
 			'#platform-illustration-4-svg,' +
-			'#story-illustration-svg').css({opacity: 1});
+			'#story-illustration-svg,' +
+			'#story2-illustration-svg').css({opacity: 1});
 
 		const mainAnimation = () => {
 			const SVGNode = `
@@ -175,7 +176,6 @@ const tlMain = new TimelineMax({paused: true}),
 				drawSVG:'0%',
 				transformOrigin: "50% 50%"
 			});
-			tlStory.set("", { drawSVG:'0%', transformOrigin: "50% 50%" });
 			tlStory.set("" +
 				"#story__line-1-1, #story__line-2-1, #story__line-3-1," +
 				"#story__line-4-1, #story__line-5-1", {
@@ -197,36 +197,65 @@ const tlMain = new TimelineMax({paused: true}),
 				opacity: 0,
 				transformOrigin: 'center'
 			});
+			tlStory.set("" +
+				"#story__path-1, #story__path-2, " +
+				"#story__path-3, #story__path-4, " +
+				"#story__path-5", {
+				drawSVG:'0%', transformOrigin: "center"
+			});
+			tlStory.set("#story__logo", {rotation: 0, transformOrigin: "center"});
+			tlStory.set("#story__logo-circle", {scale: 0, transformOrigin: "center"});
+			tlStory.set("#story__logo-curve-1", {scaleY: 0, transformOrigin: "left top"});
+			tlStory.set("#story__logo-curve-3", {scaleY: 0, transformOrigin: "left bottom"});
+			tlStory.set("#story__logo-curve-2", { scaleX: 0, transformOrigin: "center"});
+			tlStory.set("#story__block-1, #story__block-2, #story__block-3, #story__block-4, #story__block-5", { opacity: 0 });
+			tlStory.set("" +
+				"#story__block-1-line > *, #story__block-2-line > *, " +
+				"#story__block-3-line > *, #story__block-4-line > *, #story__block-5-line > *", {
+				scaleX: 0, transformOrigin: "left center"
+			});
+			tlStory.set("#story__block-2-graph > *, #story__block-5-graph > *", { scaleY: 0, transformOrigin: "0 bottom" });
+
 
 			tlStory
 				.to($(SVGNode), 0, {opacity: 1, ease: Power0.none})
-				.to($('#story__circle-stroke-1'), 0.45, {drawSVG:'0% 100%', ease:Power1.easeInOut})
-				.to($('#story__icon-1'), 0.5, {opacity: 1, ease:Power1.easeInOut}, '-=0.3')
-				.to($('#story__line-1-1'), 0.45, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
-				.to($('#story__additional-line-1'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
-				.to($('#story__line-1-2'), 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
-				.to($('#story__circle-stroke-2'), 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
-				.to($('#story__icon-2'), 0.5, {opacity: 1, ease:Power1.easeInOut}, '-=0.3')
-				.to($('#story__line-2-1'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
-				.to($('#story__additional-line-2'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
-				.to($('#story__line-2-2'), 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
-				.to($('#story__circle-stroke-3'), 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
-				.to($('#story__icon-3'), 0.5, {opacity: 1, ease:Power1.easeInOut})
-				.to($('#story__line-3-1'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
-				.to($('#story__additional-line-3'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
-				.to($('#story__line-3-2'), 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
-				.to($('#story__circle-stroke-4'), 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
-				.to($('#story__icon-4'), 0.5, {opacity: 1, ease:Power1.easeInOut})
-				.to($('#story__line-4-1'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
-				.to($('#story__additional-line-4'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
-				.to($('#story__line-4-2'), 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
-				.to($('#story__circle-stroke-5'), 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
-				.to($('#story__icon-5'), 0.5, {opacity: 1, ease:Power1.easeInOut})
-				.to($('#story__line-5-1'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
-				.to($('#story__additional-line-5'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
-				.to($('#story__line-5-2'), 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
-				.to($('#story__circle-stroke-6'), 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
-				.to($('#story__icon-6'), 0.5, {opacity: 1, ease:Power1.easeInOut})
+				.to('#story__circle-stroke-1', 0.45, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to('#story__icon-1', 0.5, {opacity: 1, ease:Power1.easeInOut}, '-=0.3')
+				.to('#story__line-1-1', 0.45, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
+				.to('#story__additional-line-1', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
+				.to('#story__line-1-2', 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
+				.to('#story__circle-stroke-2', 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to('#story__icon-2', 0.5, {opacity: 1, ease:Power1.easeInOut}, '-=0.3')
+				.to('#story__line-2-1', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
+				.to('#story__additional-line-2', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
+				.to('#story__line-2-2', 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
+				.to('#story__circle-stroke-3', 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to('#story__icon-3', 0.5, {opacity: 1, ease:Power1.easeInOut})
+				.to('#story__line-3-1', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
+				.to('#story__additional-line-3', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
+				.to('#story__line-3-2', 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
+				.to('#story__circle-stroke-4', 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to('#story__icon-4', 0.5, {opacity: 1, ease:Power1.easeInOut})
+				.to('#story__line-4-1', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
+				.to('#story__additional-line-4', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
+				.to('#story__line-4-2', 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
+				.to('#story__circle-stroke-5', 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to('#story__icon-5', 0.5, {opacity: 1, ease:Power1.easeInOut})
+				.to('#story__line-5-1', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
+				.to('#story__additional-line-5', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
+				.to('#story__line-5-2', 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
+				.to('#story__circle-stroke-6', 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to('#story__icon-6', 0.5, {opacity: 1, ease:Power1.easeInOut})
+				.to('#story__icon-6', 0.5, {opacity: 1, ease:Power1.easeInOut}, '-=0.15')
+				.to('#story-illustration-svg', 0.75, {opacity: 0, ease: Elastic.easeInOut.config(1, 1)}, '-=0.75')
+				.to('#story__logo-circle', 1, {scale: 1, ease: Elastic.easeInOut.config(1.2, 0.5)}, '-=0.25')
+				.to('#story__logo-curve-1, #story__logo-curve-3', 0.75, {scaleY: 1, ease:Power1.easeInOut})
+				.to('#story__logo-curve-2', 0.75, {scaleX: 1, ease:Power1.easeInOut}, '-=0.75')
+				.to('#story__logo', 1.2, {rotation: '360deg', ease:Power1.easeInOut}, '-=1')
+				.staggerTo('#story__path > *', 1, {drawSVG:'0 100%', ease:Power1.easeInOut}, '-=0.25')
+				.to('#story__block-1, #story__block-2, #story__block-3, #story__block-4, #story__block-5', 1, {opacity: 1, ease:Power1.easeInOut})
+				.staggerTo('#story__block-1-line > *, #story__block-2-line > *, #story__block-3-line > *, #story__block-4-line > *, #story__block-5-line > *', 0.55, {scaleX: 1, ease:Power1.easeInOut}, 0.1, '-=0.75')
+				.staggerTo('#story__block-2-graph > *, #story__block-5-graph > *', 0.55, {scaleY: 1, ease:Power1.easeInOut}, 0.1, '-=0.95')
 			;
 		};
 
@@ -343,7 +372,6 @@ const tlMain = new TimelineMax({paused: true}),
 		// lib
 		initHamburger();
 		initSmoothScroll();
-		initViewPortCountToChecker();
 		// ==========================================
 
 		// callback

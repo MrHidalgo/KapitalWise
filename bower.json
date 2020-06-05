@@ -31,7 +31,6 @@
   "dependencies": {
     "normalize-css": "^8.0.0",
     "reset-css": "^4.0.1",
-    "jquery": "^3.5.1",
-    "jQuery-viewport-checker": "^1.8.8"
+    "jquery": "^3.5.1"
   }
 }

@@ -269,6 +269,7 @@ const tlMain = new TimelineMax({paused: true}),
 
 		// lib
 		initHamburger();
+		initSmoothScroll();
 		// ==========================================
 
 		// callback

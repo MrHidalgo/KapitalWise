@@ -10881,6 +10881,137 @@ return jQuery;
 
 !function(a){a.fn.viewportChecker=function(b){var c={classToAdd:"visible",classToRemove:"invisible",classToAddForFullView:"full-visible",removeClassAfterAnimation:!1,offset:100,repeat:!1,invertBottomOffset:!0,callbackFunction:function(a,b){},scrollHorizontal:!1,scrollBox:window};a.extend(c,b);var d=this,e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()};return this.checkElements=function(){var b,f;c.scrollHorizontal?(b=Math.max(a("html").scrollLeft(),a("body").scrollLeft(),a(window).scrollLeft()),f=b+e.width):(b=Math.max(a("html").scrollTop(),a("body").scrollTop(),a(window).scrollTop()),f=b+e.height),d.each(function(){var d=a(this),g={},h={};if(d.data("vp-add-class")&&(h.classToAdd=d.data("vp-add-class")),d.data("vp-remove-class")&&(h.classToRemove=d.data("vp-remove-class")),d.data("vp-add-class-full-view")&&(h.classToAddForFullView=d.data("vp-add-class-full-view")),d.data("vp-keep-add-class")&&(h.removeClassAfterAnimation=d.data("vp-remove-after-animation")),d.data("vp-offset")&&(h.offset=d.data("vp-offset")),d.data("vp-repeat")&&(h.repeat=d.data("vp-repeat")),d.data("vp-scrollHorizontal")&&(h.scrollHorizontal=d.data("vp-scrollHorizontal")),d.data("vp-invertBottomOffset")&&(h.scrollHorizontal=d.data("vp-invertBottomOffset")),a.extend(g,c),a.extend(g,h),!d.data("vp-animated")||g.repeat){String(g.offset).indexOf("%")>0&&(g.offset=parseInt(g.offset)/100*e.height);var i=g.scrollHorizontal?d.offset().left:d.offset().top,j=g.scrollHorizontal?i+d.width():i+d.height(),k=Math.round(i)+g.offset,l=g.scrollHorizontal?k+d.width():k+d.height();g.invertBottomOffset&&(l-=2*g.offset),k<f&&l>b?(d.removeClass(g.classToRemove),d.addClass(g.classToAdd),g.callbackFunction(d,"add"),j<=f&&i>=b?d.addClass(g.classToAddForFullView):d.removeClass(g.classToAddForFullView),d.data("vp-animated",!0),g.removeClassAfterAnimation&&d.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){d.removeClass(g.classToAdd)})):d.hasClass(g.classToAdd)&&g.repeat&&(d.removeClass(g.classToAdd+" "+g.classToAddForFullView),g.callbackFunction(d,"remove"),d.data("vp-animated",!1))}})},("ontouchstart"in window||"onmsgesturechange"in window)&&a(document).bind("touchmove MSPointerMove pointermove",this.checkElements),a(c.scrollBox).bind("load scroll",this.checkElements),a(window).resize(function(b){e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()},d.checkElements()}),this.checkElements(),this}}(jQuery);
 //# sourceMappingURL=jquery.viewportchecker.min.js.map
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // CommonJS
+        factory(require('jquery'));
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
+  var CountTo = function (element, options) {
+    this.$element = $(element);
+    this.options  = $.extend({}, CountTo.DEFAULTS, this.dataOptions(), options);
+    this.init();
+  };
+
+  CountTo.DEFAULTS = {
+    from: 0,               // the number the element should start at
+    to: 0,                 // the number the element should end at
+    speed: 1000,           // how long it should take to count between the target numbers
+    refreshInterval: 100,  // how often the element should be updated
+    decimals: 0,           // the number of decimal places to show
+    formatter: formatter,  // handler for formatting the value before rendering
+    onUpdate: null,        // callback method for every time the element is updated
+    onComplete: null       // callback method for when the element finishes updating
+  };
+
+  CountTo.prototype.init = function () {
+    this.value     = this.options.from;
+    this.loops     = Math.ceil(this.options.speed / this.options.refreshInterval);
+    this.loopCount = 0;
+    this.increment = (this.options.to - this.options.from) / this.loops;
+  };
+
+  CountTo.prototype.dataOptions = function () {
+    var options = {
+      from:            this.$element.data('from'),
+      to:              this.$element.data('to'),
+      speed:           this.$element.data('speed'),
+      refreshInterval: this.$element.data('refresh-interval'),
+      decimals:        this.$element.data('decimals')
+    };
+
+    var keys = Object.keys(options);
+
+    for (var i in keys) {
+      var key = keys[i];
+
+      if (typeof(options[key]) === 'undefined') {
+        delete options[key];
+      }
+    }
+
+    return options;
+  };
+
+  CountTo.prototype.update = function () {
+    this.value += this.increment;
+    this.loopCount++;
+
+    this.render();
+
+    if (typeof(this.options.onUpdate) == 'function') {
+      this.options.onUpdate.call(this.$element, this.value);
+    }
+
+    if (this.loopCount >= this.loops) {
+      clearInterval(this.interval);
+      this.value = this.options.to;
+
+      if (typeof(this.options.onComplete) == 'function') {
+        this.options.onComplete.call(this.$element, this.value);
+      }
+    }
+  };
+
+  CountTo.prototype.render = function () {
+    var formattedValue = this.options.formatter.call(this.$element, this.value, this.options);
+    this.$element.text(formattedValue);
+  };
+
+  CountTo.prototype.restart = function () {
+    this.stop();
+    this.init();
+    this.start();
+  };
+
+  CountTo.prototype.start = function () {
+    this.stop();
+    this.render();
+    this.interval = setInterval(this.update.bind(this), this.options.refreshInterval);
+  };
+
+  CountTo.prototype.stop = function () {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  };
+
+  CountTo.prototype.toggle = function () {
+    if (this.interval) {
+      this.stop();
+    } else {
+      this.start();
+    }
+  };
+
+  function formatter(value, options) {
+    return value.toFixed(options.decimals);
+  }
+
+  $.fn.countTo = function (option) {
+    return this.each(function () {
+      var $this   = $(this);
+      var data    = $this.data('countTo');
+      var init    = !data || typeof(option) === 'object';
+      var options = typeof(option) === 'object' ? option : {};
+      var method  = typeof(option) === 'string' ? option : 'start';
+
+      if (init) {
+        if (data) data.stop();
+        $this.data('countTo', data = new CountTo(this, options));
+      }
+
+      data[method].call(data);
+    });
+  };
+}));
+
 /*!
  * VERSION: 2.0.1
  * DATE: 2018-05-30

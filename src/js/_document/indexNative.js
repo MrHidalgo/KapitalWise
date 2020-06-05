@@ -270,6 +270,7 @@ const tlMain = new TimelineMax({paused: true}),
 		// lib
 		initHamburger();
 		initSmoothScroll();
+		initViewPortCountToChecker();
 		// ==========================================
 
 		// callback

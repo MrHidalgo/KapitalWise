@@ -144,42 +144,6 @@ var initViewPortChecker = function initViewPortChecker() {
 	});
 };
 
-var initViewPortPlatformBlockChecker = function initViewPortPlatformBlockChecker() {
-	var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "viewport-platform-js";
-	var classNameToAdd = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "is-active";
-	var offsetVal = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 300;
-
-
-	$("." + className).not(".full-visible").each(function (idx, el) {
-
-		$(el).viewportChecker({
-			classToAdd: classNameToAdd,
-			classToAddForFullView: 'full-visible',
-			classToRemove: className,
-			removeClassAfterAnimation: true,
-			offset: offsetVal,
-			repeat: true,
-			callbackFunction: function callbackFunction(elem, action) {
-				if (action === 'add') {
-					// const parentNode = $(elem).closest('.platform__box-wrapper'),
-					// 	currentBlockElem = parentNode.find('.platform__box.is-active'),
-					// 	activeCount = $('.platform__box.is-active').length;
-					//
-					// if(activeCount > 1) {
-					// 	for (let i = 0; i < currentBlockElem.length - 1; i++) {
-					// 		$(currentBlockElem[i]).removeClass('is-active');
-					// 	}
-					// }
-
-					$(elem).addClass('is-active');
-				}
-
-				if (action === 'remove') $(elem).removeClass('is-active');
-			}
-		});
-	});
-};
-
 var initViewPortCountToChecker = function initViewPortCountToChecker() {
 	var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "viewport-countTo-js";
 	var classNameToAdd = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
@@ -233,14 +197,15 @@ var tlMain = new TimelineMax({ paused: true }),
     tlPlatform1 = new TimelineMax({ paused: true }),
     tlPlatform2 = new TimelineMax({ paused: true }),
     tlPlatform3 = new TimelineMax({ paused: true }),
-    tlPlatform4 = new TimelineMax({ paused: true });
+    tlPlatform4 = new TimelineMax({ paused: true }),
+    tlStory = new TimelineMax({ paused: true });
 
 (function () {
 	/*
  * CALLBACK :: start
  * ============================================= */
 	var illustrationAnimation = function illustrationAnimation() {
-		$('#main-illustration-svg, ' + '#platform-illustration-1-svg, ' + '#platform-illustration-2-svg, ' + '#platform-illustration-3-svg,' + '#platform-illustration-4-svg').css({ opacity: 1 });
+		$('#main-illustration-svg, ' + '#platform-illustration-1-svg, ' + '#platform-illustration-2-svg, ' + '#platform-illustration-3-svg,' + '#platform-illustration-4-svg,' + '#story-illustration-svg').css({ opacity: 1 });
 
 		var mainAnimation = function mainAnimation() {
 			var SVGNode = "\n\t\t\t\t#main__box-line > *, #main__box-graph > *, #main__box-point > *,\n\t\t\t\t#main__box-point > *, #main__sidebar-point > *, #main__sidebar-line > *,\n\t\t\t\t#main__content-line-1 > *, #main__content-line-2 > *, #main__content-line-3 > *\n\t\t\t";
@@ -312,6 +277,32 @@ var tlMain = new TimelineMax({ paused: true }),
 			tlPlatform4.to($(SVGNode), 0, { opacity: 1, ease: Power0.none }).staggerTo($('#platform-4__sidebar-point > *'), 0.8, { scale: 1, ease: Power2.easeInOut }, 0.1).staggerTo($('#platform-4__sidebar-line > *'), 0.8, { scaleX: 1, ease: Power2.easeInOut }, 0.075, '-=0.95').staggerTo($('#platform-4__details-point > *'), 0.8, { scale: 1, ease: Power2.easeInOut }, 0.1, '-=1').staggerTo($('#platform-4__details-line > *'), 0.8, { scaleX: 1, ease: Power2.easeInOut }, 0.075, '-=1').staggerTo($('#platform-4__graph-line > *'), 0.75, { scaleY: 1, ease: Power2.easeInOut }, 0.075, '-=1').to($('#platform-4__box-1'), 1, { opacity: 1, ease: Power2.easeInOut }, '-=1').to($('#platform-4__box-2'), 1, { opacity: 1, ease: Power2.easeInOut }, '-=0.55');
 		};
 
+		var storyAnimation = function storyAnimation() {
+			var SVGNode = "\n\t\t\t\t#story__part-1 circle, #story__part-1 line,\n\t\t\t\t#story__part-2 circle, #story__part-2 line,\n\t\t\t\t#story__part-3 circle, #story__part-3 line,\n\t\t\t\t#story__part-4 circle, #story__part-4 line,\n\t\t\t\t#story__part-5 circle, #story__part-5 line,\n\t\t\t\t#story__part-6 circle\n\t\t\t";
+
+			tlStory.set("" + "#story__circle-stroke-1, #story__circle-stroke-2, #story__circle-stroke-3, " + "#story__circle-stroke-4, #story__circle-stroke-5, #story__circle-stroke-5, " + "#story__circle-stroke-6", {
+				drawSVG: '0%',
+				transformOrigin: "50% 50%"
+			});
+			tlStory.set("", { drawSVG: '0%', transformOrigin: "50% 50%" });
+			tlStory.set("" + "#story__line-1-1, #story__line-2-1, #story__line-3-1," + "#story__line-4-1, #story__line-5-1", {
+				drawSVG: '0%',
+				transformOrigin: '0 top'
+			});
+			tlStory.set("" + "#story__additional-line-1, #story__additional-line-2, #story__additional-line-3," + "#story__additional-line-4, #story__additional-line-5, #story__additional-line-5," + "#story__additional-line-6", {
+				drawSVG: '0%',
+				transformOrigin: 'left 0'
+			});
+			tlStory.set("#story__line-1-2, #story__line-3-2, #story__line-5-2", { scaleY: 0, transformOrigin: '0 top' });
+			tlStory.set("#story__line-2-2, #story__line-4-2", { scaleY: 0, transformOrigin: '0 bottom' });
+			tlStory.set("" + "#story__icon-1, #story__icon-2, #story__icon-3, " + "#story__icon-4, #story__icon-5, #story__icon-6", {
+				opacity: 0,
+				transformOrigin: 'center'
+			});
+
+			tlStory.to($(SVGNode), 0, { opacity: 1, ease: Power0.none }).to($('#story__circle-stroke-1'), 0.45, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-1'), 0.5, { opacity: 1, ease: Power1.easeInOut }, '-=0.3').to($('#story__line-1-1'), 0.45, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to($('#story__additional-line-1'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to($('#story__line-1-2'), 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to($('#story__circle-stroke-2'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-2'), 0.5, { opacity: 1, ease: Power1.easeInOut }, '-=0.3').to($('#story__line-2-1'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to($('#story__additional-line-2'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to($('#story__line-2-2'), 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to($('#story__circle-stroke-3'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-3'), 0.5, { opacity: 1, ease: Power1.easeInOut }).to($('#story__line-3-1'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to($('#story__additional-line-3'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to($('#story__line-3-2'), 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to($('#story__circle-stroke-4'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-4'), 0.5, { opacity: 1, ease: Power1.easeInOut }).to($('#story__line-4-1'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to($('#story__additional-line-4'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to($('#story__line-4-2'), 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to($('#story__circle-stroke-5'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-5'), 0.5, { opacity: 1, ease: Power1.easeInOut }).to($('#story__line-5-1'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.15').to($('#story__additional-line-5'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }, '-=0.45').to($('#story__line-5-2'), 0.5, { scaleY: 1, ease: Power1.easeInOut }, '-=0.15').to($('#story__circle-stroke-6'), 0.5, { drawSVG: '0% 100%', ease: Power1.easeInOut }).to($('#story__icon-6'), 0.5, { opacity: 1, ease: Power1.easeInOut });
+		};
+
 		var viewportCheckedAnimation = function viewportCheckedAnimation() {
 			$.fn.isInViewport = function () {
 				var elementTop = $(this).offset().top;
@@ -323,7 +314,7 @@ var tlMain = new TimelineMax({ paused: true }),
 				return elementBottom > viewportTop && elementTop < viewportBottom;
 			};
 
-			var svgObj = ['#main-illustration-svg', '#platform-illustration-1-svg', '#platform-illustration-2-svg', '#platform-illustration-3-svg', '#platform-illustration-4-svg'];
+			var svgObj = ['#main-illustration-svg', '#platform-illustration-1-svg', '#platform-illustration-2-svg', '#platform-illustration-3-svg', '#platform-illustration-4-svg', '#story-illustration-svg'];
 
 			for (var i = 0; i < svgObj.length; i++) {
 				if ($(svgObj[i]).isInViewport()) {
@@ -349,6 +340,7 @@ var tlMain = new TimelineMax({ paused: true }),
 		platform2Animation();
 		platform3Animation();
 		platform4Animation();
+		storyAnimation();
 		viewportCheckedAnimation();
 	};
 
@@ -443,7 +435,6 @@ var tlMain = new TimelineMax({ paused: true }),
 		initHamburger();
 		initSmoothScroll();
 		initViewPortCountToChecker();
-		// initViewPortPlatformBlockChecker();
 		// ==========================================
 
 		// callback

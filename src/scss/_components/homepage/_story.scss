@@ -8,6 +8,31 @@
 		padding-bottom: 145px;
 		text-align: center;
 	}
+
+	&__wrapper {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+
+	svg {
+		opacity: 0;
+		position: relative;
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+
+		#story__part-1 circle, #story__part-1 path, #story__part-1 line,
+		#story__part-2 circle, #story__part-2 path, #story__part-2 line,
+		#story__part-3 circle, #story__part-3 path, #story__part-3 line,
+		#story__part-4 circle, #story__part-4 path, #story__part-4 line,
+		#story__part-5 circle, #story__part-5 path, #story__part-5 line,
+		#story__part-6 circle, #story__part-6 path {
+			opacity: 0;
+		}
+	}
 }
 
 // SECTION :: END

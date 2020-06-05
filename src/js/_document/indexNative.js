@@ -6,7 +6,8 @@ const tlMain = new TimelineMax({paused: true}),
 	tlPlatform1 = new TimelineMax({paused: true}),
 	tlPlatform2 = new TimelineMax({paused: true}),
 	tlPlatform3 = new TimelineMax({paused: true}),
-	tlPlatform4 = new TimelineMax({paused: true});
+	tlPlatform4 = new TimelineMax({paused: true}),
+	tlStory = new TimelineMax({paused: true});
 
 (function () {
 	/*
@@ -17,7 +18,8 @@ const tlMain = new TimelineMax({paused: true}),
 			'#platform-illustration-1-svg, ' +
 			'#platform-illustration-2-svg, ' +
 			'#platform-illustration-3-svg,' +
-			'#platform-illustration-4-svg').css({opacity: 1});
+			'#platform-illustration-4-svg,' +
+			'#story-illustration-svg').css({opacity: 1});
 
 		const mainAnimation = () => {
 			const SVGNode = `
@@ -156,6 +158,78 @@ const tlMain = new TimelineMax({paused: true}),
 				.to($('#platform-4__box-2'), 1, {opacity: 1, ease: Power2.easeInOut}, '-=0.55');
 		};
 
+		const storyAnimation = () => {
+			const SVGNode = `
+				#story__part-1 circle, #story__part-1 line,
+				#story__part-2 circle, #story__part-2 line,
+				#story__part-3 circle, #story__part-3 line,
+				#story__part-4 circle, #story__part-4 line,
+				#story__part-5 circle, #story__part-5 line,
+				#story__part-6 circle
+			`;
+
+			tlStory.set("" +
+				"#story__circle-stroke-1, #story__circle-stroke-2, #story__circle-stroke-3, " +
+				"#story__circle-stroke-4, #story__circle-stroke-5, #story__circle-stroke-5, " +
+				"#story__circle-stroke-6", {
+				drawSVG:'0%',
+				transformOrigin: "50% 50%"
+			});
+			tlStory.set("", { drawSVG:'0%', transformOrigin: "50% 50%" });
+			tlStory.set("" +
+				"#story__line-1-1, #story__line-2-1, #story__line-3-1," +
+				"#story__line-4-1, #story__line-5-1", {
+				drawSVG: '0%',
+				transformOrigin: '0 top'
+			});
+			tlStory.set("" +
+				"#story__additional-line-1, #story__additional-line-2, #story__additional-line-3," +
+				"#story__additional-line-4, #story__additional-line-5, #story__additional-line-5," +
+				"#story__additional-line-6", {
+				drawSVG: '0%',
+				transformOrigin: 'left 0'
+			});
+			tlStory.set("#story__line-1-2, #story__line-3-2, #story__line-5-2", { scaleY: 0, transformOrigin: '0 top' });
+			tlStory.set("#story__line-2-2, #story__line-4-2", { scaleY: 0, transformOrigin: '0 bottom' });
+			tlStory.set("" +
+				"#story__icon-1, #story__icon-2, #story__icon-3, " +
+				"#story__icon-4, #story__icon-5, #story__icon-6", {
+				opacity: 0,
+				transformOrigin: 'center'
+			});
+
+			tlStory
+				.to($(SVGNode), 0, {opacity: 1, ease: Power0.none})
+				.to($('#story__circle-stroke-1'), 0.45, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to($('#story__icon-1'), 0.5, {opacity: 1, ease:Power1.easeInOut}, '-=0.3')
+				.to($('#story__line-1-1'), 0.45, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
+				.to($('#story__additional-line-1'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
+				.to($('#story__line-1-2'), 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
+				.to($('#story__circle-stroke-2'), 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to($('#story__icon-2'), 0.5, {opacity: 1, ease:Power1.easeInOut}, '-=0.3')
+				.to($('#story__line-2-1'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
+				.to($('#story__additional-line-2'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
+				.to($('#story__line-2-2'), 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
+				.to($('#story__circle-stroke-3'), 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to($('#story__icon-3'), 0.5, {opacity: 1, ease:Power1.easeInOut})
+				.to($('#story__line-3-1'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
+				.to($('#story__additional-line-3'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
+				.to($('#story__line-3-2'), 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
+				.to($('#story__circle-stroke-4'), 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to($('#story__icon-4'), 0.5, {opacity: 1, ease:Power1.easeInOut})
+				.to($('#story__line-4-1'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
+				.to($('#story__additional-line-4'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
+				.to($('#story__line-4-2'), 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
+				.to($('#story__circle-stroke-5'), 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to($('#story__icon-5'), 0.5, {opacity: 1, ease:Power1.easeInOut})
+				.to($('#story__line-5-1'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
+				.to($('#story__additional-line-5'), 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
+				.to($('#story__line-5-2'), 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
+				.to($('#story__circle-stroke-6'), 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
+				.to($('#story__icon-6'), 0.5, {opacity: 1, ease:Power1.easeInOut})
+			;
+		};
+
 		const viewportCheckedAnimation = () => {
 			$.fn.isInViewport = function() {
 				var elementTop = $(this).offset().top;
@@ -172,7 +246,8 @@ const tlMain = new TimelineMax({paused: true}),
 				'#platform-illustration-1-svg',
 				'#platform-illustration-2-svg',
 				'#platform-illustration-3-svg',
-				'#platform-illustration-4-svg'
+				'#platform-illustration-4-svg',
+				'#story-illustration-svg'
 			];
 
 			for(let i = 0; i < svgObj.length; i++) {
@@ -199,6 +274,7 @@ const tlMain = new TimelineMax({paused: true}),
 		platform2Animation();
 		platform3Animation();
 		platform4Animation();
+		storyAnimation();
 		viewportCheckedAnimation();
 	};
 
@@ -268,7 +344,6 @@ const tlMain = new TimelineMax({paused: true}),
 		initHamburger();
 		initSmoothScroll();
 		initViewPortCountToChecker();
-		// initViewPortPlatformBlockChecker();
 		// ==========================================
 
 		// callback

@@ -61,43 +61,6 @@ const initViewPortChecker = (
 
 };
 
-const initViewPortPlatformBlockChecker = (
-	className = "viewport-platform-js",
-	classNameToAdd = "is-active",
-	offsetVal = 300,
-) => {
-
-	$("." + className).not(".full-visible").each(function (idx, el) {
-
-		$(el).viewportChecker({
-			classToAdd: classNameToAdd,
-			classToAddForFullView: 'full-visible',
-			classToRemove: className,
-			removeClassAfterAnimation: true,
-			offset: offsetVal,
-			repeat: true,
-			callbackFunction: function (elem, action) {
-				if (action === 'add') {
-					// const parentNode = $(elem).closest('.platform__box-wrapper'),
-					// 	currentBlockElem = parentNode.find('.platform__box.is-active'),
-					// 	activeCount = $('.platform__box.is-active').length;
-					//
-					// if(activeCount > 1) {
-					// 	for (let i = 0; i < currentBlockElem.length - 1; i++) {
-					// 		$(currentBlockElem[i]).removeClass('is-active');
-					// 	}
-					// }
-
-					$(elem).addClass('is-active');
-				}
-
-				if (action === 'remove') $(elem).removeClass('is-active');
-			}
-		});
-
-	});
-
-};
 
 const initViewPortCountToChecker = (
 	className = "viewport-countTo-js",

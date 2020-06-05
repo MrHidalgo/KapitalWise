@@ -3,10 +3,17 @@
 .story {
 	padding-top: 71px;
 	padding-bottom: 127px;
+	@include adaptive(767) {
+		padding-top: 75px;
+		padding-bottom: 75px;
+	}
 
 	&__title {
-		padding-bottom: 145px;
+		padding-bottom: 100px;
 		text-align: center;
+		@include adaptive(767) {
+			padding-bottom: 75px;
+		}
 	}
 
 	&__wrapper {

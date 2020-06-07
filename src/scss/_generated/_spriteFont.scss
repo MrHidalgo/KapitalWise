@@ -33,56 +33,68 @@
 	@if $filename == banking {
 		$char: "\E002";
 	}
-	@if $filename == category {
+	@if $filename == bullseye-solid {
 		$char: "\E003";
 	}
-	@if $filename == customer-needs {
+	@if $filename == category {
 		$char: "\E004";
 	}
-	@if $filename == data-analysis {
+	@if $filename == chart-line-solid {
 		$char: "\E005";
 	}
-	@if $filename == data-security {
+	@if $filename == customer-needs {
 		$char: "\E006";
 	}
-	@if $filename == deep-insights {
+	@if $filename == data-analysis {
 		$char: "\E007";
 	}
-	@if $filename == encryptions {
+	@if $filename == data-security {
 		$char: "\E008";
 	}
-	@if $filename == like {
+	@if $filename == deep-insights {
 		$char: "\E009";
 	}
-	@if $filename == linkedin {
+	@if $filename == encryptions {
 		$char: "\E00A";
 	}
-	@if $filename == loupe {
+	@if $filename == file-medical-alt-solid {
 		$char: "\E00B";
 	}
-	@if $filename == method {
+	@if $filename == like {
 		$char: "\E00C";
 	}
-	@if $filename == ring-chart {
+	@if $filename == linkedin {
 		$char: "\E00D";
 	}
-	@if $filename == saas-dashboards {
+	@if $filename == loupe {
 		$char: "\E00E";
 	}
-	@if $filename == security {
+	@if $filename == method {
 		$char: "\E00F";
 	}
-	@if $filename == star {
+	@if $filename == ring-chart {
 		$char: "\E010";
 	}
-	@if $filename == targeted-marketing {
+	@if $filename == saas-dashboards {
 		$char: "\E011";
 	}
-	@if $filename == twitter {
+	@if $filename == security {
 		$char: "\E012";
 	}
-	@if $filename == virtual-engagement {
+	@if $filename == star {
 		$char: "\E013";
+	}
+	@if $filename == targeted-marketing {
+		$char: "\E014";
+	}
+	@if $filename == twitter {
+		$char: "\E015";
+	}
+	@if $filename == virtual-engagement {
+		$char: "\E016";
+	}
+	@if $filename == zuser-circle-regular {
+		$char: "\E017";
 	}
 
 	@return $char;
@@ -107,8 +119,16 @@
 	@include icon(banking);
 
 }
+.icon-bullseye-solid {
+	@include icon(bullseye-solid);
+
+}
 .icon-category {
 	@include icon(category);
+
+}
+.icon-chart-line-solid {
+	@include icon(chart-line-solid);
 
 }
 .icon-customer-needs {
@@ -129,6 +149,10 @@
 }
 .icon-encryptions {
 	@include icon(encryptions);
+
+}
+.icon-file-medical-alt-solid {
+	@include icon(file-medical-alt-solid);
 
 }
 .icon-like {
@@ -173,5 +197,9 @@
 }
 .icon-virtual-engagement {
 	@include icon(virtual-engagement);
+
+}
+.icon-zuser-circle-regular {
+	@include icon(zuser-circle-regular);
 
 }

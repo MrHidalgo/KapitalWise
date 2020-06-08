@@ -93,8 +93,11 @@
 	@if $filename == virtual-engagement {
 		$char: "\E016";
 	}
-	@if $filename == zuser-circle-regular {
+	@if $filename == zheart-rate {
 		$char: "\E017";
+	}
+	@if $filename == zuser-circle-regular {
+		$char: "\E018";
 	}
 
 	@return $char;
@@ -197,6 +200,10 @@
 }
 .icon-virtual-engagement {
 	@include icon(virtual-engagement);
+
+}
+.icon-zheart-rate {
+	@include icon(zheart-rate);
 
 }
 .icon-zuser-circle-regular {

@@ -177,7 +177,7 @@
 }
 
 /* line 23, src/scss/_generated/_spriteFont.scss */
-.icon-artificial-intellience:before, .icon-banking:before, .icon-bullseye-solid:before, .icon-category:before, .icon-chart-line-solid:before, .icon-customer-needs:before, .icon-data-analysis:before, .icon-data-security:before, .icon-deep-insights:before, .icon-encryptions:before, .icon-file-medical-alt-solid:before, .icon-like:before, .icon-linkedin:before, .icon-loupe:before, .icon-method:before, .icon-ring-chart:before, .icon-saas-dashboards:before, .icon-security:before, .icon-star:before, .icon-targeted-marketing:before, .icon-twitter:before, .icon-virtual-engagement:before, .icon-zuser-circle-regular:before {
+.icon-artificial-intellience:before, .icon-banking:before, .icon-bullseye-solid:before, .icon-category:before, .icon-chart-line-solid:before, .icon-customer-needs:before, .icon-data-analysis:before, .icon-data-security:before, .icon-deep-insights:before, .icon-encryptions:before, .icon-file-medical-alt-solid:before, .icon-like:before, .icon-linkedin:before, .icon-loupe:before, .icon-method:before, .icon-ring-chart:before, .icon-saas-dashboards:before, .icon-security:before, .icon-star:before, .icon-targeted-marketing:before, .icon-twitter:before, .icon-virtual-engagement:before, .icon-zheart-rate:before, .icon-zuser-circle-regular:before {
   font-family: "iconFont", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -188,119 +188,124 @@
   text-transform: none;
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-artificial-intellience:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-banking:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-bullseye-solid:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-category:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-chart-line-solid:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-customer-needs:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-data-analysis:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-data-security:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-deep-insights:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-encryptions:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-file-medical-alt-solid:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-like:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-linkedin:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-loupe:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-method:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-ring-chart:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-saas-dashboards:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-security:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-star:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-targeted-marketing:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-twitter:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
+/* line 107, src/scss/_generated/_spriteFont.scss */
 .icon-virtual-engagement:before {
   content: "";
 }
 
-/* line 104, src/scss/_generated/_spriteFont.scss */
-.icon-zuser-circle-regular:before {
+/* line 107, src/scss/_generated/_spriteFont.scss */
+.icon-zheart-rate:before {
   content: "";
+}
+
+/* line 107, src/scss/_generated/_spriteFont.scss */
+.icon-zuser-circle-regular:before {
+  content: "";
 }
 
 /* line 1, src/scss/_shared/_main-setting-reset.scss */

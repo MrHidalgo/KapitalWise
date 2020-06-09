@@ -7,3 +7,6 @@ PageList:
 - file: demo.html
   titleName: Demo
   ready: 100
+- file: demo-thanks.html
+  titleName: Demo Thank You!
+  ready: 100

@@ -1,0 +1,12 @@
+---
+title: KapitalWise | Demo page
+
+pageClassName: p-demo
+---
+extends shared/_layout
+
+block content
+	div.body.body--start(class!= pageClassName)
+
+		include components/demo/_main
+		include components/demo/_connect

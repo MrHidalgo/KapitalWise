@@ -1,0 +1,163 @@
+// SECTION :: START
+
+.demo-main {
+	z-index: 2;
+	position: relative;
+	padding-top: 143px;
+	padding-bottom: 169px;
+	@include adaptive(1023) {
+		padding-bottom: 125px;
+	}
+	@include adaptive(767) {
+		padding-bottom: 75px;
+	}
+
+	&__bg {
+		z-index: 0;
+		opacity: 0.7;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-bottom-left-radius: 350px;
+		background-color: #fff;
+		@include adaptive(1279) {
+			border-bottom-left-radius: 250px;
+		}
+		@include adaptive(1023) {
+			border-bottom-left-radius: 200px;
+		}
+		@include adaptive(767) {
+			border-bottom-left-radius: 125px;
+		}
+	}
+
+	&__wrapper {
+		z-index: 2;
+		position: relative;
+		display: flex;
+		align-items: center;
+		@include adaptive(767) {
+			flex-wrap: wrap;
+		}
+
+		&-left {
+			width: 45%;
+			padding-left: 58px;
+			@include adaptive(1279) {
+				padding-left: 0;
+				width: auto;
+			}
+			@include adaptive(767) {
+				width: 100%;
+				padding-bottom: 50px;
+			}
+		}
+
+		&-right {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 55%;
+			@include adaptive(1279) {
+				flex: 1;
+				min-width: 1px;
+				max-width: 100%;
+				width: auto;
+				padding-left: 15px;
+			}
+			@include adaptive(767) {
+				padding-left: 0;
+			}
+
+			svg {
+				opacity: 0;
+				display: block;
+				max-width: 100%;
+				height: auto;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
+	&__title {
+		padding-bottom: 10px;
+		@extend %fontPoppins;
+		font-weight: bold;
+		font-size: 36px;
+		letter-spacing: 0.05em;
+		line-height: 42px;
+		color: #153156;
+		@include adaptive(767) {
+			text-align: center;
+		}
+	}
+
+	&__line {
+		width: 50px;
+		height: 11px;
+		margin-bottom: 17px;
+		border-radius: 5px;
+		background-color: #fd5545;
+		@include adaptive(767) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 378px;
+		@include adaptive(767) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&-field {
+			&:not(:last-of-type) {
+				padding-bottom: 19px;
+			}
+
+			&--button {
+				.c-btn__wrapper {
+					width: 100%;
+
+					.c-btn {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		input,
+		textarea {
+			outline: none;
+			position: relative;
+			width: 100%;
+			height: 50px;
+			padding: 0 16px;
+			border: 1px solid #d6e1fb;
+			box-shadow: none;
+			background-color: transparent;
+			font-size: 14px;
+			letter-spacing: 0.05em;
+			@include inputPlaceholder {
+				font-size: 14px;
+				letter-spacing: 0.05em;
+				color: #505050;
+			}
+		}
+
+		textarea {
+			resize: none;
+			height: 128px;
+			padding: 15px 16px;
+		}
+	}
+}
+
+// SECTION :: END

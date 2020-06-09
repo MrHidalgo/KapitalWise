@@ -3,4 +3,7 @@ ProjectTitle: KapitalWise
 PageList:
 - file: index.html
   titleName: Home
+  ready: 100
+- file: demo.html
+  titleName: Demo
   ready: 1

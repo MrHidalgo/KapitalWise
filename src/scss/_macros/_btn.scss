@@ -11,7 +11,9 @@
 	height: 42px;
 	padding-left: 23px;
 	padding-right: 23px;
-	border-color: #FD5545;
+	//border-color: #FD5545;
+	border: none;
+	box-shadow: none;
 	background-color: #FD5545;
 	transition: all 0.75s cubic-bezier(0, 0.9, 0.5, 1);
 

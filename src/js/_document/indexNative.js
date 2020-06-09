@@ -270,6 +270,10 @@ const tlMain = new TimelineMax({paused: true}),
 				return elementBottom > viewportTop && elementTop < viewportBottom;
 			};
 
+			if(!$('#main-illustration-svg').length) {
+				return;
+			}
+
 			const svgObj = [
 				'#main-illustration-svg',
 				'#platform-illustration-1-svg',
@@ -338,6 +342,10 @@ const tlMain = new TimelineMax({paused: true}),
 			return (vertInView && horInView);
 		}
 
+		if(!$('.turn-key__box-wrapper').length) {
+			return;
+		}
+
 		const elem = $('.turn-key__box-wrapper')[0];
 
 		if (isAnyPartOfElementInViewport(elem)) {
@@ -353,6 +361,31 @@ const tlMain = new TimelineMax({paused: true}),
 				$(elem).removeClass('is-active');
 			}
 		});
+	};
+
+
+	const demoIllustrationAnimation = () => {
+		const tl = new TimelineMax();
+
+		$('#demo-illustration-svg').css({opacity: 1});
+
+		tl.set('#request__mail', {transformOrigin: 'center', opacity: '0'});
+		tl.set('#request__block-1, #request__block-2', {transformOrigin: 'right bottom', scale: '0'});
+		tl.set('#request__block-3', {transformOrigin: 'center bottom', scale: '0'});
+		tl.set('#request__block-4, #request__block-5', {transformOrigin: 'left bottom', scale: '0'});
+		tl.set('#request__block-1-icon, #request__block-2-icon, #request__block-3-icon, #request__block-4-icon, #request__block-5-icon', {
+			transformOrigin: 'center', scale: '0'
+		});
+
+		tl
+			.to('#request__mail', 1, {opacity: 1, ease: Power2.easeInOut})
+			.to('#request__block-1', 0.9, {scale: 1, ease: Bounce.easeOut})
+			.to('#request__block-2', 0.95, {scale: 1, ease: Bounce.easeOut}, '-=0.9')
+			.to('#request__block-3', 1, {scale: 1, ease: Bounce.easeOut}, '-=0.95')
+			.to('#request__block-4', 0.975, {scale: 1, ease: Bounce.easeOut}, '-=1')
+			.to('#request__block-5', 1.05, {scale: 1, ease: Bounce.easeOut}, '-=0.975')
+			.staggerTo('#request__block-1-icon, #request__block-2-icon, #request__block-3-icon, #request__block-4-icon, #request__block-5-icon', 1, {scale: 1}, 0.1, '-=0.5')
+		;
 	};
 	/*
 	* CALLBACK :: end
@@ -378,6 +411,7 @@ const tlMain = new TimelineMax({paused: true}),
 		illustrationAnimation();
 		platformBoxViewportAnimation();
 		turnKeyLineAnimation();
+		demoIllustrationAnimation();
 		// ==========================================
 	};
 

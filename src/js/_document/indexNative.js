@@ -192,8 +192,8 @@ const tlMain = new TimelineMax({paused: true}),
 			tlStory.set("#story__line-1-2, #story__line-3-2, #story__line-5-2", { scaleY: 0, transformOrigin: '0 top' });
 			tlStory.set("#story__line-2-2, #story__line-4-2", { scaleY: 0, transformOrigin: '0 bottom' });
 			tlStory.set("" +
-				"#story__icon-1, #story__icon-2, #story__icon-3, " +
-				"#story__icon-4, #story__icon-5, #story__icon-6", {
+				"#story__icon-1, #story__icon-2, #story__icon-3 path, " +
+				"#story__icon-4 path, #story__icon-5, #story__icon-6", {
 				opacity: 0,
 				transformOrigin: 'center'
 			});
@@ -230,12 +230,12 @@ const tlMain = new TimelineMax({paused: true}),
 				.to('#story__additional-line-2', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
 				.to('#story__line-2-2', 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
 				.to('#story__circle-stroke-3', 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
-				.to('#story__icon-3', 0.5, {opacity: 1, ease:Power1.easeInOut})
+				.to('#story__icon-3 path', 0.5, {opacity: 1, ease:Power1.easeInOut})
 				.to('#story__line-3-1', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
 				.to('#story__additional-line-3', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
 				.to('#story__line-3-2', 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')
 				.to('#story__circle-stroke-4', 0.5, {drawSVG:'0% 100%', ease:Power1.easeInOut})
-				.to('#story__icon-4', 0.5, {opacity: 1, ease:Power1.easeInOut})
+				.to('#story__icon-4 path', 0.5, {opacity: 1, ease:Power1.easeInOut})
 				.to('#story__line-4-1', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.15')
 				.to('#story__additional-line-4', 0.5, {drawSVG:'0% 100%', ease: Power1.easeInOut}, '-=0.45')
 				.to('#story__line-4-2', 0.5, {scaleY: 1, ease: Power1.easeInOut}, '-=0.15')

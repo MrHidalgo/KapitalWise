@@ -387,6 +387,17 @@ const tlMain = new TimelineMax({paused: true}),
 			.staggerTo('#request__block-1-icon, #request__block-2-icon, #request__block-3-icon, #request__block-4-icon, #request__block-5-icon', 1, {scale: 1}, 0.1, '-=0.5')
 		;
 	};
+
+
+	const headerLinkToggle = () => {
+		$('.header__nav-link, .header__nav-link-drop a').on('click', (ev) => {
+			if($(window).width() < 768) {
+				$('[hamburger-js]').removeClass("is-active");
+				$('[mobile-block-js]').removeClass("is-open");
+				$("html, body").removeClass('is-hideScroll');
+			}
+		});
+	};
 	/*
 	* CALLBACK :: end
 	* ============================================= */
@@ -412,6 +423,7 @@ const tlMain = new TimelineMax({paused: true}),
 		platformBoxViewportAnimation();
 		turnKeyLineAnimation();
 		demoIllustrationAnimation();
+		headerLinkToggle();
 		// ==========================================
 	};
 

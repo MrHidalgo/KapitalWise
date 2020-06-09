@@ -11,9 +11,13 @@ const initSmoothScroll = (
 ) => {
 
   $(btnName).on("click", (e) => {
+		let linkHref = $(e.currentTarget).attr('href');
 
-    let linkHref = $(e.currentTarget).attr('href'),
-      headerHeight = $(".header").outerHeight() || 0,
+  	if(!$(linkHref).length) {
+  		return;
+		}
+
+    let headerHeight = $(".header").outerHeight() || 0,
       topHeightOffset = $(linkHref).offset().top - headerHeight;
 
     $('body, html').animate({

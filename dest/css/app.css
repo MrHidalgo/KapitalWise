@@ -1023,10 +1023,16 @@ picture {
         -ms-flex-align: center;
             align-items: center;
     min-height: 45px;
+    text-align: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 18px;
   }
 }
 
-/* line 132, src/scss/_components/common/_header.scss */
+/* line 135, src/scss/_components/common/_header.scss */
 .header__nav-link:after, .header__nav-link:before {
   content: '';
   position: absolute;
@@ -1039,17 +1045,17 @@ picture {
   transition: width 0.35s ease-in-out;
 }
 
-/* line 143, src/scss/_components/common/_header.scss */
+/* line 146, src/scss/_components/common/_header.scss */
 .header__nav-link:after {
   left: 50%;
 }
 
-/* line 147, src/scss/_components/common/_header.scss */
+/* line 150, src/scss/_components/common/_header.scss */
 .header__nav-link:before {
   right: 50%;
 }
 
-/* line 151, src/scss/_components/common/_header.scss */
+/* line 154, src/scss/_components/common/_header.scss */
 .header__nav-link:hover {
   color: #fd5545;
   -webkit-transition: color 0.35s ease-in-out;
@@ -1057,7 +1063,7 @@ picture {
   transition: color 0.35s ease-in-out;
 }
 
-/* line 155, src/scss/_components/common/_header.scss */
+/* line 158, src/scss/_components/common/_header.scss */
 .header__nav-link:hover:after, .header__nav-link:hover:before {
   width: 50%;
   -webkit-transition: width 0.35s ease-in-out;
@@ -1065,12 +1071,12 @@ picture {
   transition: width 0.35s ease-in-out;
 }
 
-/* line 162, src/scss/_components/common/_header.scss */
+/* line 165, src/scss/_components/common/_header.scss */
 .header__nav-link-wrapper {
   position: relative;
 }
 
-/* line 166, src/scss/_components/common/_header.scss */
+/* line 169, src/scss/_components/common/_header.scss */
 .header__nav-link-wrapper:hover .header__nav-link-drop {
   opacity: 1;
   visibility: visible;
@@ -1084,7 +1090,17 @@ picture {
   transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
 }
 
-/* line 175, src/scss/_components/common/_header.scss */
+@media screen and (max-width: 767px) {
+  /* line 169, src/scss/_components/common/_header.scss */
+  .header__nav-link-wrapper:hover .header__nav-link-drop {
+    opacity: 1;
+    -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+/* line 182, src/scss/_components/common/_header.scss */
 .header__nav-link-drop {
   overflow: hidden;
   opacity: 0;
@@ -1123,7 +1139,21 @@ picture {
   transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
 }
 
-/* line 194, src/scss/_components/common/_header.scss */
+@media screen and (max-width: 767px) {
+  /* line 182, src/scss/_components/common/_header.scss */
+  .header__nav-link-drop {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    position: static;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+/* line 208, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a {
   position: relative;
   display: -webkit-box;
@@ -1141,7 +1171,7 @@ picture {
   transition: background-color 0.35s ease-in-out;
 }
 
-/* line 202, src/scss/_components/common/_header.scss */
+/* line 216, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a:hover {
   background-color: #f2f7ff;
   -webkit-transition: background-color 0.35s ease-in-out;
@@ -1149,7 +1179,7 @@ picture {
   transition: background-color 0.35s ease-in-out;
 }
 
-/* line 206, src/scss/_components/common/_header.scss */
+/* line 220, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a:hover span {
   background-color: #fd5545;
   -webkit-box-shadow: 0 3px 10px 0 rgba(21, 49, 86, 0.83);
@@ -1161,7 +1191,7 @@ picture {
   transition: background-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out, -webkit-box-shadow 0.35s ease-in-out;
 }
 
-/* line 211, src/scss/_components/common/_header.scss */
+/* line 225, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a:hover span .icon-font {
   color: #ffffff;
   -webkit-transition: color 0.35s ease-in-out;
@@ -1169,13 +1199,13 @@ picture {
   transition: color 0.35s ease-in-out;
 }
 
-/* line 219, src/scss/_components/common/_header.scss */
+/* line 233, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a > div:nth-of-type(1) {
   width: 82px;
   padding-left: 20px;
 }
 
-/* line 223, src/scss/_components/common/_header.scss */
+/* line 237, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a > div:nth-of-type(2) {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -1186,7 +1216,7 @@ picture {
   padding-right: 20px;
 }
 
-/* line 231, src/scss/_components/common/_header.scss */
+/* line 245, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a span {
   position: relative;
   display: -webkit-box;
@@ -1214,7 +1244,7 @@ picture {
   transition: background-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out, -webkit-box-shadow 0.35s ease-in-out;
 }
 
-/* line 243, src/scss/_components/common/_header.scss */
+/* line 257, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a span .icon-font {
   color: #fd5545;
   -webkit-transition: color 0.35s ease-in-out;
@@ -1222,22 +1252,22 @@ picture {
   transition: color 0.35s ease-in-out;
 }
 
-/* line 247, src/scss/_components/common/_header.scss */
+/* line 261, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a span .icon-font.icon-banking {
   font-size: 17px;
 }
 
-/* line 250, src/scss/_components/common/_header.scss */
+/* line 264, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a span .icon-font.icon-category {
   font-size: 20px;
 }
 
-/* line 253, src/scss/_components/common/_header.scss */
+/* line 267, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a span .icon-font.icon-ring-chart {
   font-size: 12px;
 }
 
-/* line 259, src/scss/_components/common/_header.scss */
+/* line 273, src/scss/_components/common/_header.scss */
 .header__nav-link-drop a p {
   font-weight: 500;
   font-size: 16px;
@@ -1245,13 +1275,13 @@ picture {
   color: #153156;
 }
 
-/* line 270, src/scss/_components/common/_header.scss */
+/* line 284, src/scss/_components/common/_header.scss */
 .header .hamburger {
   display: none;
 }
 
 @media screen and (max-width: 767px) {
-  /* line 270, src/scss/_components/common/_header.scss */
+  /* line 284, src/scss/_components/common/_header.scss */
   .header .hamburger {
     display: -webkit-box;
     display: -webkit-flex;

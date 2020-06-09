@@ -34,7 +34,8 @@
 
 		&#story-illustration-svg {
 			position: absolute;
-			top: 0;
+			top: 50%;
+			transform: translateY(-50%);
 			left: 0;
 			right: 0;
 			display: block;

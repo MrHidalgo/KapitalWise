@@ -2476,7 +2476,10 @@ picture {
 /* line 35, src/scss/_components/homepage/_story.scss */
 .story svg#story-illustration-svg {
   position: absolute;
-  top: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   left: 0;
   right: 0;
   display: block;
@@ -2486,7 +2489,7 @@ picture {
   margin-right: auto;
 }
 
-/* line 47, src/scss/_components/homepage/_story.scss */
+/* line 48, src/scss/_components/homepage/_story.scss */
 .story svg #story__part-1 circle, .story svg #story__part-1 path, .story svg #story__part-1 line,
 .story svg #story__part-2 circle, .story svg #story__part-2 path, .story svg #story__part-2 line,
 .story svg #story__part-3 circle, .story svg #story__part-3 path, .story svg #story__part-3 line,

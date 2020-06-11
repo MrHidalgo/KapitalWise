@@ -3330,6 +3330,12 @@ picture {
 }
 
 /* line 162, src/scss/_components/demo/_main.scss */
+.demo-main__form label {
+  width: 100%;
+  margin: 0;
+}
+
+/* line 167, src/scss/_components/demo/_main.scss */
 .demo-main__form input,
 .demo-main__form textarea {
   outline: none;
@@ -3385,7 +3391,7 @@ picture {
   color: #505050;
 }
 
-/* line 181, src/scss/_components/demo/_main.scss */
+/* line 186, src/scss/_components/demo/_main.scss */
 .demo-main__form textarea {
   resize: none;
   height: 128px;

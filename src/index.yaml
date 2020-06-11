@@ -10,3 +10,6 @@ PageList:
 - file: demo-thanks.html
   titleName: Demo Thank You!
   ready: 100
+- file: financial-wellness.html
+  titleName: Financial Wellness
+  ready: 100

@@ -603,8 +603,9 @@ picture {
 /* line 12, src/scss/_macros/_logotype.scss */
 .logo__img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  max-width: 199px;
+  height: 31px;
   max-height: 100%;
 }
 
@@ -748,14 +749,16 @@ picture {
   font-size: 16px;
   letter-spacing: 0px;
   color: #FFFFFF;
+  margin: 0;
+  padding: 0;
 }
 
-/* line 59, src/scss/_macros/_btn.scss */
+/* line 61, src/scss/_macros/_btn.scss */
 .c-btn p span {
   font-weight: 700;
 }
 
-/* line 64, src/scss/_macros/_btn.scss */
+/* line 66, src/scss/_macros/_btn.scss */
 .c-btn__wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -767,13 +770,13 @@ picture {
           align-items: center;
 }
 
-/* line 69, src/scss/_macros/_btn.scss */
+/* line 71, src/scss/_macros/_btn.scss */
 .c-btn--radiusBig {
   -webkit-border-radius: 21px;
           border-radius: 21px;
 }
 
-/* line 73, src/scss/_macros/_btn.scss */
+/* line 75, src/scss/_macros/_btn.scss */
 .c-btn--radiusSmall {
   -webkit-border-radius: 3px;
           border-radius: 3px;
@@ -3328,6 +3331,12 @@ picture {
 }
 
 /* line 162, src/scss/_components/demo/_main.scss */
+.demo-main__form label {
+  width: 100%;
+  margin: 0;
+}
+
+/* line 167, src/scss/_components/demo/_main.scss */
 .demo-main__form input,
 .demo-main__form textarea {
   outline: none;
@@ -3383,7 +3392,7 @@ picture {
   color: #505050;
 }
 
-/* line 181, src/scss/_components/demo/_main.scss */
+/* line 186, src/scss/_components/demo/_main.scss */
 .demo-main__form textarea {
   resize: none;
   height: 128px;
